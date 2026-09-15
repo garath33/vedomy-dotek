@@ -1,0 +1,90 @@
+name: CI/CD Pipeline - Test & Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+  pull_request:
+    branches:
+      - main
+      - staging
+
+# Umožňuje GitHub Actions nasazovat na GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Zajistí, že běží vždy jen jeden deploy najednou
+concurrency:
+  group: 'pages-${{ github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  # ========================================================
+  # FÁZE 1: TESTOVÁNÍ A KONTROLA INTEGRITY (SDLC QA Phase)
+  # ========================================================
+  test:
+    name: Kvalitativní testy (QA & Validation)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kódu
+        uses: actions/checkout@v4
+
+      - name: Nastavení Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalace závislostí
+        run: npm ci
+
+      - name: Sestavení statického webu (Build)
+        run: npm run build
+
+      - name: Test integrity odkazů a assetů (Broken Link Check)
+        run: npm run test:links
+
+      - name: Test přítomnosti klíčového obsahu a meta tagů
+        run: npm run test:content
+
+  # ========================================================
+  # FÁZE 2: DEPLOY (PRODUKCE NEBO STAGING PREVIEW)
+  # ========================================================
+  deploy:
+    name: Nasazení na GitHub Pages
+    needs: test
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kódu
+        uses: actions/checkout@v4
+
+      - name: Nastavení Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalace závislostí
+        run: npm ci
+
+      - name: Sestavení projektu
+        run: npm run build
+
+      - name: Příprava GitHub Pages artifactu
+        uses: actions/configure-pages@v4
+
+      - name: Nahrání statických souborů z dist/
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy na GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
