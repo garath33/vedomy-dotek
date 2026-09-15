@@ -13,6 +13,7 @@ console.log('--- TEST: Kontrola zpětné kompatibility a produkční bezpečnost
 const canonicalPages = [
   'index.html',
   'o-martinovi.html',
+  'reference.html',
   'cenik.html',
   'faq.html',
   'kontakt.html'

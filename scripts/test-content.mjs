@@ -11,6 +11,7 @@ console.log('--- TEST: Validace povinného obsahu, meta tagů a klíčových úd
 const requiredFiles = [
   'index.html',
   'o-martinovi.html',
+  'reference.html',
   'cenik.html',
   'faq.html',
   'kontakt.html'
@@ -93,6 +94,16 @@ const aboutDetails = [
 aboutDetails.forEach(detail => {
   if (!oMartinoviHtml.toLowerCase().includes(detail.toLowerCase())) {
     console.error(`❌ V o-martinovi.html chybí informace: "${detail}"`);
+    errors++;
+  }
+});
+
+// 5. Kontrola podstránky reference.html
+const referenceHtml = fs.readFileSync(path.join(distDir, 'reference.html'), 'utf8');
+const referenceNames = ['Anna', 'Jana', 'Lucie', 'Hanka', 'Milena'];
+referenceNames.forEach(name => {
+  if (!referenceHtml.includes(name)) {
+    console.error(`❌ V reference.html chybí recenzent: "${name}"`);
     errors++;
   }
 });

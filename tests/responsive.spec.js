@@ -3,6 +3,7 @@ import { test, expect } from '@playwright/test';
 const PAGES = [
   { path: '/', title: 'Terapie vědomého dotyku' },
   { path: '/o-martinovi.html', title: 'O Martinovi' },
+  { path: '/reference.html', title: 'Reference' },
   { path: '/cenik.html', title: 'Ceník' },
   { path: '/faq.html', title: 'Časté dotazy' },
   { path: '/kontakt.html', title: 'Kontakt' },
@@ -102,5 +103,25 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     // Vyzkoušet vepsání
     await nameInput.fill('Jan Novák');
     await expect(nameInput).toHaveValue('Jan Novák');
+  });
+
+  test('Filtrování referencí na podstránce reference.html funguje', async ({ page }) => {
+    await page.goto('/reference.html');
+
+    const cards = page.locator('.reference-card');
+    await expect(cards).toHaveCount(8);
+
+    // Kliknout na filtr "Vědomý dotyk"
+    const dotekBtn = page.locator('button[data-filter="dotek"]');
+    await dotekBtn.click();
+
+    // Viditelné pouze karty kategorie dotek
+    const visibleCards = page.locator('.reference-card:visible');
+    await expect(visibleCards).toHaveCount(4);
+
+    // Kliknout na "Všechny ohlasy"
+    const allBtn = page.locator('button[data-filter="all"]');
+    await allBtn.click();
+    await expect(page.locator('.reference-card:visible')).toHaveCount(8);
   });
 });

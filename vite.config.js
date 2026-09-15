@@ -12,6 +12,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         oMartinovi: resolve(__dirname, 'o-martinovi.html'),
+        reference: resolve(__dirname, 'reference.html'),
         cenik: resolve(__dirname, 'cenik.html'),
         faq: resolve(__dirname, 'faq.html'),
         kontakt: resolve(__dirname, 'kontakt.html')
