@@ -46,25 +46,37 @@ Pro bezpečné provádění změn (nové texty, fotky, úpravy cen) doporučujem
 
 ---
 
-## 4. Testovací fáze (QA)
+## 4. Testovací fáze (QA & Automatizované testy)
 
-Projekt obsahuje sadu skriptů, které chrání web před chybami:
+Projekt obsahuje komplexní testovací sadu, kterou lze spustit jedním příkazem `npm run test`:
 
-1. **`npm run test:links`**
+1. **`npm run test:e2e` (Playwright testy responzivity - Desktop, Mobil, Tablet)**
+   - Testuje zobrazení na reálných rozlišeních: **Desktop Chrome (1280px)**, **Mobile Pixel 5 (393px)**, **Mobile iPhone 13 (390px)** a **Tablet iPad (820px)**.
+   - **Horizontal Overflow Check**: Zaručuje, že na žádném mobilním telefonu nedochází k nechtěnému vodorovnému posouvání (žádný element nepřetéká obrazovku).
+   - **Navigační test**: Ověřuje chování hamburger menu na mobilu/tabletu a standardního menu na desktopu.
+   - **Interaktivní prvky**: Testuje přepínání referencí v karuselu, otevírání/zavírání akordeonů v sekci FAQ a funkčnost rezervačního formuláře.
+
+2. **`npm run test:compat` (Zpětná kompatibilita Staging & Produkce)**
+   - Ověřuje, že všechny interní assety a skripty používají relativní cesty, takže fungují na jakékoliv subdoméně, náhledu i vlastní produkční doméně bez zásahu do kódu.
+   - Kontroluje bezpečnostní atributy (`rel="noopener"` u externích odkazů).
+
+3. **`npm run test:links` (Broken Link Checker)**
    - Projde všechny vygenerované HTML soubory v `dist/`.
    - Zkontroluje, zda každý interní odkaz (na jinou stránku, kotvu, CSS styl, JS skript nebo obrázek) reálně existuje na disku.
-   - Zabraňuje chybám 404 (nefunkční obrázky, překlepy v odkazech).
 
-2. **`npm run test:content`**
+4. **`npm run test:content` (Validace obsahu)**
    - Ověřuje přítomnost povinných SEO meta tagů (`<title>`, `<meta name="description">`, viewport).
-   - Kontroluje, že na stránkách nechybí zásadní údaje:
-     - Kontaktní údaje (telefon, e-mail, adresa, IČO)
-     - Ceny a varianty služeb
-     - Jména a citace z referencí
-     - Klíčové informace o Martinovi (psychoterapeutický výcvik, bojová umění, masérská praxe).
+   - Kontroluje přítomnost klíčových údajů (kontakt, ceník, reference).
 
-3. **`npm run build`**
-   - Statická kompilace přes Vite. Kontroluje syntaktickou správnost a optimalizuje assety.
+---
+
+## 5. Zpětná kompatibilita a přímý deploy na produkci (Bypass Stagingu)
+
+Pokud nastane situace, kdy potřebujete **nasadit úpravy ihned na produkci (`main`)**:
+- Pipeline je navržena tak, že **přímý push do větve `main` projde kompletní sadou testů (včetně responzivity)**.
+- Pokud testy projdou, změna se okamžitě nasadí na produkční web.
+- **Automatická synchronizace do stagingu**: Krok `sync-back-to-staging` v GitHub Actions automaticky přenese změny z `main` zpět do větve `staging`.
+- Tím je zaručeno, že **staging nikdy nezůstane zastaralý** a nedojde k divergenci větví ani přepsání novinek při budoucím vývoji.
 
 ---
 

@@ -12,21 +12,21 @@ on:
 
 # Umožňuje GitHub Actions nasazovat na GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
-# Zajistí, že běží vždy jen jeden deploy najednou
+# Zabrání souběžným konfliktům při deployi
 concurrency:
   group: 'pages-${{ github.ref }}'
   cancel-in-progress: true
 
 jobs:
   # ========================================================
-  # FÁZE 1: TESTOVÁNÍ A KONTROLA INTEGRITY (SDLC QA Phase)
+  # FÁZE 1: TESTOVÁNÍ, RESPONZIVITA A ZPĚTNÁ KOMPATIBILITA (QA)
   # ========================================================
   test:
-    name: Kvalitativní testy (QA & Validation)
+    name: Kvalitativní testy (Responzivita, Kompatibilita, QA)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout kódu
@@ -41,17 +41,26 @@ jobs:
       - name: Instalace závislostí
         run: npm ci
 
+      - name: Instalace Chromium pro Playwright
+        run: npx playwright install chromium --with-deps
+
       - name: Sestavení statického webu (Build)
         run: npm run build
 
       - name: Test integrity odkazů a assetů (Broken Link Check)
         run: npm run test:links
 
+      - name: Test zpětné kompatibility staging a produkce
+        run: npm run test:compat
+
       - name: Test přítomnosti klíčového obsahu a meta tagů
         run: npm run test:content
 
+      - name: Automatizované testy responzivity (Desktop, Mobil, Tablet)
+        run: npm run test:e2e
+
   # ========================================================
-  # FÁZE 2: DEPLOY (PRODUKCE NEBO STAGING PREVIEW)
+  # FÁZE 2: NASAZENÍ (DEPLOY NA GITHUB PAGES)
   # ========================================================
   deploy:
     name: Nasazení na GitHub Pages
@@ -88,3 +97,25 @@ jobs:
       - name: Deploy na GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # ========================================================
+  # FÁZE 3: ZPĚTNÁ SYNCHRONIZACE PRODUKCE DO STAGINGU
+  # ========================================================
+  sync-back-to-staging:
+    name: Sync produkce do stagingu (pokud byl push přímo do main)
+    needs: deploy
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kódu s plnou historií
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Synchronizace změn z main do větve staging
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout staging || git checkout -b staging
+          git merge main --ff-only || (git merge main -m "chore(sync): automatická synchronizace main do staging" && git push origin staging)
+          git push origin staging

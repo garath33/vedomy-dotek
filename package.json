@@ -8,11 +8,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:links": "node scripts/check-links.mjs",
+    "test:compat": "node scripts/check-compatibility.mjs",
     "test:html": "html-validate dist/**/*.html",
     "test:content": "node scripts/test-content.mjs",
-    "test": "npm run build && npm run test:links && npm run test:content"
+    "test:e2e": "playwright test",
+    "test": "npm run build && npm run test:links && npm run test:compat && npm run test:content && npm run test:e2e"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "html-validate": "^10.9.0",
     "vite": "^6.4.3"
   }
