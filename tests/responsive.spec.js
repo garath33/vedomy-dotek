@@ -7,6 +7,7 @@ const PAGES = [
   { path: '/cenik.html', title: 'Ceník' },
   { path: '/faq.html', title: 'Časté dotazy' },
   { path: '/kontakt.html', title: 'Kontakt' },
+  { path: '/storno-podminky.html', title: 'Storno podmínky' },
 ];
 
 test.describe('Responzivita a Layout (Desktop & Mobile)', () => {

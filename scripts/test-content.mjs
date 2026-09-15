@@ -14,7 +14,8 @@ const requiredFiles = [
   'reference.html',
   'cenik.html',
   'faq.html',
-  'kontakt.html'
+  'kontakt.html',
+  'storno-podminky.html'
 ];
 
 let errors = 0;
@@ -107,6 +108,36 @@ referenceNames.forEach(name => {
     errors++;
   }
 });
+
+// 6. Kontrola podstránky storno-podminky.html a úprav ceníku / FAQ
+const stornoHtml = fs.readFileSync(path.join(distDir, 'storno-podminky.html'), 'utf8');
+const stornoDetails = ['48 hodin', '50 %', '100 %', 'Slevu 30 %', '30 minut péče navíc'];
+stornoDetails.forEach(detail => {
+  if (!stornoHtml.includes(detail)) {
+    console.error(`❌ V storno-podminky.html chybí klíčový údaj: "${detail}"`);
+    errors++;
+  }
+});
+
+const cenikHtml = fs.readFileSync(path.join(distDir, 'cenik.html'), 'utf8');
+if (!cenikHtml.includes('přes QR kód na místě.')) {
+  console.error('❌ V cenik.html chybí upravená formulace o platbě přes QR kód na místě.');
+  errors++;
+}
+if (!cenikHtml.includes('storno-podminky.html')) {
+  console.error('❌ V cenik.html chybí odkaz na storno-podminky.html.');
+  errors++;
+}
+
+const faqHtml = fs.readFileSync(path.join(distDir, 'faq.html'), 'utf8');
+if (faqHtml.includes('specifických ortopedických diagnóz')) {
+  console.error('❌ V faq.html stále zůstal starý text "specifických ortopedických diagnóz"!');
+  errors++;
+}
+if (!faqHtml.includes('specifických diagnóz')) {
+  console.error('❌ V faq.html chybí nový text "specifických diagnóz"!');
+  errors++;
+}
 
 if (errors > 0) {
   console.error(`\n❌ Testy obsahu selhaly (${errors} chyb)!`);
