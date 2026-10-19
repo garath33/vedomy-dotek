@@ -1249,10 +1249,11 @@ img {
   color: var(--color-muted);
 }
 
-/* Večerní klid: fotka v pozadí, text v teplém stínu vlevo */
+/* Večerní klid: fotka v pozadí, text ve stínu vlevo, opticky ve středu výšky */
 .hero {
   display: grid;
   grid-template-columns: 1fr;
+  align-items: center;
   position: relative;
   min-height: min(88vh, 820px);
   background: #24312d;
@@ -1277,7 +1278,7 @@ img {
   order: 0;
   margin: 0;
   max-width: 640px;
-  padding: 6rem 8vw;
+  padding: 3.2rem 8vw;
   background: transparent;
 }
 
@@ -1345,16 +1346,48 @@ img {
 /* Respozivita */
 @media (max-width: 960px) {
   .hero {
-    min-height: 78vh;
+    align-items: stretch;
+    min-height: min(76vh, 680px);
   }
 
+  /* Stín je silnější nahoře, kde leží text, a dolů pouští záběr lehátka. */
   .hero-veil {
-    background: linear-gradient(180deg, rgba(24, 34, 31, 0.2) 0%, rgba(24, 34, 31, 0.78) 58%, rgba(24, 34, 31, 0.88) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(24, 34, 31, 0.84) 0%,
+      rgba(24, 34, 31, 0.72) 42%,
+      rgba(24, 34, 31, 0.5) 74%,
+      rgba(24, 34, 31, 0.28) 100%
+    );
   }
 
   .hero-panel {
-    padding: 42vh 1.4rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: clamp(1.35rem, 4.6vh, 2.4rem);
+    align-self: stretch;
+    min-height: min(76vh, 680px);
     max-width: none;
+    padding: 1.6rem 1.35rem 1.7rem;
+  }
+
+  .hero .badge-tag,
+  .hero h1,
+  .hero-subtitle,
+  .hero .btn-group {
+    margin: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 9vw, 3.35rem);
+    line-height: 1.12;
+  }
+
+  .hero-subtitle {
+    max-width: 24rem;
+    line-height: 1.55;
   }
 
   .page-header {
