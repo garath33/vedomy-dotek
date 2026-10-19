@@ -112,19 +112,30 @@
 
         <!-- Formulář / Rezervace -->
         <div class="contact-card" style="background: var(--color-sand); border-color: var(--color-primary-border);">
-          <span class="section-eyebrow">Napište mi zprávu</span>
-          <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Nezávazná poptávka termínu</h2>
-          <p style="font-size: 0.95rem; color: var(--color-muted); margin-bottom: 1.75rem;">
-            Nevíte, který formát zvolit, nebo máte specifický dotaz? Vyplňte formulář níže a já se vám obratem ozvu zpět.
-          </p>
+          <div id="form-intro">
+            <span class="section-eyebrow">Napište mi zprávu</span>
+            <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Nezávazná poptávka termínu</h2>
+            <p style="font-size: 0.95rem; color: var(--color-muted); margin-bottom: 1.75rem;">
+              Nevíte, který formát zvolit, nebo máte specifický dotaz? Vyplňte formulář níže a já se vám obratem ozvu zpět.
+            </p>
+          </div>
 
-          <p id="form-success" class="form-success" hidden>
-            Zpráva je na cestě. Ozvu se vám na uvedený kontakt.
-          </p>
+          <div id="form-success" class="form-success" hidden>
+            <span class="section-eyebrow">Děkuji</span>
+            <h2>Vaše zpráva ke mně dorazila</h2>
+            <p>
+              Jsem rád, že jste se ozvali. Ozvu se vám na kontakt, který jste uvedli, a společně najdeme čas, který vám bude vyhovovat. Do té doby si dopřejte chvíli klidu.
+            </p>
+            <p>
+              Když chcete termín domluvit hned, jsem na telefonu.
+            </p>
+            <a href="tel:+420604430087" class="btn btn-primary">Zavolat +420 604 430 087</a>
+          </div>
 
           <form id="contact-form" class="contact-form" action="https://formsubmit.co/cesta-zmeny@email.cz" method="POST">
             <input type="hidden" name="_subject" value="Poptávka z webu Terapie vědomého dotyku">
             <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" id="form-next" value="">
             <input type="text" name="_honey" autocomplete="off" tabindex="-1" aria-hidden="true" style="display: none;">
 
