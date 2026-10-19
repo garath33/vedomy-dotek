@@ -167,17 +167,21 @@ if (!cenikHtml.includes('storno-podminky.html')) {
   console.error('❌ V cenik.html chybí odkaz na storno-podminky.html.');
   errors++;
 }
-const integrationPhrase = 'Klidová integrace na lůžku v délce podle vaší potřeby';
-if (!indexHtml.includes('Délku tohoto doznění přizpůsobím tomu, jak se právě cítíte.')) {
-  console.error('❌ V index.html chybí obecné znění délky doznění na lůžku.');
+if (!indexHtml.includes('dopřejeme tělu čas v naprostém klidu na lůžku')) {
+  console.error('❌ V index.html chybí čas v klidu na lůžku.');
   errors++;
 }
+if (indexHtml.includes('Délku tohoto doznění přizpůsobím')) {
+  console.error('❌ V index.html zůstala věta o přizpůsobení délky doznění.');
+  errors++;
+}
+const integrationPhrase = 'Klidová integrace na lůžku';
 if (!indexHtml.includes(integrationPhrase) || !cenikHtml.includes(integrationPhrase)) {
-  console.error('❌ V nabídce chybí klidová integrace v délce podle potřeby.');
+  console.error('❌ V nabídce chybí klidová integrace na lůžku.');
   errors++;
 }
-if (/minimálně 10 minut/i.test(indexHtml) || /minimálně 10 minut/i.test(cenikHtml)) {
-  console.error('❌ Na webu zůstala pevná délka klidové integrace (minimálně 10 minut).');
+if (/podle vaší potřeby|minimálně 10 minut/i.test(indexHtml) || /podle vaší potřeby|minimálně 10 minut/i.test(cenikHtml)) {
+  console.error('❌ Na webu zůstala pevná nebo vysvětlovaná délka klidové integrace.');
   errors++;
 }
 

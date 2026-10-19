@@ -18,7 +18,7 @@
 
 ### Changed
 
-- Klidová integrace na lůžku se na úvodu i v ceníku popisuje obecně: délka se přizpůsobuje tomu, jak se člověk právě cítí. Pevné „minimálně 10 minut“ na webu není.
+- Klidová integrace na lůžku se na úvodu i v ceníku zmiňuje jen jako čas na doznění. Pevné minuty ani věta o přizpůsobení délky na webu nejsou.
 - Z referencí i úvodního přehledu ohlasů jsou pryč karty ke koučinku a osobnímu rozvoji. Zůstávají Anna, Jana, Lucie a Hanka.
 - Jméno a popisek u ohlasu jsou pod sebou, aby se dlouhý popisek nelámal vedle jména.
 - Úhrada v ceníku říká „na místě“ jen jednou: hotovost, případně QR kód.

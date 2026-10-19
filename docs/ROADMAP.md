@@ -27,7 +27,7 @@
 
 ## Hotovo
 
-- Délka klidové integrace na lůžku je na webu obecná a řídí se potřebou člověka. Konkrétní minuty u doznění se neuvádějí.
+- Klid na lůžku je na webu jen čas na doznění. Konkrétní minuty ani vysvětlení délky se neuvádějí.
 - Náhled před schválením je veřejný odkaz na commit. Ostrý web se k tomu nepoužívá.
 - Volba modelu zůstává na uživateli. Agent ji posoudí a bez souhlasu ji nemění, ani u subagenta.
 - Reference mluví jen o vědomém dotyku. Koučink a osobní rozvoj v ohlasech nejsou. Popisek referujícího je pod jménem. Kontakt má nadpis Kontakt a objednání a ceník neopakuje „na místě“.
