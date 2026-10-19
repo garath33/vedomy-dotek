@@ -29,7 +29,6 @@ Web je rozdělen do čistých, srozumitelných sekcí:
 3. **Ceník a formáty sezení (`cenik.html`)**:
    - **Ochutnávka vědomého dotyku**: 800 Kč / 60 min
    - **Terapie vědomého dotyku**: 1 600 Kč / 120 min (hloubková péče se šamanským bubnem)
-   - **Masáž u vás (domov/kancelář)**: příplatek +500 Kč po Praze
    - Platební a storno podmínky (zrušení do 24 h)
 
 4. **Časté dotazy (`faq.html`)**:
