@@ -8,6 +8,8 @@ const PAGES = [
   { path: '/faq.html', title: 'Časté dotazy' },
   { path: '/kontakt.html', title: 'Kontakt' },
   { path: '/storno-podminky.html', title: 'Storno podmínky' },
+  { path: '/ochrana-osobnich-udaju.html', title: 'Ochrana osobních údajů' },
+  { path: '/404.html', title: 'Stránka nenalezena' },
 ];
 
 test.describe('Responzivita a Layout (Desktop & Mobile)', () => {

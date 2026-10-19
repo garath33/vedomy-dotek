@@ -16,7 +16,9 @@ export default defineConfig({
         cenik: resolve(__dirname, 'cenik.html'),
         faq: resolve(__dirname, 'faq.html'),
         kontakt: resolve(__dirname, 'kontakt.html'),
-        storno: resolve(__dirname, 'storno-podminky.html')
+        storno: resolve(__dirname, 'storno-podminky.html'),
+        ochrana: resolve(__dirname, 'ochrana-osobnich-udaju.html'),
+        nenalezeno: resolve(__dirname, '404.html')
       }
     }
   }

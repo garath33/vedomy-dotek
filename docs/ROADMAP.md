@@ -8,7 +8,10 @@
 - Cílová skupina: lidé, kteří se už trochu znají a chtějí nový vhled skrze tělo.
 - Nové stránky: ochrana osobních údajů (patička) a 404. Reference už existují a patří do menu.
 - Měření: Umami, až bude adresa instance a website ID.
-- SEO: `sitemap.xml`, `robots.txt` a kanonické URL jsou schválené. Open Graph a favicon vzniknou v projektu, podklady od uživatele nejsou.
+- SEO: veřejná adresa je `https://garath33.github.io/vedomy-dotek/`. `sitemap.xml`, `robots.txt`, kanonické URL, Open Graph a favicon jsou součást fáze 1. Podklady od uživatele nejsou.
+- Umami se nevkládá, dokud není adresa instance a website ID.
+- Rychlost webu a úpravy fotek v této fázi nejsou. Fonty se hostují na webu, aby prohlížeč neposílal adresu návštěvníka na Google.
+- Bezpečnostní hlavičky GitHub Pages nastavit neumí. Meta značku Content-Security-Policy teď nedáváme, protože by musela povolit vložené styly a FormSubmit.
 - Ceny, které platí: ochutnávka 800 Kč / 60 min a terapie 1 600 Kč / 120 min. Příplatek +500 Kč neplatí a na webu už není. Fotky zůstávají.
 - Formulář doručí zprávu na `cesta-zmeny@email.cz` přes FormSubmit. Kalendář na webu nebude.
 - Dokumentace: `README.md` je návod ke spuštění, `SDLC_GUIDE.md` je provozní příručka, `docs/ROADMAP.md` je plán a `docs/CHANGELOG.md` je historie změn. Všechny čtyři zůstávají.
@@ -16,14 +19,13 @@
 
 ## Další práce
 
-1. Propis metody do textů na úvodu a v navazujících stránkách, bez přejmenování praxe.
-2. Ověřit, že nikde není kalendář a telefon zůstává hlavní výzva k akci.
-3. `reference.html` do navigace, `ochrana-osobnich-udaju.html` a `404.html`.
-4. `sitemap.xml`, `robots.txt`, kanonické URL, jednoduchý favicon a Open Graph. Místo pro Umami skript.
-5. Lychee v GitHub Actions. Po nasazení připomenout registraci sitemap v Google Search Console.
+1. Po nasazení na `main` provést registraci `sitemap.xml` v Google Search Console.
+2. Umami doplnit až s reálnou adresou instance a website ID. Do měření nepatří jméno, telefon ani text z formuláře.
+3. Lychee v GitHub Actions, až bude na řadě samostatná úprava pipeline.
 
 ## Hotovo
 
 - `.cursorrules` a `.cursorignore` drží schválené zadání a rozsah souborů, které se nemají načítat.
 - Úvodní text popisuje terapeutickou masáž jako metodu Terapie vědomého dotyku.
 - Kontaktní formulář odesílá poptávku přes FormSubmit na `cesta-zmeny@email.cz`.
+- Fáze 1: kanonické URL a absolutní Open Graph, `sitemap.xml`, `robots.txt`, favicon, ochrana osobních údajů v patičce, stránka 404 mimo menu a mimo sitemap, lokální fonty.

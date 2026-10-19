@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+- Kanonické URL a absolutní Open Graph adresa `https://garath33.github.io/vedomy-dotek/` na všech stránkách.
+- `sitemap.xml`, `robots.txt` a favicon s písmenem V.
+- Stránka `ochrana-osobnich-udaju.html` s odkazem v patičce a u souhlasu ve formuláři. Popisuje údaje z formuláře a doručení přes FormSubmit na `cesta-zmeny@email.cz`.
+- Stránka `404.html` pro neexistující adresu. Není v menu ani v sitemap a má `noindex`.
+- Fonty Playfair Display, Plus Jakarta Sans a Montserrat jsou uložené ve webu (latin a latin-ext, licence SIL OFL).
+
 ### Changed
 
 - Úvodní stránka nese text o terapeutické masáži: analytická mysl, tělo jako místo odpovědí, vedený rozhovor a léčivé zvuky (šamanský buben, Koshi, kalimba).
