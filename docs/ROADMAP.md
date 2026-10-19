@@ -31,6 +31,7 @@
 
 ## Hotovo
 
+- Nabídka na úvodu a v ceníku klidovou integraci na lůžku neuvádí. V průběhu sezení na úvodu zůstává jen čas na doznění.
 - Zvolený vzhled je Večerní klid. Přepínač a další dva návrhy jsou pryč. Portrét Martina se neměnil.
 - Kalimba a olej jsou na úvodu i jako menší záběry vedle textu.
 - Dodaná fotka lehátka je na úvodu a na kontaktu.
