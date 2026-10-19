@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+- Úvodní stránka nese text o terapeutické masáži: analytická mysl, tělo jako místo odpovědí, vedený rozhovor a léčivé zvuky (šamanský buben, Koshi, kalimba).
+
 ### Added
 
 - `.cursorignore` v kořeni projektu. Vynechává `node_modules/`, `.next/`, `dist/`, `build/`, `package-lock.json`, `*.log` a `.git/`, aby se zbytečně neindexovaly velké a generované soubory.
