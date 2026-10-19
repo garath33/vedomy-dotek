@@ -27,9 +27,17 @@ Ponech stávající stránky. Samostatná `reference.html` patří do navigace. 
 - Styly patří do `src/styles/main.css` (vlastní CSS, ne Tailwind). Skripty do `src/scripts/main.js`.
 - Nové závislosti nepřidávej, pokud bez nich úkol nejde splnit.
 
+## Model a subagenti
+
+- Na začátku úkolu posuď, jestli zvolený model sedí. Nemá být slabý na danou práci ani zbytečně silný. Když se fit liší, napiš uživateli své stanovisko dřív, než se do práce pustíš. Když sedí, stačí krátká věta.
+- Drž se modelu, který uživatel vybral. Na jiný model, včetně Sonnetu a dalších Claude modelů, nepřepínej bez jeho výslovného souhlasu.
+- Subagenta nespouštěj na jiném modelu. Když už subagent dává smysl, musí jet na stejném modelu jako hlavní běh. Když to ten typ subagenta neumí, nespouštěj ho a práci udělej sám na zvoleném modelu.
+- Subagenta nespouštěj jen proto, že je k dispozici. Na běžnou úpravu textu, dokumentace a stylů není potřeba.
+
 ## Testy, dokumentace, git
 
 - Testy drž v souladu se změnou. Kontrolu odkazů nespouštěj ručně jako hlavní jistotu; spoléhej na GitHub Actions (Lychee nebo htmlproofer) a existující `npm test`.
 - Každou změnu rozsahu zapiš do `docs/ROADMAP.md` a `docs/CHANGELOG.md`. `README.md` nech jako návod ke spuštění a `SDLC_GUIDE.md` jako provozní příručku. Nemaz je a nekopíruj do nich plán práce.
 - Práce jde na feature větev a do PR s náhledem. Před pushem i před mergem do `main` ověř konflikty proti aktuálnímu `origin/main` a vyřeš je. Před mergem je potřeba závěrečná kontrola a schválení uživatele.
+- Než požádáš o schválení změn na webu, dej uživateli odkaz na náhled právě té verze. Není to ostrý web `https://garath33.github.io/vedomy-dotek/`. Odkaz je `https://cdn.jsdelivr.net/gh/garath33/vedomy-dotek@<celý-sha-commitu>/index.html` a k němu stránky, kterých se změna týká. Commit musí být už na GitHubu. Když odkaz nejde sestavit, napiš to a o schválení nežádej. Fotky v tomhle náhledu nemusí být vidět: ve zdrojácích jsou ve `public/images/` a do `images/` se kopírují až při sestavení na GitHub Pages.
 - Po ostrém spuštění připomeň registraci `sitemap.xml` v Google Search Console.

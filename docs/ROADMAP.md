@@ -13,6 +13,8 @@
 - Formulář doručí zprávu na `cesta-zmeny@email.cz` přes FormSubmit. Kalendář na webu nebude.
 - Dokumentace: `README.md` je návod ke spuštění, `SDLC_GUIDE.md` je provozní příručka, `docs/ROADMAP.md` je plán a `docs/CHANGELOG.md` je historie změn. Všechny čtyři zůstávají.
 - Hosting: GitHub Pages. Odkazy hlídá CI (Lychee nebo htmlproofer).
+- Před schválením změny dostane uživatel odkaz na náhled daného commitu (`https://cdn.jsdelivr.net/gh/garath33/vedomy-dotek@<sha>/index.html`), ne na ostrý web.
+- Agent posoudí, jestli zvolený model na úkol sedí, a zůstane na něm. Jiný model nebo subagent na jiném modelu jen s výslovným souhlasem.
 
 ## Další práce
 
@@ -24,6 +26,9 @@
 
 ## Hotovo
 
+- Náhled před schválením je veřejný odkaz na commit. Ostrý web se k tomu nepoužívá.
+- Volba modelu zůstává na uživateli. Agent ji posoudí a bez souhlasu ji nemění, ani u subagenta.
+- Reference mluví jen o vědomém dotyku. Koučink a osobní rozvoj v ohlasech nejsou. Popisek referujícího je pod jménem. Kontakt má nadpis Kontakt a objednání a ceník neopakuje „na místě“.
 - `.cursorrules` a `.cursorignore` drží schválené zadání a rozsah souborů, které se nemají načítat.
 - Úvodní text popisuje terapeutickou masáž jako metodu Terapie vědomého dotyku.
 - Kontaktní formulář odesílá poptávku přes FormSubmit na `cesta-zmeny@email.cz`.

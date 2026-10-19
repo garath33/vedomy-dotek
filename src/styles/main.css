@@ -679,7 +679,9 @@ img {
 }
 
 .slide-author-role {
+  margin-top: 0.2rem;
   font-size: 0.85rem;
+  line-height: 1.45;
   color: var(--color-muted);
 }
 
@@ -1103,10 +1105,6 @@ img {
   border-top: 5px solid var(--color-primary);
 }
 
-.reference-card[data-category="koucink"] {
-  border-top: 5px solid var(--color-accent);
-}
-
 .reference-tag {
   align-self: flex-start;
   display: inline-flex;
@@ -1128,12 +1126,6 @@ img {
   border: 1px solid var(--color-primary-border);
 }
 
-.tag-koucink {
-  background: var(--color-accent-soft);
-  color: var(--color-accent);
-  border: 1px solid #b7ddd6;
-}
-
 .reference-quote {
   font-size: 0.98rem;
   line-height: 1.75;
@@ -1147,19 +1139,22 @@ img {
   border-top: 1px solid var(--color-sand-border);
   padding-top: 1.1rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
 }
 
 .reference-author-name {
   font-family: var(--font-accent);
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.2;
   color: var(--color-dark);
 }
 
 .reference-author-role {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
   color: var(--color-muted);
 }
 
