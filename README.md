@@ -34,7 +34,7 @@ Web je rozdělen do čistých, srozumitelných sekcí:
 4. **Časté dotazy (`faq.html`)**:
    - Interaktivní akordeon s odpověďmi na přípravu, kontraindikace, otázku usnutí při masáži a přístup k tlaku
 
-5. **Kontakt a rezervace (`kontakt.html`)**:
+5. **Kontakt a objednání (`kontakt.html`)**:
    - Telefon: `+420 604 430 087`
    - E-mail: `cesta-zmeny@email.cz`
    - Adresa studia: `Hevlínská 495/3, Praha 5 - Zličín`

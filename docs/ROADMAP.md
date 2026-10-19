@@ -24,6 +24,7 @@
 
 ## Hotovo
 
+- Reference mluví jen o vědomém dotyku. Koučink a osobní rozvoj v ohlasech nejsou. Popisek referujícího je pod jménem. Kontakt má nadpis Kontakt a objednání a ceník neopakuje „na místě“.
 - `.cursorrules` a `.cursorignore` drží schválené zadání a rozsah souborů, které se nemají načítat.
 - Úvodní text popisuje terapeutickou masáž jako metodu Terapie vědomého dotyku.
 - Kontaktní formulář odesílá poptávku přes FormSubmit na `cesta-zmeny@email.cz`.

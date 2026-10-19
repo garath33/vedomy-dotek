@@ -84,6 +84,14 @@ contactDetails.forEach(detail => {
     errors++;
   }
 });
+if (!kontaktHtml.includes('<h1>Kontakt a objednání</h1>')) {
+  console.error('❌ V kontakt.html chybí nadpis Kontakt a objednání.');
+  errors++;
+}
+if (kontaktHtml.includes('Kontakt a rezervace')) {
+  console.error('❌ V kontakt.html zůstal nadpis Kontakt a rezervace.');
+  errors++;
+}
 
 // 4. Kontrola profilu v o-martinovi.html
 const oMartinoviHtml = fs.readFileSync(path.join(distDir, 'o-martinovi.html'), 'utf8');
@@ -103,10 +111,16 @@ aboutDetails.forEach(detail => {
 
 // 5. Kontrola podstránky reference.html
 const referenceHtml = fs.readFileSync(path.join(distDir, 'reference.html'), 'utf8');
-const referenceNames = ['Anna', 'Jana', 'Lucie', 'Hanka', 'Milena'];
+const referenceNames = ['Anna', 'Jana', 'Lucie', 'Hanka'];
 referenceNames.forEach(name => {
   if (!referenceHtml.includes(name)) {
     console.error(`❌ V reference.html chybí recenzent: "${name}"`);
+    errors++;
+  }
+});
+['Koučink &amp; rozvoj', 'Osobní rozvoj', 'Milena'].forEach(phrase => {
+  if (referenceHtml.includes(phrase)) {
+    console.error(`❌ V reference.html zůstala reference na koučink nebo rozvoj: "${phrase}"`);
     errors++;
   }
 });
@@ -122,8 +136,13 @@ stornoDetails.forEach(detail => {
 });
 
 const cenikHtml = fs.readFileSync(path.join(distDir, 'cenik.html'), 'utf8');
-if (!cenikHtml.includes('přes QR kód na místě.')) {
-  console.error('❌ V cenik.html chybí upravená formulace o platbě přes QR kód na místě.');
+const paymentSentence = 'Platbu je možné provést na místě v hotovosti, případně přes QR kód.';
+if (!cenikHtml.includes(paymentSentence)) {
+  console.error('❌ V cenik.html chybí formulace o platbě na místě v hotovosti nebo přes QR kód.');
+  errors++;
+}
+if ((cenikHtml.match(/na místě/g) || []).length !== 1) {
+  console.error('❌ V cenik.html se slovní spojení „na místě“ neopakuje právě jednou.');
   errors++;
 }
 if (!cenikHtml.includes('storno-podminky.html')) {

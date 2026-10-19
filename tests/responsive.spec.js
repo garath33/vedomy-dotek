@@ -116,23 +116,27 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     await expect(page.locator('#contact-form')).toBeHidden();
   });
 
-  test('Filtrování referencí na podstránce reference.html funguje', async ({ page }) => {
+  test('Reference ukazují jen ohlasy vědomého dotyku a jméno s popiskem jdou pod sebou', async ({ page }) => {
     await page.goto('/reference.html');
 
     const cards = page.locator('.reference-card');
-    await expect(cards).toHaveCount(8);
+    await expect(cards).toHaveCount(4);
+    await expect(cards.filter({ hasText: 'Koučink' })).toHaveCount(0);
+    await expect(cards.filter({ hasText: 'Osobní rozvoj' })).toHaveCount(0);
+    await expect(page.locator('.filter-tabs')).toHaveCount(0);
 
-    // Kliknout na filtr "Vědomý dotyk"
-    const dotekBtn = page.locator('button[data-filter="dotek"]');
-    await dotekBtn.click();
+    const jana = page.locator('.reference-card').filter({ hasText: 'Jana' });
+    const name = jana.locator('.reference-author-name');
+    const role = jana.locator('.reference-author-role');
+    await expect(name).toHaveText('Jana');
+    await expect(role).toHaveText('frekventantka psychoterapeutického výcviku');
 
-    // Viditelné pouze karty kategorie dotek
-    const visibleCards = page.locator('.reference-card:visible');
-    await expect(visibleCards).toHaveCount(4);
-
-    // Kliknout na "Všechny ohlasy"
-    const allBtn = page.locator('button[data-filter="all"]');
-    await allBtn.click();
-    await expect(page.locator('.reference-card:visible')).toHaveCount(8);
+    const stacked = await name.evaluate((nameEl) => {
+      const roleEl = nameEl.parentElement.querySelector('.reference-author-role');
+      const nameBox = nameEl.getBoundingClientRect();
+      const roleBox = roleEl.getBoundingClientRect();
+      return roleBox.top >= nameBox.bottom - 1 && roleBox.left <= nameBox.left + 2;
+    });
+    expect(stacked).toBe(true);
   });
 });
