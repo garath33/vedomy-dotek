@@ -20,7 +20,7 @@ Web je rozdělen do čistých, srozumitelných sekcí:
 2. **O Martinovi (`o-martinovi.html`)**:
    - Kompletní životní příběh a cesta od IT a státní správy k pomáhajícím profesím
    - Zkušenosti a vzdělání:
-     - 4. rok 5letého psychoterapeutického výcviku
+     - Před koncem 5letého psychoterapeutického výcviku
      - Rekvalifikovaný masér (Čechy, Thajsko)
      - Bojová umění a sebeobrana (WingTsun, Kung-fu terapie)
      - Vedení skupin divadelní improvizace

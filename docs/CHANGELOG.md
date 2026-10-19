@@ -25,6 +25,7 @@
 
 ### Changed
 
+- Na stránce O Martinovi už není tučně „IT a státní správy“. U psychoterapeutického výcviku je, že je Martin před jeho koncem.
 - Úvodní text na mobilu a tabletu začíná výš a je rozložený po výšce hero, aby horní část fotky nezůstávala prázdná. Stín je silnější u textu a dolů pouští lehátko. Na široké obrazovce je stejný text opticky ve středu výšky.
 - Popisek u oleje na úvodu zní: Na masáži na vás čekají čisté ručníky, prostěradlo a přírodní olej.
 - V nabídce na úvodu i v ceníku už není položka o klidové integraci na lůžku. V popisu průběhu na úvodu zůstává jen to, že na lůžku bude čas na doznění.
