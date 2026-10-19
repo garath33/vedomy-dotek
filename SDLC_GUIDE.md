@@ -42,14 +42,15 @@ Pro bezpečné provádění změn (nové texty, fotky, úpravy cen) doporučujem
 ### Větev `main` (Produkce)
 - `main` představuje ostrý produkční stav, který vidí návštěvníci.
 - Změny do `main` se přenášejí pomocí **Pull Requestu** ze `staging` &rarr; `main`.
+- Pull Request se zakládá rovnou jako připravený ke kontrole. Draft se nenechává, aby nebylo potřeba na GitHubu ručně přepínat stav na Ready for review.
 - Pull Request automaticky provede testy (Broken links + Content check). Pokud testy selžou, nepustí vás k mergi.
 
 ### Náhled před schválením
 - Než se změna sloučí, má být k dispozici odkaz na náhled **právě toho commitu**, ne na ostrý web.
 - Ostrý web je `https://garath33.github.io/vedomy-dotek/`. Větev `staging` se nasazuje na stejné GitHub Pages, proto to není oddělený náhled.
-- Náhled větve po pushi: `https://cdn.jsdelivr.net/gh/garath33/vedomy-dotek@<celý-sha-commitu>/index.html`
+- Náhled musí prohlížeč vykreslit jako stránku. Odkaz na jsDelivr (`cdn.jsdelivr.net/gh/.../index.html`) ani na raw GitHub se neposílá: oba vrací `Content-Type: text/plain` a místo webu je vidět zdrojový kód.
+- Ke schválení se dává adresa sestaveného webu po `npm run build`. Ve složce `dist/` už jsou fotky v `images/` a styly sestavené. Adresa musí vracet `text/html`.
 - U konkrétní úpravy přidej i dotčené stránky, například `reference.html`, `cenik.html` nebo `kontakt.html`.
-- Fotky v tomto náhledu nemusí být vidět. Ve zdrojácích leží ve `public/images/` a do `images/` se kopírují až při sestavení na GitHub Pages. Text, styly a skripty náhled ukazuje.
 
 ### Model a souhlas s jiným modelem
 - Agent si na začátku úkolu řekne, jestli zvolený model na tu práci sedí. Slabý model na těžký úkol i silný model na drobnost (styly, texty, changelog) má pojmenovat a navrhnout nejnižší model, který stačí.
@@ -113,7 +114,7 @@ Až budete chtít web převést z `github.io` na vlastní doménu (např. `www.v
 4. Hotová a odladěná feature větev jde rovnou do finálního pull requestu proti `main`. Draft PR se nezakládá.
 5. Před pushem i před mergem se větev porovná s aktuálním `origin/main`. Když hrozí nebo vznikne konflikt, dostanete ho popsaný v chatu a návrh řešení v kódu. Ruční skládání konfliktu ve webovém rozhraní GitHubu se nepoužívá.
 6. Merge do `main` je až po závěrečné kontrole a vašem schválení.
-7. U změny designu nebo layoutu je u náhledu commitu ještě úsporný snímek: výřez změněné části, ne sada velkých celostránkových obrázků.
+7. U změny designu nebo layoutu je u vykresleného náhledu ještě úsporný snímek: výřez změněné části, ne sada velkých celostránkových obrázků.
 8. Rozbité odkazy, validace HTML a výsledek buildu se berou z GitHub Actions a z `npm test`, ne z ručního procházení.
 
 Po významnější fázi se zkontroluje `sitemap.xml`, kanonické URL a dopad na indexaci. Když se mění adresa stránky, navrhne se přesměrování nebo vyžádání nového crawlu v Google Search Console. Registrace `sitemap.xml` po ostrém spuštění zůstává samostatný krok.
