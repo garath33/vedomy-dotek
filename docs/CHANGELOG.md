@@ -14,6 +14,7 @@
 - `.cursorrules` popisují tento web: název Terapie vědomého dotyku, terapeutická masáž jako metoda, jen čeština, telefon jako hlavní rezervace, formulář jako alternativa, bez kalendáře, Umami až s reálným ID, styly ve stávajícím CSS.
 - `.cursorignore` navíc vynechává výsledky testů, report Playwrightu a `public/images/`.
 - `docs/ROADMAP.md` drží schválený rozsah a pořadí dalších úprav.
+- Do `.cursorrules`, `SDLC_GUIDE.md` a `docs/ROADMAP.md` přibyl zbytek master promptu, který tam chyběl: práce po schválených iteracích, nejnižší dostatečný model bez přepnutí bez souhlasu, respekt k `.gitignore`, finální pull request bez draftu, konflikty popsané v chatu a vyřešené v kódu, úsporný vizuální náhled u změny layoutu a kontrola sitemap, kanonických URL a indexace po významnější fázi.
 - Doplněno zadání: sitemap a kanonické URL, vlastní favicon a Open Graph, ceny bez příplatku +500 Kč, stávající fotky a doručení formuláře na `cesta-zmeny@email.cz`. Dokumentace zůstává ve čtyřech souborech s různým účelem.
 
 ### Changed
