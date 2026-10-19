@@ -7,8 +7,8 @@ Statický web Martina Šimůnka (Vite, čisté HTML/CSS/JS). Běží na GitHub P
 - Název praxe zůstává **Terapie vědomého dotyku**. Terapeutická masáž je metoda, ne nový název webu.
 - Metoda v textech: prvky muzikoterapie pro hluboké uvolnění, vedený rozhovor a bodyterapeutické techniky pro práci s tělem a emocemi v něm uloženými.
 - Jediný jazyk je čeština. Vícejazyčnost nepřidávej. Kdyby později přibyla, strukturu vyvíjej a testuj na češtině, překlady drž v JSON a mutace kontroluj hromadně až před vydáním.
-- Rezervace je telefonická. Formulář na kontaktu je jen alternativa. Nikde nepřidávej kalendář, výběr termínu ani rezervační widget.
-- Nabídka má dva formáty ve studiu (ochutnávka a terapie). Masáž u klienta ani partnerskou lištu nevracej.
+- Rezervace je telefonická. Formulář na kontaktu je jen alternativa a po odeslání doručí e-mail na `cesta-zmeny@email.cz`. Samotné `mailto:` nestačí, GitHub Pages e-mail neodešle. Použij formulářovou službu, jejíž adresu dodá uživatel. Nikde nepřidávej kalendář, výběr termínu ani rezervační widget.
+- Nabídka má dva formáty ve studiu: ochutnávka 800 Kč / 60 min a terapie 1 600 Kč / 120 min. Příplatek +500 Kč ani masáž u klienta nevracej. Fotky v `public/images/` neměň, dokud uživatel nedodá nové.
 - Cílová skupina: lidé, kteří se už trochu znají a chtějí nový vhled skrze tělo — změnu, uvolnění, nebo rovnováhu.
 
 ## Rozsah stránek
@@ -17,7 +17,7 @@ Ponech stávající stránky. Samostatná `reference.html` patří do navigace. 
 
 ## SEO a analytika
 
-- Sémantické HTML5, unikátní title a meta description na každé stránce, kanonické URL, `sitemap.xml` a `robots.txt`.
+- Sémantické HTML5, unikátní title a meta description na každé stránce, kanonické URL, `sitemap.xml` a `robots.txt`. Open Graph a favicon vytvoř v rámci webu, uživatel nemá podklady.
 - Analytika je Umami (návštěvy, zdroje, počty). Skript vkládej až s reálnou adresou instance a website ID. Nepřidávej Google Analytics ani jiné měření. Do Umami neposílej jména, telefon ani text z formuláře.
 
 ## Tokeny a soubory
@@ -30,6 +30,6 @@ Ponech stávající stránky. Samostatná `reference.html` patří do navigace. 
 ## Testy, dokumentace, git
 
 - Testy drž v souladu se změnou. Kontrolu odkazů nespouštěj ručně jako hlavní jistotu; spoléhej na GitHub Actions (Lychee nebo htmlproofer) a existující `npm test`.
-- Každou změnu rozsahu zapiš do `docs/ROADMAP.md` a `docs/CHANGELOG.md`.
+- Každou změnu rozsahu zapiš do `docs/ROADMAP.md` a `docs/CHANGELOG.md`. `README.md` nech jako návod ke spuštění a `SDLC_GUIDE.md` jako provozní příručku. Nemaz je a nekopíruj do nich plán práce.
 - Práce jde na feature větev a do PR s náhledem. Před mergem do `main` je potřeba závěrečná kontrola a schválení uživatele.
 - Po ostrém spuštění připomeň registraci `sitemap.xml` v Google Search Console.
