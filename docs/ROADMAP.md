@@ -29,7 +29,9 @@
 
 - Úvodní stránka ukazuje u výkladu terapie medailonek Martina Šimůnka, aby bylo hned jasné, kdo masáž provádí.
 - Pull request je rovnou připravený ke kontrole. Uživatel na GitHubu nepřepíná draft na Ready for review.
-- Tři návrhy vzhledu (Lehátko v klidu, Světlý dech, Večerní klid) s rozostřeným záběrem lehátka a fotkou v hlavičce podle stránky. Portrét na stránce O Martinovi se neměnil. Po výběru jednoho směru se přepínač sundá.
+- Zvolený vzhled je Večerní klid. Přepínač a další dva návrhy jsou pryč. Portrét na stránce O Martinovi se neměnil.
+- Kalimba a olej jsou na úvodu i jako menší záběry vedle textu.
+- Dodaná fotka lehátka je na úvodu a na kontaktu.
 - Náhled před schválením je vykreslená stránka sestaveného webu. jsDelivr se nepoužívá, protože ukazuje zdrojový kód. Ostrý web se k tomu nepoužívá.
 - Volba modelu zůstává na uživateli. Agent ji posoudí a bez souhlasu ji nemění, ani u subagenta.
 - Reference mluví jen o vědomém dotyku. Koučink a osobní rozvoj v ohlasech nejsou. Popisek referujícího je pod jménem. Kontakt má nadpis Kontakt a objednání a ceník neopakuje „na místě“.

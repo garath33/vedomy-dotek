@@ -8,10 +8,13 @@
 - Pull request se zakládá rovnou jako připravený ke kontrole. Draft se nenechává.
 - Tři návrhy vzhledu na všech stránkách: Lehátko v klidu, Světlý dech a Večerní klid. Přepínač je dole na stránce, volba zůstane v prohlížeči a jde sdílet přes `?vzhled=klid`, `?vzhled=svetlo` nebo `?vzhled=soumrak`.
 - Nové atmosférické fotky lehátka, ručníků, dlaní, kalimby a tichého místa k zastavení. Pozadí je rozostřené, místnost nejde poznat. Stávající portrét Martina zůstává.
+- Na úvodu jsou kalimba a olej také jako menší záběry u textu o léčivých zvucích a přípravě sezení.
+- Úvod a kontakt používají dodanou fotku lehátka v měkkém denním světle.
 
 ### Changed
 
-- Úvod už nezakrývá fotku tmavým cihlovým přechodem. V klidu je text vedle záběru lehátka, ve světlém dechu leží v mléčném rámečku a ve večerním klidu stojí ve stínu vlevo.
+- Zvolený vzhled je Večerní klid. Přepínač návrhů a varianty Lehátko v klidu a Světlý dech jsou pryč.
+- Úvod už nezakrývá fotku tmavým cihlovým přechodem. Text stojí ve stínu vlevo přes záběr lehátka.
 - Hlavičky podstránek nesou fotku k tématu stránky: ceník ručníky a olej, kontakt připravené lehátko, reference dlaně v klidu, časté dotazy kalimbu, O Martinovi tiché zastavení. Právní stránky a 404 používají záběr lehátka.
 - Kanonické URL a absolutní Open Graph adresa `https://garath33.github.io/vedomy-dotek/` na všech stránkách.
 - `sitemap.xml`, `robots.txt` a favicon s písmenem V.
