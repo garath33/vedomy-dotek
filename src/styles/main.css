@@ -559,6 +559,34 @@ img {
   color: var(--color-primary);
 }
 
+/* Menší záběry kalimby a oleje v textu */
+.detail-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 2.2rem 0 0.4rem;
+}
+
+.detail-photo {
+  margin: 0;
+}
+
+.detail-photo img {
+  width: 100%;
+  height: 168px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-photo figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--color-muted);
+}
+
 /* Zvýrazněný box Proč tělo */
 .feature-box {
   background: linear-gradient(145deg, #ffffff 0%, var(--color-primary-soft) 100%);
@@ -1596,6 +1624,14 @@ html[data-vzhled="soumrak"] .cta-banner {
 
   html[data-vzhled="svetlo"] .page-header-inner {
     padding-top: 6.4rem;
+  }
+
+  .detail-photos {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-photo img {
+    height: 200px;
   }
 
   .reference-grid {
