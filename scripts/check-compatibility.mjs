@@ -17,7 +17,9 @@ const canonicalPages = [
   'cenik.html',
   'faq.html',
   'kontakt.html',
-  'storno-podminky.html'
+  'storno-podminky.html',
+  'ochrana-osobnich-udaju.html',
+  '404.html'
 ];
 
 let errors = 0;

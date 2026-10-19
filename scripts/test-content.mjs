@@ -15,7 +15,9 @@ const requiredFiles = [
   'cenik.html',
   'faq.html',
   'kontakt.html',
-  'storno-podminky.html'
+  'storno-podminky.html',
+  'ochrana-osobnich-udaju.html',
+  '404.html'
 ];
 
 let errors = 0;
@@ -40,6 +42,22 @@ requiredFiles.forEach(file => {
     }
     if (!html.includes('<meta name="viewport"')) {
       console.error(`❌ V souboru ${file} chybí viewport tag`);
+      errors++;
+    }
+    if (!html.includes('rel="canonical" href="https://garath33.github.io/vedomy-dotek/')) {
+      console.error(`❌ V souboru ${file} chybí kanonická adresa`);
+      errors++;
+    }
+    if (!html.includes('href="./favicon.svg"')) {
+      console.error(`❌ V souboru ${file} chybí favicon`);
+      errors++;
+    }
+    if (!html.includes('property="og:image" content="https://garath33.github.io/vedomy-dotek/images/')) {
+      console.error(`❌ V souboru ${file} chybí absolutní og:image`);
+      errors++;
+    }
+    if (!html.includes('ochrana-osobnich-udaju.html')) {
+      console.error(`❌ V souboru ${file} chybí odkaz na ochranu osobních údajů`);
       errors++;
     }
   }
@@ -159,6 +177,69 @@ if (!faqHtml.includes('specifických diagnóz')) {
   console.error('❌ V faq.html chybí nový text "specifických diagnóz"!');
   errors++;
 }
+
+const privacyHtml = fs.readFileSync(path.join(distDir, 'ochrana-osobnich-udaju.html'), 'utf8');
+const privacyDetails = [
+  'FormSubmit',
+  'cesta-zmeny@email.cz',
+  'jméno a příjmení',
+  'e-mail nebo telefon',
+  'zvolenou péči',
+  'text zprávy'
+];
+privacyDetails.forEach(detail => {
+  if (!privacyHtml.includes(detail)) {
+    console.error(`❌ V ochrana-osobnich-udaju.html chybí údaj: "${detail}"`);
+    errors++;
+  }
+});
+
+const notFoundHtml = fs.readFileSync(path.join(distDir, '404.html'), 'utf8');
+if (!notFoundHtml.includes('name="robots" content="noindex"')) {
+  console.error('❌ V 404.html chybí noindex');
+  errors++;
+}
+
+const sitemap = fs.readFileSync(path.join(distDir, 'sitemap.xml'), 'utf8');
+const robots = fs.readFileSync(path.join(distDir, 'robots.txt'), 'utf8');
+if (!sitemap.includes('https://garath33.github.io/vedomy-dotek/ochrana-osobnich-udaju.html')) {
+  console.error('❌ V sitemap.xml chybí ochrana osobních údajů');
+  errors++;
+}
+if (sitemap.includes('404.html')) {
+  console.error('❌ sitemap.xml nesmí obsahovat 404.html');
+  errors++;
+}
+if (!robots.includes('Sitemap: https://garath33.github.io/vedomy-dotek/sitemap.xml')) {
+  console.error('❌ V robots.txt chybí odkaz na sitemap');
+  errors++;
+}
+
+const cssFiles = fs.readdirSync(path.join(distDir, 'assets')).filter(file => file.endsWith('.css'));
+if (cssFiles.length === 0) {
+  console.error('❌ V dist/assets chybí sestavené CSS');
+  errors++;
+}
+cssFiles.forEach(file => {
+  const css = fs.readFileSync(path.join(distDir, 'assets', file), 'utf8');
+  if (css.includes('fonts.googleapis.com')) {
+    console.error(`❌ ${file} stále načítá Google Fonts`);
+    errors++;
+  }
+  const fontUrls = css.match(/url\(([^)]+\.woff2)\)/g) || [];
+  if (fontUrls.length === 0) {
+    console.error(`❌ ${file} neobsahuje lokální fonty`);
+    errors++;
+  }
+  fontUrls.forEach(token => {
+    const relative = token.slice(4, -1).replace(/['"]/g, '');
+    const fontPath = path.resolve(path.join(distDir, 'assets'), relative);
+    if (!fs.existsSync(fontPath)) {
+      console.error(`❌ Chybí font odkazovaný z CSS: ${relative}`);
+      errors++;
+    }
+  });
+});
 
 if (errors > 0) {
   console.error(`\n❌ Testy obsahu selhaly (${errors} chyb)!`);
