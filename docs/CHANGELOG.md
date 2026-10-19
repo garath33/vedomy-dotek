@@ -25,7 +25,7 @@
 
 ### Changed
 
-- Popisek u oleje na úvodu mluví o čistých ručnících a prostěradle.
+- Popisek u oleje na úvodu zní: Na masáži na vás čekají čisté ručníky, prostěradlo a přírodní olej.
 - Zvolený vzhled je Večerní klid. Přepínač návrhů a varianty Lehátko v klidu a Světlý dech jsou pryč.
 - Úvod už nezakrývá fotku tmavým cihlovým přechodem. Text stojí ve stínu vlevo přes záběr lehátka.
 - Hlavičky podstránek nesou fotku k tématu stránky: ceník ručníky a olej, kontakt připravené lehátko, reference dlaně v klidu, časté dotazy kalimbu, O Martinovi tiché zastavení. Právní stránky a 404 používají záběr lehátka.
