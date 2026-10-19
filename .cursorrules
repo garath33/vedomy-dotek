@@ -7,7 +7,7 @@ Statický web Martina Šimůnka (Vite, čisté HTML/CSS/JS). Běží na GitHub P
 - Název praxe zůstává **Terapie vědomého dotyku**. Terapeutická masáž je metoda, ne nový název webu.
 - Metoda v textech: prvky muzikoterapie pro hluboké uvolnění, vedený rozhovor a bodyterapeutické techniky pro práci s tělem a emocemi v něm uloženými.
 - Jediný jazyk je čeština. Vícejazyčnost nepřidávej. Kdyby později přibyla, strukturu vyvíjej a testuj na češtině, překlady drž v JSON a mutace kontroluj hromadně až před vydáním.
-- Rezervace je telefonická. Formulář na kontaktu je jen alternativa a po odeslání doručí e-mail na `cesta-zmeny@email.cz`. Samotné `mailto:` nestačí, GitHub Pages e-mail neodešle. Použij formulářovou službu, jejíž adresu dodá uživatel. Nikde nepřidávej kalendář, výběr termínu ani rezervační widget.
+- Rezervace je telefonická. Formulář na kontaktu je jen alternativa a odesílá se přes FormSubmit na `cesta-zmeny@email.cz` (`https://formsubmit.co/cesta-zmeny@email.cz`). Nevracej `mailto:` jako způsob odeslání. Nikde nepřidávej kalendář, výběr termínu ani rezervační widget.
 - Nabídka má dva formáty ve studiu: ochutnávka 800 Kč / 60 min a terapie 1 600 Kč / 120 min. Příplatek +500 Kč ani masáž u klienta nevracej. Fotky v `public/images/` neměň, dokud uživatel nedodá nové.
 - Cílová skupina: lidé, kteří se už trochu znají a chtějí nový vhled skrze tělo — změnu, uvolnění, nebo rovnováhu.
 
@@ -31,5 +31,5 @@ Ponech stávající stránky. Samostatná `reference.html` patří do navigace. 
 
 - Testy drž v souladu se změnou. Kontrolu odkazů nespouštěj ručně jako hlavní jistotu; spoléhej na GitHub Actions (Lychee nebo htmlproofer) a existující `npm test`.
 - Každou změnu rozsahu zapiš do `docs/ROADMAP.md` a `docs/CHANGELOG.md`. `README.md` nech jako návod ke spuštění a `SDLC_GUIDE.md` jako provozní příručku. Nemaz je a nekopíruj do nich plán práce.
-- Práce jde na feature větev a do PR s náhledem. Před mergem do `main` je potřeba závěrečná kontrola a schválení uživatele.
+- Práce jde na feature větev a do PR s náhledem. Před pushem i před mergem do `main` ověř konflikty proti aktuálnímu `origin/main` a vyřeš je. Před mergem je potřeba závěrečná kontrola a schválení uživatele.
 - Po ostrém spuštění připomeň registraci `sitemap.xml` v Google Search Console.
