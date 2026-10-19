@@ -33,6 +33,7 @@
 
 - Úvodní stránka ukazuje u výkladu terapie medailonek Martina Šimůnka, aby bylo hned jasné, kdo masáž provádí.
 - Popisek u oleje na úvodu zní: Na masáži na vás čekají čisté ručníky, prostěradlo a přírodní olej.
+- Nabídka na úvodu a v ceníku klidovou integraci na lůžku neuvádí. V průběhu sezení na úvodu zůstává jen čas na doznění.
 - Pull request je rovnou připravený ke kontrole. Uživatel na GitHubu nepřepíná draft na Ready for review.
 - Zvolený vzhled je Večerní klid. Přepínač a další dva návrhy jsou pryč. Portrét na stránce O Martinovi se neměnil.
 - Kalimba a olej jsou na úvodu i jako menší záběry vedle textu.

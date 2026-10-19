@@ -26,6 +26,7 @@
 ### Changed
 
 - Popisek u oleje na úvodu zní: Na masáži na vás čekají čisté ručníky, prostěradlo a přírodní olej.
+- V nabídce na úvodu i v ceníku už není položka o klidové integraci na lůžku. V popisu průběhu na úvodu zůstává jen to, že na lůžku bude čas na doznění.
 - Zvolený vzhled je Večerní klid. Přepínač návrhů a varianty Lehátko v klidu a Světlý dech jsou pryč.
 - Úvod už nezakrývá fotku tmavým cihlovým přechodem. Text stojí ve stínu vlevo přes záběr lehátka.
 - Hlavičky podstránek nesou fotku k tématu stránky: ceník ručníky a olej, kontakt připravené lehátko, reference dlaně v klidu, časté dotazy kalimbu, O Martinovi tiché zastavení. Právní stránky a 404 používají záběr lehátka.
