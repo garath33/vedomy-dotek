@@ -336,6 +336,11 @@ img {
   object-position: center 30%;
 }
 
+.hero-visual img.photo-lehatko,
+.page-header-photo.photo-lehatko {
+  object-position: 34% 46%;
+}
+
 .hero-veil {
   display: none;
 }
