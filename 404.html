@@ -15,9 +15,20 @@
   <meta property="og:url" content="https://garath33.github.io/vedomy-dotek/404.html">
   <meta property="og:title" content="Stránka nenalezena | Terapie vědomého dotyku">
   <meta property="og:description" content="Tato adresa na webu neexistuje.">
-  <meta property="og:image" content="https://garath33.github.io/vedomy-dotek/images/hero_masaz_abstract.png">
+  <meta property="og:image" content="https://garath33.github.io/vedomy-dotek/images/lehatko-klid.jpg">
 
   <link rel="stylesheet" href="./src/styles/main.css">
+  <script>
+    (function () {
+      var allowed = ["klid", "svetlo", "soumrak"];
+      var q = new URLSearchParams(location.search).get("vzhled");
+      var stored = "";
+      try { stored = localStorage.getItem("tvd-vzhled") || ""; } catch (e) {}
+      var v = allowed.indexOf(q) !== -1 ? q : (allowed.indexOf(stored) !== -1 ? stored : "klid");
+      document.documentElement.setAttribute("data-vzhled", v);
+      try { localStorage.setItem("tvd-vzhled", v); } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -45,7 +56,9 @@
   </header>
 
   <header class="page-header">
-    <div class="container">
+    <img class="page-header-photo" src="./images/lehatko-klid.jpg" alt="" width="1600" height="900">
+    <div class="page-header-veil" aria-hidden="true"></div>
+    <div class="page-header-inner container">
       <h1>Stránka nenalezena</h1>
       <p>Tahle adresa na webu Terapie vědomého dotyku není. Odkaz může být starý, nebo se v něm překleplo.</p>
     </div>
