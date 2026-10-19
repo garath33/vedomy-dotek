@@ -167,6 +167,19 @@ if (!cenikHtml.includes('storno-podminky.html')) {
   console.error('❌ V cenik.html chybí odkaz na storno-podminky.html.');
   errors++;
 }
+const integrationPhrase = 'Klidová integrace na lůžku v délce podle vaší potřeby';
+if (!indexHtml.includes('Délku tohoto doznění přizpůsobím tomu, jak se právě cítíte.')) {
+  console.error('❌ V index.html chybí obecné znění délky doznění na lůžku.');
+  errors++;
+}
+if (!indexHtml.includes(integrationPhrase) || !cenikHtml.includes(integrationPhrase)) {
+  console.error('❌ V nabídce chybí klidová integrace v délce podle potřeby.');
+  errors++;
+}
+if (/minimálně 10 minut/i.test(indexHtml) || /minimálně 10 minut/i.test(cenikHtml)) {
+  console.error('❌ Na webu zůstala pevná délka klidové integrace (minimálně 10 minut).');
+  errors++;
+}
 
 const faqHtml = fs.readFileSync(path.join(distDir, 'faq.html'), 'utf8');
 if (faqHtml.includes('specifických ortopedických diagnóz')) {
