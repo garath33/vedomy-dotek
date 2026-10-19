@@ -76,7 +76,9 @@ const expectedTexts = [
   'Anna',
   'Jana',
   'Lucie',
-  'Hanka'
+  'Hanka',
+  'Kdo masáž provádí',
+  'images/martin-medailonek.png'
 ];
 
 expectedTexts.forEach(text => {

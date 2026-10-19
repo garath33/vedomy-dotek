@@ -4,6 +4,7 @@
 
 ### Added
 
+- Na úvodní stránce je u výkladu terapie medailonek Martina Šimůnka s popiskem, kdo masáž provádí, a odkazem na stránku O Martinovi.
 - Kanonické URL a absolutní Open Graph adresa `https://garath33.github.io/vedomy-dotek/` na všech stránkách.
 - `sitemap.xml`, `robots.txt` a favicon s písmenem V.
 - Stránka `ochrana-osobnich-udaju.html` s odkazem v patičce a u souhlasu ve formuláři. Popisuje údaje z formuláře a doručení přes FormSubmit na `cesta-zmeny@email.cz`.

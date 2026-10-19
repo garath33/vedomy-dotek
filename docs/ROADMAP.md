@@ -27,6 +27,7 @@
 
 ## Hotovo
 
+- Úvodní stránka ukazuje u výkladu terapie medailonek Martina Šimůnka, aby bylo hned jasné, kdo masáž provádí.
 - Náhled před schválením je veřejný odkaz na commit. Ostrý web se k tomu nepoužívá.
 - Volba modelu zůstává na uživateli. Agent ji posoudí a bez souhlasu ji nemění, ani u subagenta.
 - Reference mluví jen o vědomém dotyku. Koučink a osobní rozvoj v ohlasech nejsou. Popisek referujícího je pod jménem. Kontakt má nadpis Kontakt a objednání a ceník neopakuje „na místě“.
