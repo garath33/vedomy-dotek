@@ -18,7 +18,7 @@
 - Stránka `ochrana-osobnich-udaju.html` s odkazem v patičce a u souhlasu ve formuláři. Popisuje údaje z formuláře a doručení přes FormSubmit na `cesta-zmeny@email.cz`.
 - Stránka `404.html` pro neexistující adresu. Není v menu ani v sitemap a má `noindex`.
 - Fonty Playfair Display, Plus Jakarta Sans a Montserrat jsou uložené ve webu (latin a latin-ext, licence SIL OFL).
-- Před schválením změn se posílá odkaz na náhled commitu přes jsDelivr, ne na ostrý web. Postup je v `SDLC_GUIDE.md` a v `.cursorrules`.
+- Před schválením změn se posílá odkaz na vykreslený sestavený web, ne na ostrý web a ne na jsDelivr. jsDelivr vrací zdrojový kód. Postup je v `SDLC_GUIDE.md` a v `.cursorrules`.
 - Agent má posoudit vhodnost zvoleného modelu a nepřeptávat se na jiný, včetně Sonnetu, bez výslovného souhlasu. Subagent zůstává na stejném modelu, jinak se nespouští.
 - `.cursorrules` popisují tento web: název Terapie vědomého dotyku, terapeutická masáž jako metoda, jen čeština, telefon jako hlavní rezervace, formulář jako alternativa, bez kalendáře, Umami až s reálným ID, styly ve stávajícím CSS.
 - `.cursorignore` navíc vynechává výsledky testů, report Playwrightu a `public/images/`.

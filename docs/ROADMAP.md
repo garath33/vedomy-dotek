@@ -16,7 +16,7 @@
 - Formulář doručí zprávu na `cesta-zmeny@email.cz` přes FormSubmit. Kalendář na webu nebude.
 - Dokumentace: `README.md` je návod ke spuštění, `SDLC_GUIDE.md` je provozní příručka, `docs/ROADMAP.md` je plán a `docs/CHANGELOG.md` je historie změn. Všechny čtyři zůstávají.
 - Hosting: GitHub Pages. Odkazy hlídá CI (Lychee nebo htmlproofer).
-- Před schválením změny dostane uživatel odkaz na náhled daného commitu (`https://cdn.jsdelivr.net/gh/garath33/vedomy-dotek@<sha>/index.html`), ne na ostrý web.
+- Před schválením změny dostane uživatel odkaz, na kterém prohlížeč vidí sestavený web. jsDelivr ani raw GitHub to nejsou: vracejí zdrojový kód.
 - Agent posoudí, jestli zvolený model na úkol sedí, a zůstane na něm. Jiný model nebo subagent na jiném modelu jen s výslovným souhlasem.
 
 ## Další práce
@@ -30,7 +30,7 @@
 - Úvodní stránka ukazuje u výkladu terapie medailonek Martina Šimůnka, aby bylo hned jasné, kdo masáž provádí.
 - Pull request je rovnou připravený ke kontrole. Uživatel na GitHubu nepřepíná draft na Ready for review.
 - Tři návrhy vzhledu (Lehátko v klidu, Světlý dech, Večerní klid) s rozostřeným záběrem lehátka a fotkou v hlavičce podle stránky. Portrét na stránce O Martinovi se neměnil. Po výběru jednoho směru se přepínač sundá.
-- Náhled před schválením je veřejný odkaz na commit. Ostrý web se k tomu nepoužívá.
+- Náhled před schválením je vykreslená stránka sestaveného webu. jsDelivr se nepoužívá, protože ukazuje zdrojový kód. Ostrý web se k tomu nepoužívá.
 - Volba modelu zůstává na uživateli. Agent ji posoudí a bez souhlasu ji nemění, ani u subagenta.
 - Reference mluví jen o vědomém dotyku. Koučink a osobní rozvoj v ohlasech nejsou. Popisek referujícího je pod jménem. Kontakt má nadpis Kontakt a objednání a ceník neopakuje „na místě“.
 - `.cursorrules` a `.cursorignore` drží schválené zadání a rozsah souborů, které se nemají načítat.

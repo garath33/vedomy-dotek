@@ -48,9 +48,9 @@ Pro bezpečné provádění změn (nové texty, fotky, úpravy cen) doporučujem
 ### Náhled před schválením
 - Než se změna sloučí, má být k dispozici odkaz na náhled **právě toho commitu**, ne na ostrý web.
 - Ostrý web je `https://garath33.github.io/vedomy-dotek/`. Větev `staging` se nasazuje na stejné GitHub Pages, proto to není oddělený náhled.
-- Náhled větve po pushi: `https://cdn.jsdelivr.net/gh/garath33/vedomy-dotek@<celý-sha-commitu>/index.html`
+- Náhled musí prohlížeč vykreslit jako stránku. Odkaz na jsDelivr (`cdn.jsdelivr.net/gh/.../index.html`) ani na raw GitHub se neposílá: oba vrací `Content-Type: text/plain` a místo webu je vidět zdrojový kód.
+- Ke schválení se dává adresa sestaveného webu po `npm run build`. Ve složce `dist/` už jsou fotky v `images/` a styly sestavené. Adresa musí vracet `text/html`.
 - U konkrétní úpravy přidej i dotčené stránky, například `reference.html`, `cenik.html` nebo `kontakt.html`.
-- Fotky v tomto náhledu nemusí být vidět. Ve zdrojácích leží ve `public/images/` a do `images/` se kopírují až při sestavení na GitHub Pages. Text, styly a skripty náhled ukazuje.
 
 ### Model a souhlas s jiným modelem
 - Agent si na začátku úkolu řekne, jestli zvolený model na tu práci sedí. Slabý model na těžký úkol i silný model na drobnost má pojmenovat.
