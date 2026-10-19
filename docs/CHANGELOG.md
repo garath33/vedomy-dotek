@@ -8,12 +8,6 @@
 - Nové atmosférické fotky lehátka, ručníků, dlaní, kalimby a tichého místa k zastavení. Pozadí je rozostřené, místnost nejde poznat. Stávající portrét Martina zůstává.
 - Na úvodu jsou kalimba a olej také jako menší záběry u textu o léčivých zvucích a přípravě sezení.
 - Úvod a kontakt používají dodanou fotku lehátka v měkkém denním světle.
-
-### Changed
-
-- Zvolený vzhled je Večerní klid. Přepínač návrhů a varianty Lehátko v klidu a Světlý dech jsou pryč.
-- Úvod už nezakrývá fotku tmavým cihlovým přechodem. Text stojí ve stínu vlevo přes záběr lehátka.
-- Hlavičky podstránek nesou fotku k tématu stránky: ceník ručníky a olej, kontakt připravené lehátko, reference dlaně v klidu, časté dotazy kalimbu, O Martinovi tiché zastavení. Právní stránky a 404 používají záběr lehátka.
 - Kanonické URL a absolutní Open Graph adresa `https://garath33.github.io/vedomy-dotek/` na všech stránkách.
 - `sitemap.xml`, `robots.txt` a favicon s písmenem V.
 - Stránka `ochrana-osobnich-udaju.html` s odkazem v patičce a u souhlasu ve formuláři. Popisuje údaje z formuláře a doručení přes FormSubmit na `cesta-zmeny@email.cz`.
@@ -24,10 +18,14 @@
 - `.cursorrules` popisují tento web: název Terapie vědomého dotyku, terapeutická masáž jako metoda, jen čeština, telefon jako hlavní rezervace, formulář jako alternativa, bez kalendáře, Umami až s reálným ID, styly ve stávajícím CSS.
 - `.cursorignore` navíc vynechává výsledky testů, report Playwrightu a `public/images/`.
 - `docs/ROADMAP.md` drží schválený rozsah a pořadí dalších úprav.
+- Do `.cursorrules`, `SDLC_GUIDE.md` a `docs/ROADMAP.md` přibyl zbytek master promptu, který tam chyběl: práce po schválených iteracích, nejnižší dostatečný model bez přepnutí bez souhlasu, respekt k `.gitignore`, finální pull request bez draftu, konflikty popsané v chatu a vyřešené v kódu, úsporný vizuální náhled u změny layoutu a kontrola sitemap, kanonických URL a indexace po významnější fázi.
 - Doplněno zadání: sitemap a kanonické URL, vlastní favicon a Open Graph, ceny bez příplatku +500 Kč, stávající fotky a doručení formuláře na `cesta-zmeny@email.cz`. Dokumentace zůstává ve čtyřech souborech s různým účelem.
 
 ### Changed
 
+- Zvolený vzhled je Večerní klid. Přepínač návrhů a varianty Lehátko v klidu a Světlý dech jsou pryč.
+- Úvod už nezakrývá fotku tmavým cihlovým přechodem. Text stojí ve stínu vlevo přes záběr lehátka.
+- Hlavičky podstránek nesou fotku k tématu stránky: ceník ručníky a olej, kontakt připravené lehátko, reference dlaně v klidu, časté dotazy kalimbu, O Martinovi tiché zastavení. Právní stránky a 404 používají záběr lehátka.
 - Z referencí i úvodního přehledu ohlasů jsou pryč karty ke koučinku a osobnímu rozvoji. Zůstávají Anna, Jana, Lucie a Hanka.
 - Jméno a popisek u ohlasu jsou pod sebou, aby se dlouhý popisek nelámal vedle jména.
 - Úhrada v ceníku říká „na místě“ jen jednou: hotovost, případně QR kód.
