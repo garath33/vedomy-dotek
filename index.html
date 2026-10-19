@@ -19,17 +19,7 @@
   <meta property="og:image" content="https://garath33.github.io/vedomy-dotek/images/lehatko-studio.jpg">
 
   <link rel="stylesheet" href="./src/styles/main.css">
-  <script>
-    (function () {
-      var allowed = ["klid", "svetlo", "soumrak"];
-      var q = new URLSearchParams(location.search).get("vzhled");
-      var stored = "";
-      try { stored = localStorage.getItem("tvd-vzhled") || ""; } catch (e) {}
-      var v = allowed.indexOf(q) !== -1 ? q : (allowed.indexOf(stored) !== -1 ? stored : "klid");
-      document.documentElement.setAttribute("data-vzhled", v);
-      try { localStorage.setItem("tvd-vzhled", v); } catch (e) {}
-    })();
-  </script>
+
 </head>
 <body>
 

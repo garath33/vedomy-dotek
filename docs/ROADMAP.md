@@ -27,7 +27,7 @@
 
 ## Hotovo
 
-- Tři návrhy vzhledu (Lehátko v klidu, Světlý dech, Večerní klid) s rozostřeným záběrem lehátka a fotkou v hlavičce podle stránky. Portrét Martina se neměnil. Po výběru jednoho směru se přepínač sundá.
+- Zvolený vzhled je Večerní klid. Přepínač a další dva návrhy jsou pryč. Portrét Martina se neměnil.
 - Kalimba a olej jsou na úvodu i jako menší záběry vedle textu.
 - Dodaná fotka lehátka je na úvodu a na kontaktu.
 - Náhled před schválením je veřejný odkaz na commit. Ostrý web se k tomu nepoužívá.
