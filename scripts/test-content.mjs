@@ -175,9 +175,8 @@ if (indexHtml.includes('Délku tohoto doznění přizpůsobím')) {
   console.error('❌ V index.html zůstala věta o přizpůsobení délky doznění.');
   errors++;
 }
-const integrationPhrase = 'Klidová integrace na lůžku';
-if (!indexHtml.includes(integrationPhrase) || !cenikHtml.includes(integrationPhrase)) {
-  console.error('❌ V nabídce chybí klidová integrace na lůžku.');
+if (indexHtml.includes('Klidová integrace na lůžku') || cenikHtml.includes('Klidová integrace na lůžku')) {
+  console.error('❌ V nabídce zůstala klidová integrace na lůžku.');
   errors++;
 }
 if (/podle vaší potřeby|minimálně 10 minut/i.test(indexHtml) || /podle vaší potřeby|minimálně 10 minut/i.test(cenikHtml)) {
