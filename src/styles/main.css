@@ -239,6 +239,25 @@ img {
   line-height: 1.2;
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form[hidden] {
+  display: none;
+}
+
+.form-success {
+  margin: 0 0 0.5rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  border: 1.5px solid var(--color-primary-border);
+  line-height: 1.5;
+}
+
 .btn-primary {
   background: var(--color-primary);
   color: #ffffff !important;

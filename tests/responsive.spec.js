@@ -93,17 +93,27 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
   test('Formulář v kontaktu obsahuje validní prvky na jakémkoliv zařízení', async ({ page }) => {
     await page.goto('/kontakt.html');
 
+    const form = page.locator('#contact-form');
     const nameInput = page.locator('#name');
     const contactInput = page.locator('#contact-input');
     const submitBtn = page.locator('button[type="submit"]');
 
+    await expect(form).toHaveAttribute('action', 'https://formsubmit.co/cesta-zmeny@email.cz');
     await expect(nameInput).toBeVisible();
     await expect(contactInput).toBeVisible();
     await expect(submitBtn).toBeVisible();
+    await expect(page.locator('#form-success')).toBeHidden();
 
-    // Vyzkoušet vepsání
+    // Vyzkoušet vepsání. Formulář se neodesílá, aby na e-mail nepřišla testovací zpráva.
     await nameInput.fill('Jan Novák');
     await expect(nameInput).toHaveValue('Jan Novák');
+    await expect(page.locator('#form-next')).toHaveValue(/odeslano=1/);
+  });
+
+  test('Po návratu z FormSubmit je vidět potvrzení', async ({ page }) => {
+    await page.goto('/kontakt.html?odeslano=1');
+    await expect(page.locator('#form-success')).toBeVisible();
+    await expect(page.locator('#contact-form')).toBeHidden();
   });
 
   test('Filtrování referencí na podstránce reference.html funguje', async ({ page }) => {

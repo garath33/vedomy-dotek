@@ -49,6 +49,8 @@ requiredFiles.forEach(file => {
 const indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
 const expectedTexts = [
   'Terapie vědomého dotyku',
+  'Když analytická mysl nestačí a odpovědi hledáme v těle.',
+  'šamanský buben, Koshi, kalimba',
   'Hlava zná příběh, ale tělo drží emoci',
   'Ochutnávka vědomého dotyku',
   '1 600 Kč',

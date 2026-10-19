@@ -11,7 +11,7 @@ Tento projekt je připraven pro bezplatný hosting na **GitHub Pages**, nabízí
 Web je rozdělen do čistých, srozumitelných sekcí:
 
 1. **Úvodní stránka (`index.html`)**:
-   - Filozofie vědomého dotyku a propojení těla s emocemi
+   - Úvod: terapeutická masáž, vedený rozhovor a léčivé zvuky (šamanský buben, Koshi, kalimba)
    - Záměr práce (biodynamický přístup, uvolnění emočního náboje ze svalů a kloubů)
    - 3 kroky průběhu setkání (Naladění a rozhovor &rarr; Práce s tělem &rarr; Integrace)
    - Interaktivní slideshow s reálnými referencemi klientů (Anna, Jana, Lucie, Hanka)

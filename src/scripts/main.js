@@ -27,7 +27,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. Filtrování referencí na podstránce reference.html
   initReferenceFilters();
+
+  // 4. FormSubmit: návrat na tuto stránku a potvrzení odeslání
+  initContactForm();
 });
+
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const nextInput = document.getElementById('form-next');
+  const success = document.getElementById('form-success');
+  if (!form || !nextInput) return;
+
+  const url = new URL(window.location.href);
+  url.hash = '';
+  const sent = url.searchParams.get('odeslano') === '1';
+  url.searchParams.set('odeslano', '1');
+  nextInput.value = url.toString();
+
+  if (sent && success) {
+    success.hidden = false;
+    form.hidden = true;
+  }
+}
 
 function initTestimonialSlideshow() {
   const root = document.querySelector('.slideshow-wrapper');
