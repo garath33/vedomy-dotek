@@ -42,6 +42,7 @@ Pro bezpečné provádění změn (nové texty, fotky, úpravy cen) doporučujem
 ### Větev `main` (Produkce)
 - `main` představuje ostrý produkční stav, který vidí návštěvníci.
 - Změny do `main` se přenášejí pomocí **Pull Requestu** ze `staging` &rarr; `main`.
+- Pull Request se zakládá rovnou jako připravený ke kontrole. Draft se nenechává, aby nebylo potřeba na GitHubu ručně přepínat stav na Ready for review.
 - Pull Request automaticky provede testy (Broken links + Content check). Pokud testy selžou, nepustí vás k mergi.
 
 ### Náhled před schválením

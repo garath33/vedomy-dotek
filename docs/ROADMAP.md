@@ -28,6 +28,7 @@
 ## Hotovo
 
 - Úvodní stránka ukazuje u výkladu terapie medailonek Martina Šimůnka, aby bylo hned jasné, kdo masáž provádí.
+- Pull request je rovnou připravený ke kontrole. Uživatel na GitHubu nepřepíná draft na Ready for review.
 - Tři návrhy vzhledu (Lehátko v klidu, Světlý dech, Večerní klid) s rozostřeným záběrem lehátka a fotkou v hlavičce podle stránky. Portrét na stránce O Martinovi se neměnil. Po výběru jednoho směru se přepínač sundá.
 - Náhled před schválením je veřejný odkaz na commit. Ostrý web se k tomu nepoužívá.
 - Volba modelu zůstává na uživateli. Agent ji posoudí a bez souhlasu ji nemění, ani u subagenta.

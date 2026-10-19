@@ -5,6 +5,7 @@
 ### Added
 
 - Na úvodní stránce je u výkladu terapie medailonek Martina Šimůnka s popiskem, kdo masáž provádí, a odkazem na stránku O Martinovi.
+- Pull request se zakládá rovnou jako připravený ke kontrole. Draft se nenechává.
 - Tři návrhy vzhledu na všech stránkách: Lehátko v klidu, Světlý dech a Večerní klid. Přepínač je dole na stránce, volba zůstane v prohlížeči a jde sdílet přes `?vzhled=klid`, `?vzhled=svetlo` nebo `?vzhled=soumrak`.
 - Nové atmosférické fotky lehátka, ručníků, dlaní, kalimby a tichého místa k zastavení. Pozadí je rozostřené, místnost nejde poznat. Stávající portrét Martina zůstává.
 
