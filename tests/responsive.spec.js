@@ -54,6 +54,31 @@ test.describe('Responzivita a Layout (Desktop & Mobile)', () => {
 });
 
 test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => {
+  test('Úvod vedle výkladu terapie ukazuje, kdo masáž provádí', async ({ page }) => {
+    await page.goto('/');
+
+    const intro = page.locator('.therapy-intro');
+    const practitioner = intro.locator('.practitioner');
+    await expect(practitioner).toBeVisible();
+    await expect(practitioner).toContainText('Kdo masáž provádí');
+    await expect(practitioner).toContainText('Martin Šimůnek');
+    await expect(practitioner.locator('img')).toBeVisible();
+    await expect(practitioner.locator('img')).toHaveAttribute('alt', 'Portrét Martina Šimůnka');
+    await expect(practitioner.getByRole('link', { name: 'Víc o mně' })).toHaveAttribute('href', './o-martinovi.html');
+    await expect(intro.getByRole('heading', { name: 'Když analytická mysl nestačí' })).toBeVisible();
+
+    const linked = await page.evaluate(() => {
+      const portrait = document.querySelector('.practitioner-portrait');
+      const heading = document.querySelector('.therapy-intro-copy h2');
+      const portraitBox = portrait.getBoundingClientRect();
+      const headingBox = heading.getBoundingClientRect();
+      const sideBySide = portraitBox.right <= headingBox.left + 8;
+      const stacked = portraitBox.bottom <= headingBox.top + 8;
+      return sideBySide || stacked;
+    });
+    expect(linked).toBe(true);
+  });
+
   test('Slideshow referencí funguje a reaguje na přepínání', async ({ page }) => {
     await page.goto('/');
 

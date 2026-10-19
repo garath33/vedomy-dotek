@@ -4,6 +4,8 @@
 
 ### Added
 
+- Na úvodní stránce je u výkladu terapie medailonek Martina Šimůnka s popiskem, kdo masáž provádí, a odkazem na stránku O Martinovi.
+- Pull request se zakládá rovnou jako připravený ke kontrole. Draft se nenechává.
 - Tři návrhy vzhledu na všech stránkách: Lehátko v klidu, Světlý dech a Večerní klid. Přepínač je dole na stránce, volba zůstane v prohlížeči a jde sdílet přes `?vzhled=klid`, `?vzhled=svetlo` nebo `?vzhled=soumrak`.
 - Nové atmosférické fotky lehátka, ručníků, dlaní, kalimby a tichého místa k zastavení. Pozadí je rozostřené, místnost nejde poznat. Stávající portrét Martina zůstává.
 - Na úvodu jsou kalimba a olej také jako menší záběry u textu o léčivých zvucích a přípravě sezení.
@@ -13,7 +15,7 @@
 - Stránka `ochrana-osobnich-udaju.html` s odkazem v patičce a u souhlasu ve formuláři. Popisuje údaje z formuláře a doručení přes FormSubmit na `cesta-zmeny@email.cz`.
 - Stránka `404.html` pro neexistující adresu. Není v menu ani v sitemap a má `noindex`.
 - Fonty Playfair Display, Plus Jakarta Sans a Montserrat jsou uložené ve webu (latin a latin-ext, licence SIL OFL).
-- Před schválením změn se posílá odkaz na náhled commitu přes jsDelivr, ne na ostrý web. Postup je v `SDLC_GUIDE.md` a v `.cursorrules`.
+- Před schválením změn se posílá odkaz na vykreslený sestavený web, ne na ostrý web a ne na jsDelivr. jsDelivr vrací zdrojový kód. Postup je v `SDLC_GUIDE.md` a v `.cursorrules`.
 - Agent má posoudit vhodnost zvoleného modelu a nepřeptávat se na jiný, včetně Sonnetu, bez výslovného souhlasu. Subagent zůstává na stejném modelu, jinak se nespouští.
 - `.cursorrules` popisují tento web: název Terapie vědomého dotyku, terapeutická masáž jako metoda, jen čeština, telefon jako hlavní rezervace, formulář jako alternativa, bez kalendáře, Umami až s reálným ID, styly ve stávajícím CSS.
 - `.cursorignore` navíc vynechává výsledky testů, report Playwrightu a `public/images/`.
@@ -23,6 +25,7 @@
 
 ### Changed
 
+- Popisek u oleje na úvodu zní: Na masáži na vás čekají čisté ručníky, prostěradlo a přírodní olej.
 - V nabídce na úvodu i v ceníku už není položka o klidové integraci na lůžku. V popisu průběhu na úvodu zůstává jen to, že na lůžku bude čas na doznění.
 - Zvolený vzhled je Večerní klid. Přepínač návrhů a varianty Lehátko v klidu a Světlý dech jsou pryč.
 - Úvod už nezakrývá fotku tmavým cihlovým přechodem. Text stojí ve stínu vlevo přes záběr lehátka.

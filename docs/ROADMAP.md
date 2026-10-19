@@ -16,7 +16,7 @@
 - Formulář doručí zprávu na `cesta-zmeny@email.cz` přes FormSubmit. Kalendář na webu nebude.
 - Dokumentace: `README.md` je návod ke spuštění, `SDLC_GUIDE.md` je provozní příručka, `docs/ROADMAP.md` je plán a `docs/CHANGELOG.md` je historie změn. Všechny čtyři zůstávají.
 - Hosting: GitHub Pages. Odkazy hlídá CI (Lychee nebo htmlproofer).
-- Před schválením změny dostane uživatel odkaz na náhled daného commitu (`https://cdn.jsdelivr.net/gh/garath33/vedomy-dotek@<sha>/index.html`), ne na ostrý web.
+- Před schválením změny dostane uživatel odkaz, na kterém prohlížeč vidí sestavený web. jsDelivr ani raw GitHub to nejsou: vracejí zdrojový kód.
 - Agent posoudí, jestli zvolený model na úkol sedí, a zůstane na něm. Když je zbytečně silný nebo slabý, navrhne nejnižší dostatečný model ještě před prací. Jiný model nebo subagent na jiném modelu jen s výslovným souhlasem.
 - Nový optimalizační záměr začíná otázkami na stav, architekturu a cíl. Plán je prioritizovaný v tomto souboru. Fáze jde do kódu až po schválení záměru. Funkční části mimo úkol se nemění.
 - Pull request je rovnou finální, bez draftu. Konflikt s `main` se popíše v chatu a vyřeší v kódu.
@@ -31,11 +31,14 @@
 
 ## Hotovo
 
+- Úvodní stránka ukazuje u výkladu terapie medailonek Martina Šimůnka, aby bylo hned jasné, kdo masáž provádí.
+- Popisek u oleje na úvodu zní: Na masáži na vás čekají čisté ručníky, prostěradlo a přírodní olej.
 - Nabídka na úvodu a v ceníku klidovou integraci na lůžku neuvádí. V průběhu sezení na úvodu zůstává jen čas na doznění.
-- Zvolený vzhled je Večerní klid. Přepínač a další dva návrhy jsou pryč. Portrét Martina se neměnil.
+- Pull request je rovnou připravený ke kontrole. Uživatel na GitHubu nepřepíná draft na Ready for review.
+- Zvolený vzhled je Večerní klid. Přepínač a další dva návrhy jsou pryč. Portrét na stránce O Martinovi se neměnil.
 - Kalimba a olej jsou na úvodu i jako menší záběry vedle textu.
 - Dodaná fotka lehátka je na úvodu a na kontaktu.
-- Náhled před schválením je veřejný odkaz na commit. Ostrý web se k tomu nepoužívá.
+- Náhled před schválením je vykreslená stránka sestaveného webu. jsDelivr se nepoužívá, protože ukazuje zdrojový kód. Ostrý web se k tomu nepoužívá.
 - Volba modelu zůstává na uživateli. Agent ji posoudí a bez souhlasu ji nemění, ani u subagenta.
 - Reference mluví jen o vědomém dotyku. Koučink a osobní rozvoj v ohlasech nejsou. Popisek referujícího je pod jménem. Kontakt má nadpis Kontakt a objednání a ceník neopakuje „na místě“.
 - `.cursorrules` a `.cursorignore` drží schválené zadání a rozsah souborů, které se nemají načítat.
