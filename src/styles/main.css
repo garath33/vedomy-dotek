@@ -250,12 +250,24 @@ img {
 }
 
 .form-success {
-  margin: 0 0 0.5rem;
-  padding: 1rem 1.1rem;
-  border-radius: var(--radius-sm);
-  background: #ffffff;
-  border: 1.5px solid var(--color-primary-border);
-  line-height: 1.5;
+  text-align: center;
+  padding: 0.75rem 0.4rem 0.25rem;
+}
+
+.form-success h2 {
+  font-size: 1.85rem;
+  margin: 0.35rem 0 1rem;
+}
+
+.form-success p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 auto 1rem;
+  max-width: 36rem;
+}
+
+.form-success .btn {
+  margin-top: 0.5rem;
 }
 
 .btn-primary {

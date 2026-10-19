@@ -112,8 +112,13 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
 
   test('Po návratu z FormSubmit je vidět potvrzení', async ({ page }) => {
     await page.goto('/kontakt.html?odeslano=1');
-    await expect(page.locator('#form-success')).toBeVisible();
+    const success = page.locator('#form-success');
+    await expect(success).toBeVisible();
+    await expect(success).toContainText('Vaše zpráva ke mně dorazila');
+    await expect(success).toContainText('Ozvu se vám na kontakt, který jste uvedli');
+    await expect(success.getByRole('link', { name: /Zavolat/ })).toBeVisible();
     await expect(page.locator('#contact-form')).toBeHidden();
+    await expect(page.locator('#form-intro')).toBeHidden();
   });
 
   test('Filtrování referencí na podstránce reference.html funguje', async ({ page }) => {

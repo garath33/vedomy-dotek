@@ -36,6 +36,7 @@ function initContactForm() {
   const form = document.getElementById('contact-form');
   const nextInput = document.getElementById('form-next');
   const success = document.getElementById('form-success');
+  const intro = document.getElementById('form-intro');
   if (!form || !nextInput) return;
 
   const url = new URL(window.location.href);
@@ -47,6 +48,7 @@ function initContactForm() {
   if (sent && success) {
     success.hidden = false;
     form.hidden = true;
+    if (intro) intro.hidden = true;
   }
 }
 
