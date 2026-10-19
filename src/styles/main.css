@@ -7,17 +7,17 @@
 
 :root {
   /* Barevná paleta - teplá, terapeutická, bezpečná a prémiová */
-  --color-primary: #8a2d23;       /* Terakotová / teplá cihlová červená (tělo) */
-  --color-primary-dark: #6e2018;  /* Hluboká červená */
-  --color-primary-light: #b04336; /* Světlejší červená */
-  --color-primary-soft: #fcf4f2;  /* Podkladový měkký tón */
-  --color-primary-border: #f2d8d3;
+  --color-primary: #8d4a32;       /* Teplá hlína večerního klidu */
+  --color-primary-dark: #6d3522;
+  --color-primary-light: #a85e42;
+  --color-primary-soft: #f8efe9;
+  --color-primary-border: #ead8ce;
 
   --color-accent: #2d5a52;        /* Přírodní zemitá šalvěj/eukalyptus pro rovnováhu */
   --color-accent-light: #41776d;
   --color-accent-soft: #edf5f3;
 
-  --color-sand: #fbf8f5;          /* Jemný teplý písek */
+  --color-sand: #f3ece4;          /* Teplý večerní písek */
   --color-sand-card: #ffffff;
   --color-sand-border: #ebdcd0;
 
@@ -312,7 +312,7 @@ img {
   gap: 1rem;
 }
 
-/* Hero — výchozí návrh „Lehátko v klidu“: text vlevo, záběr lehátka vpravo */
+/* Hero — Večerní klid: fotka v pozadí, text ve stínu vlevo */
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
@@ -334,6 +334,11 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
+}
+
+.hero-visual img.photo-lehatko,
+.page-header-photo.photo-lehatko {
+  object-position: 34% 46%;
 }
 
 .hero-veil {
@@ -557,6 +562,34 @@ img {
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
   color: var(--color-primary);
+}
+
+/* Menší záběry kalimby a oleje v textu */
+.detail-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 2.2rem 0 0.4rem;
+}
+
+.detail-photo {
+  margin: 0;
+}
+
+.detail-photo img {
+  width: 100%;
+  height: 168px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-photo figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--color-muted);
 }
 
 /* Zvýrazněný box Proč tělo */
@@ -1216,136 +1249,8 @@ img {
   color: var(--color-muted);
 }
 
-/* Návrh „Světlý dech“: fotka na celou šířku, text v mléčném rámečku */
-html[data-vzhled="svetlo"] {
-  --color-primary: #2f5d52;
-  --color-primary-dark: #23483f;
-  --color-primary-light: #3e7568;
-  --color-primary-soft: #eef6f3;
-  --color-primary-border: #d3e6e0;
-  --color-sand: #f6f3ee;
-}
-
-html[data-vzhled="svetlo"] .hero {
-  display: block;
-  position: relative;
-  min-height: min(88vh, 820px);
-  background: #efe8df;
-}
-
-html[data-vzhled="svetlo"] .hero-visual {
-  position: absolute;
-  inset: 0;
-  order: 0;
-}
-
-html[data-vzhled="svetlo"] .hero-veil {
-  display: block;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255, 250, 244, 0.18) 0%, rgba(255, 248, 242, 0.28) 100%);
-}
-
-html[data-vzhled="svetlo"] .hero-panel {
-  position: relative;
-  z-index: 1;
-  order: 0;
-  margin: 7vh auto;
-  max-width: 680px;
-  padding: 2.6rem 2.2rem 2.4rem;
-  text-align: center;
-  align-items: center;
-  background: rgba(255, 250, 245, 0.84);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 28px;
-  box-shadow: 0 18px 50px rgba(48, 40, 32, 0.12);
-}
-
-html[data-vzhled="svetlo"] .badge-tag {
-  align-self: center;
-}
-
-html[data-vzhled="svetlo"] .hero-subtitle {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-html[data-vzhled="svetlo"] .hero .btn-group {
-  justify-content: center;
-}
-
-html[data-vzhled="svetlo"] .page-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  min-height: 320px;
-  text-align: center;
-  background: #efe8df;
-}
-
-html[data-vzhled="svetlo"] .page-header-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-}
-
-html[data-vzhled="svetlo"] .page-header-veil {
-  display: block;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255, 250, 245, 0.05) 10%, rgba(255, 248, 242, 0.82) 100%);
-}
-
-html[data-vzhled="svetlo"] .page-header-inner {
-  width: 100%;
-  align-items: center;
-  padding-top: 5.5rem;
-  padding-bottom: 2.2rem;
-}
-
-html[data-vzhled="svetlo"] .page-header p {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-html[data-vzhled="svetlo"] .cta-banner {
-  background: #f3f7f5;
-  color: var(--color-dark);
-  border: 1px solid var(--color-sand-border);
-  box-shadow: var(--shadow-md);
-}
-
-html[data-vzhled="svetlo"] .cta-banner h2 {
-  color: var(--color-dark);
-}
-
-html[data-vzhled="svetlo"] .cta-banner p {
-  color: var(--color-muted);
-}
-
-html[data-vzhled="svetlo"] .cta-banner .btn-outline-white {
-  color: var(--color-accent) !important;
-  border-color: var(--color-accent);
-}
-
-html[data-vzhled="svetlo"] .cta-banner .btn-outline-white:hover {
-  background: var(--color-accent-soft);
-}
-
-/* Návrh „Večerní klid“: fotka v pozadí, text v teplém stínu vlevo */
-html[data-vzhled="soumrak"] {
-  --color-primary: #8d4a32;
-  --color-primary-dark: #6d3522;
-  --color-primary-light: #a85e42;
-  --color-primary-soft: #f8efe9;
-  --color-primary-border: #ead8ce;
-  --color-sand: #f3ece4;
-}
-
-html[data-vzhled="soumrak"] .hero {
+/* Večerní klid: fotka v pozadí, text v teplém stínu vlevo */
+.hero {
   display: grid;
   grid-template-columns: 1fr;
   position: relative;
@@ -1353,20 +1258,20 @@ html[data-vzhled="soumrak"] .hero {
   background: #24312d;
 }
 
-html[data-vzhled="soumrak"] .hero-visual {
+.hero-visual {
   position: absolute;
   inset: 0;
   order: 0;
 }
 
-html[data-vzhled="soumrak"] .hero-veil {
+.hero-veil {
   display: block;
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, rgba(24, 34, 31, 0.78) 0%, rgba(24, 34, 31, 0.42) 48%, rgba(24, 34, 31, 0.12) 100%);
 }
 
-html[data-vzhled="soumrak"] .hero-panel {
+.hero-panel {
   position: relative;
   z-index: 1;
   order: 0;
@@ -1376,36 +1281,36 @@ html[data-vzhled="soumrak"] .hero-panel {
   background: transparent;
 }
 
-html[data-vzhled="soumrak"] .badge-tag {
+.hero .badge-tag {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.28);
   color: #f4efe8;
 }
 
-html[data-vzhled="soumrak"] .hero h1,
-html[data-vzhled="soumrak"] .hero-subtitle {
+.hero h1,
+.hero-subtitle {
   color: #f7f3ee;
 }
 
-html[data-vzhled="soumrak"] .btn-quiet {
+.hero .btn-quiet {
   color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.65);
 }
 
-html[data-vzhled="soumrak"] .btn-quiet:hover {
+.hero .btn-quiet:hover {
   background: rgba(255, 255, 255, 0.12);
   color: #ffffff !important;
   border-color: #ffffff;
 }
 
-html[data-vzhled="soumrak"] .page-header {
+.page-header {
   display: flex;
   align-items: flex-end;
   min-height: 300px;
   background: #24312d;
 }
 
-html[data-vzhled="soumrak"] .page-header-photo {
+.page-header-photo {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1413,189 +1318,60 @@ html[data-vzhled="soumrak"] .page-header-photo {
   min-height: 0;
 }
 
-html[data-vzhled="soumrak"] .page-header-veil {
+.page-header-veil {
   display: block;
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, rgba(22, 30, 28, 0.78) 0%, rgba(22, 30, 28, 0.35) 72%, rgba(22, 30, 28, 0.15) 100%);
 }
 
-html[data-vzhled="soumrak"] .page-header h1 {
+.page-header h1 {
   color: #f7f3ee;
 }
 
-html[data-vzhled="soumrak"] .page-header p {
+.page-header p {
   color: rgba(247, 243, 238, 0.88);
 }
 
-html[data-vzhled="soumrak"] .page-header-inner {
+.page-header-inner {
   padding-top: 4.8rem;
   padding-bottom: 2.3rem;
 }
 
-html[data-vzhled="soumrak"] .cta-banner {
+.cta-banner {
   background: linear-gradient(135deg, #3a2a24 0%, #24312d 100%);
-}
-
-/* Přepínač tří návrhů sedí pod navigací, ať nezakrývá tlačítka */
-.vzhled-picker {
-  position: relative;
-  z-index: 20;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem 0.7rem;
-  width: 100%;
-  padding: 0.55rem 1rem;
-  background: #f6f0e8;
-  border-bottom: 1px solid var(--color-sand-border);
-}
-
-.vzhled-picker-label {
-  margin: 0;
-  font-family: var(--font-accent);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
-.vzhled-picker-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  justify-content: center;
-}
-
-.vzhled-picker button {
-  appearance: none;
-  border: 1px solid var(--color-sand-border);
-  background: #ffffff;
-  color: var(--color-dark);
-  font-family: var(--font-sans);
-  font-size: 0.86rem;
-  font-weight: 600;
-  padding: 0.4rem 0.8rem;
-  border-radius: var(--radius-full);
-  cursor: pointer;
-}
-
-.vzhled-picker button[aria-pressed="true"] {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: #ffffff;
-}
-
-.vzhled-picker button:hover {
-  border-color: var(--color-accent);
 }
 
 /* Respozivita */
 @media (max-width: 960px) {
-  .hero,
-  html[data-vzhled="svetlo"] .hero,
-  html[data-vzhled="soumrak"] .hero {
-    min-height: 0;
-  }
-
   .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-visual,
-  .hero-panel {
-    order: 0;
-  }
-
-  .hero-visual img {
-    min-height: 260px;
-    max-height: 48vh;
-  }
-
-  .hero-panel {
-    margin-left: 0;
-    max-width: none;
-    padding: 2.2rem 1.5rem 2.6rem;
-  }
-
-  html[data-vzhled="svetlo"] .hero {
-    min-height: 0;
-    padding-bottom: 1.5rem;
-  }
-
-  html[data-vzhled="svetlo"] .hero-visual {
-    position: relative;
-    min-height: 280px;
-  }
-
-  html[data-vzhled="svetlo"] .hero-visual img {
-    max-height: none;
-    min-height: 280px;
-    height: 46vh;
-  }
-
-  html[data-vzhled="svetlo"] .hero-panel {
-    margin: -3.2rem 1rem 0;
-    padding: 1.6rem 1.15rem 1.5rem;
-  }
-
-  html[data-vzhled="soumrak"] .hero {
     min-height: 78vh;
   }
 
-  html[data-vzhled="soumrak"] .hero-veil {
+  .hero-veil {
     background: linear-gradient(180deg, rgba(24, 34, 31, 0.2) 0%, rgba(24, 34, 31, 0.78) 58%, rgba(24, 34, 31, 0.88) 100%);
   }
 
-  html[data-vzhled="soumrak"] .hero-panel {
+  .hero-panel {
     padding: 42vh 1.4rem 2.4rem;
     max-width: none;
   }
 
-  .page-header,
-  html[data-vzhled="svetlo"] .page-header,
-  html[data-vzhled="soumrak"] .page-header {
-    display: block;
-    min-height: 0;
-  }
-
-  .page-header-photo {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 180px;
-    min-height: 180px;
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  html[data-vzhled="svetlo"] .page-header-photo,
-  html[data-vzhled="soumrak"] .page-header-photo {
-    position: absolute;
-    height: 100%;
-    min-height: 0;
-  }
-
-  html[data-vzhled="svetlo"] .page-header,
-  html[data-vzhled="soumrak"] .page-header {
+  .page-header {
     min-height: 240px;
   }
 
-  .page-header-inner,
-  html[data-vzhled="svetlo"] .page-header-inner,
-  html[data-vzhled="soumrak"] .page-header-inner {
-    padding-top: 1.6rem;
+  .page-header-inner {
+    padding-top: 7.2rem;
     padding-bottom: 1.7rem;
   }
 
-  html[data-vzhled="soumrak"] .page-header-inner {
-    padding-top: 7.2rem;
+  .detail-photos {
+    grid-template-columns: 1fr;
   }
 
-  html[data-vzhled="svetlo"] .page-header-inner {
-    padding-top: 6.4rem;
+  .detail-photo img {
+    height: 200px;
   }
 
   .reference-grid {

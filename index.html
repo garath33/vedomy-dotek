@@ -16,20 +16,10 @@
   <meta property="og:url" content="https://garath33.github.io/vedomy-dotek/">
   <meta property="og:title" content="Terapie vědomého dotyku | Martin Šimůnek">
   <meta property="og:description" content="Když analytická mysl nestačí a odpovědi hledáme v těle. Terapeutická masáž, rozhovor a léčivé zvuky.">
-  <meta property="og:image" content="https://garath33.github.io/vedomy-dotek/images/lehatko-klid.jpg">
+  <meta property="og:image" content="https://garath33.github.io/vedomy-dotek/images/lehatko-studio.jpg">
 
   <link rel="stylesheet" href="./src/styles/main.css">
-  <script>
-    (function () {
-      var allowed = ["klid", "svetlo", "soumrak"];
-      var q = new URLSearchParams(location.search).get("vzhled");
-      var stored = "";
-      try { stored = localStorage.getItem("tvd-vzhled") || ""; } catch (e) {}
-      var v = allowed.indexOf(q) !== -1 ? q : (allowed.indexOf(stored) !== -1 ? stored : "klid");
-      document.documentElement.setAttribute("data-vzhled", v);
-      try { localStorage.setItem("tvd-vzhled", v); } catch (e) {}
-    })();
-  </script>
+
 </head>
 <body>
 
@@ -60,7 +50,7 @@
   <!-- Hero sekce -->
   <section class="hero" aria-label="Úvod">
     <div class="hero-visual">
-      <img src="./images/lehatko-klid.jpg" alt="Masážní lehátko v měkkém světle. Pozadí je rozostřené, aby zůstal jen klid." width="1600" height="900">
+      <img class="photo-lehatko" src="./images/lehatko-studio.jpg" alt="Masážní lehátko s lněným přehozem v měkkém denním světle." width="1408" height="768">
       <div class="hero-veil" aria-hidden="true"></div>
     </div>
     <div class="hero-panel">
@@ -93,6 +83,17 @@
       <p>
         Společně vytvoříme bezpečný prostor, kde můžete uvolnit nahromaděné napětí, zklidnit přeťaženou mysl a znovu se napojit na sebe.
       </p>
+
+      <div class="detail-photos">
+        <figure class="detail-photo">
+          <img src="./images/hlavicka-faq.jpg" alt="Dřevěná kalimba a jemné kovové tóny položené na lněné látce." width="1280" height="720">
+          <figcaption>Léčivé zvuky, mezi nimi kalimba, provázejí práci s tělem.</figcaption>
+        </figure>
+        <figure class="detail-photo">
+          <img src="./images/hlavicka-cenik.jpg" alt="Lahvička přírodního oleje mezi složenými lněnými ručníky." width="1280" height="720">
+          <figcaption>Na sezení je připravený přírodní olej a čisté plátno.</figcaption>
+        </figure>
+      </div>
 
       <!-- Proč zapojit tělo -->
       <div class="feature-box">
