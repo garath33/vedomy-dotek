@@ -5,6 +5,13 @@
 ### Added
 
 - Na úvodní stránce je u výkladu terapie medailonek Martina Šimůnka s popiskem, kdo masáž provádí, a odkazem na stránku O Martinovi.
+- Tři návrhy vzhledu na všech stránkách: Lehátko v klidu, Světlý dech a Večerní klid. Přepínač je dole na stránce, volba zůstane v prohlížeči a jde sdílet přes `?vzhled=klid`, `?vzhled=svetlo` nebo `?vzhled=soumrak`.
+- Nové atmosférické fotky lehátka, ručníků, dlaní, kalimby a tichého místa k zastavení. Pozadí je rozostřené, místnost nejde poznat. Stávající portrét Martina zůstává.
+
+### Changed
+
+- Úvod už nezakrývá fotku tmavým cihlovým přechodem. V klidu je text vedle záběru lehátka, ve světlém dechu leží v mléčném rámečku a ve večerním klidu stojí ve stínu vlevo.
+- Hlavičky podstránek nesou fotku k tématu stránky: ceník ručníky a olej, kontakt připravené lehátko, reference dlaně v klidu, časté dotazy kalimbu, O Martinovi tiché zastavení. Právní stránky a 404 používají záběr lehátka.
 - Kanonické URL a absolutní Open Graph adresa `https://garath33.github.io/vedomy-dotek/` na všech stránkách.
 - `sitemap.xml`, `robots.txt` a favicon s písmenem V.
 - Stránka `ochrana-osobnich-udaju.html` s odkazem v patičce a u souhlasu ve formuláři. Popisuje údaje z formuláře a doručení přes FormSubmit na `cesta-zmeny@email.cz`.

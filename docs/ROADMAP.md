@@ -28,6 +28,7 @@
 ## Hotovo
 
 - Úvodní stránka ukazuje u výkladu terapie medailonek Martina Šimůnka, aby bylo hned jasné, kdo masáž provádí.
+- Tři návrhy vzhledu (Lehátko v klidu, Světlý dech, Večerní klid) s rozostřeným záběrem lehátka a fotkou v hlavičce podle stránky. Portrét na stránce O Martinovi se neměnil. Po výběru jednoho směru se přepínač sundá.
 - Náhled před schválením je veřejný odkaz na commit. Ostrý web se k tomu nepoužívá.
 - Volba modelu zůstává na uživateli. Agent ji posoudí a bez souhlasu ji nemění, ani u subagenta.
 - Reference mluví jen o vědomém dotyku. Koučink a osobní rozvoj v ohlasech nejsou. Popisek referujícího je pod jménem. Kontakt má nadpis Kontakt a objednání a ceník neopakuje „na místě“.

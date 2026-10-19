@@ -30,7 +30,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. FormSubmit: návrat na tuto stránku a potvrzení odeslání
   initContactForm();
+
+  // 5. Přepínač tří návrhů vzhledu
+  initVzhledPicker();
 });
+
+const VZHLEDY = [
+  { id: 'klid', label: 'Lehátko v klidu' },
+  { id: 'svetlo', label: 'Světlý dech' },
+  { id: 'soumrak', label: 'Večerní klid' }
+];
+
+function currentVzhled() {
+  const value = document.documentElement.getAttribute('data-vzhled');
+  return VZHLEDY.some(item => item.id === value) ? value : 'klid';
+}
+
+function applyVzhled(id) {
+  document.documentElement.setAttribute('data-vzhled', id);
+  try {
+    localStorage.setItem('tvd-vzhled', id);
+  } catch (error) {
+    /* prohlížeč může ukládání zakázat */
+  }
+  const url = new URL(window.location.href);
+  url.searchParams.set('vzhled', id);
+  history.replaceState({}, '', url);
+  document.querySelectorAll('[data-vzhled-choice]').forEach(button => {
+    button.setAttribute('aria-pressed', button.getAttribute('data-vzhled-choice') === id ? 'true' : 'false');
+  });
+}
+
+function initVzhledPicker() {
+  const active = currentVzhled();
+  const bar = document.createElement('div');
+  bar.className = 'vzhled-picker';
+  bar.setAttribute('role', 'region');
+  bar.setAttribute('aria-label', 'Návrh vzhledu');
+
+  const label = document.createElement('p');
+  label.className = 'vzhled-picker-label';
+  label.textContent = 'Návrh vzhledu';
+
+  const options = document.createElement('div');
+  options.className = 'vzhled-picker-options';
+
+  VZHLEDY.forEach(item => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.dataset.vzhledChoice = item.id;
+    button.textContent = item.label;
+    button.setAttribute('aria-pressed', item.id === active ? 'true' : 'false');
+    button.addEventListener('click', () => applyVzhled(item.id));
+    options.appendChild(button);
+  });
+
+  bar.append(label, options);
+  const nav = document.querySelector('.site-nav');
+  if (nav) nav.insertAdjacentElement('afterend', bar);
+  else document.body.prepend(bar);
+}
 
 function initContactForm() {
   const form = document.getElementById('contact-form');
