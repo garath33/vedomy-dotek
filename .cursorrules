@@ -27,6 +27,13 @@ Ponech stávající stránky. Samostatná `reference.html` patří do navigace. 
 - Styly patří do `src/styles/main.css` (vlastní CSS, ne Tailwind). Skripty do `src/scripts/main.js`.
 - Nové závislosti nepřidávej, pokud bez nich úkol nejde splnit.
 
+## Model a subagenti
+
+- Na začátku úkolu posuď, jestli zvolený model sedí. Nemá být slabý na danou práci ani zbytečně silný. Když se fit liší, napiš uživateli své stanovisko dřív, než se do práce pustíš. Když sedí, stačí krátká věta.
+- Drž se modelu, který uživatel vybral. Na jiný model, včetně Sonnetu a dalších Claude modelů, nepřepínej bez jeho výslovného souhlasu.
+- Subagenta nespouštěj na jiném modelu. Když už subagent dává smysl, musí jet na stejném modelu jako hlavní běh. Když to ten typ subagenta neumí, nespouštěj ho a práci udělej sám na zvoleném modelu.
+- Subagenta nespouštěj jen proto, že je k dispozici. Na běžnou úpravu textu, dokumentace a stylů není potřeba.
+
 ## Testy, dokumentace, git
 
 - Testy drž v souladu se změnou. Kontrolu odkazů nespouštěj ručně jako hlavní jistotu; spoléhej na GitHub Actions (Lychee nebo htmlproofer) a existující `npm test`.

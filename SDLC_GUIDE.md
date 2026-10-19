@@ -51,6 +51,11 @@ Pro bezpečné provádění změn (nové texty, fotky, úpravy cen) doporučujem
 - U konkrétní úpravy přidej i dotčené stránky, například `reference.html`, `cenik.html` nebo `kontakt.html`.
 - Fotky v tomto náhledu nemusí být vidět. Ve zdrojácích leží ve `public/images/` a do `images/` se kopírují až při sestavení na GitHub Pages. Text, styly a skripty náhled ukazuje.
 
+### Model a souhlas s jiným modelem
+- Agent si na začátku úkolu řekne, jestli zvolený model na tu práci sedí. Slabý model na těžký úkol i silný model na drobnost má pojmenovat.
+- Zůstává na modelu, který jste vybral. Přepnutí na jiný model, včetně Sonnetu, je až po vašem výslovném souhlasu.
+- Subagent, pokud vůbec běží, jede na stejném modelu. Když to neumí, nespouští se.
+
 ---
 
 ## 4. Testovací fáze (QA & Automatizované testy)
