@@ -17,11 +17,15 @@
 - Dokumentace: `README.md` je návod ke spuštění, `SDLC_GUIDE.md` je provozní příručka, `docs/ROADMAP.md` je plán a `docs/CHANGELOG.md` je historie změn. Všechny čtyři zůstávají.
 - Hosting: GitHub Pages. Odkazy hlídá CI (Lychee nebo htmlproofer).
 - Před schválením změny dostane uživatel odkaz, na kterém prohlížeč vidí sestavený web. jsDelivr ani raw GitHub to nejsou: vracejí zdrojový kód.
-- Agent posoudí, jestli zvolený model na úkol sedí, a zůstane na něm. Jiný model nebo subagent na jiném modelu jen s výslovným souhlasem.
+- Agent posoudí, jestli zvolený model na úkol sedí, a zůstane na něm. Když je zbytečně silný nebo slabý, navrhne nejnižší dostatečný model ještě před prací. Jiný model nebo subagent na jiném modelu jen s výslovným souhlasem.
+- Nový optimalizační záměr začíná otázkami na stav, architekturu a cíl. Plán je prioritizovaný v tomto souboru. Fáze jde do kódu až po schválení záměru. Funkční části mimo úkol se nemění.
+- Pull request je rovnou finální, bez draftu. Konflikt s `main` se popíše v chatu a vyřeší v kódu.
+- U změny vzhledu patří k náhledu úsporný snímek nebo výřez. Rozbité odkazy, HTML a build hlídá CI.
+- Po významnější fázi se kontroluje `sitemap.xml`, kanonické URL a indexace. Podle výsledku se navrhne redirect nebo nový crawl v Google Search Console.
 
 ## Další práce
 
-1. Po nasazení na `main` provést registraci `sitemap.xml` v Google Search Console.
+1. Po nasazení na `main` provést registraci `sitemap.xml` v Google Search Console. Po dalších významných fázích zkontrolovat kanonické URL a navrhnout redirect nebo nový crawl.
 2. Umami doplnit až s reálnou adresou instance a website ID. Do měření nepatří jméno, telefon ani text z formuláře.
 3. Lychee v GitHub Actions, až bude na řadě samostatná úprava pipeline.
 

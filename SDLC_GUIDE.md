@@ -53,7 +53,7 @@ Pro bezpečné provádění změn (nové texty, fotky, úpravy cen) doporučujem
 - U konkrétní úpravy přidej i dotčené stránky, například `reference.html`, `cenik.html` nebo `kontakt.html`.
 
 ### Model a souhlas s jiným modelem
-- Agent si na začátku úkolu řekne, jestli zvolený model na tu práci sedí. Slabý model na těžký úkol i silný model na drobnost má pojmenovat.
+- Agent si na začátku úkolu řekne, jestli zvolený model na tu práci sedí. Slabý model na těžký úkol i silný model na drobnost (styly, texty, changelog) má pojmenovat a navrhnout nejnižší model, který stačí.
 - Zůstává na modelu, který jste vybral. Přepnutí na jiný model, včetně Sonnetu, je až po vašem výslovném souhlasu.
 - Subagent, pokud vůbec běží, jede na stejném modelu. Když to neumí, nespouští se.
 
@@ -101,3 +101,20 @@ Až budete chtít web převést z `github.io` na vlastní doménu (např. `www.v
    - buď CNAME pro subdoménu (např. `www` mířící na `<vase-jmeno>.github.io`),
    - nebo A záznamy pro GitHub IP adresy (`185.199.108.153`, atd.).
 3. Zaškrtnete **Enforce HTTPS** na GitHubu pro bezplatný SSL certifikát Let's Encrypt.
+
+---
+
+## 6. Řízené iterace, pull request a konflikty
+
+Úpravy webu jdou po schválených krocích, ne plošně.
+
+1. Nový optimalizační záměr začíná otázkami na stav webu, architekturu a cíl. Z odpovědí vznikne prioritizovaný plán v `docs/ROADMAP.md`.
+2. Každá fáze začíná krátkým popisem záměru. Realizace začne až po vašem souhlasu.
+3. Funkční části, které fáze nevyžaduje, zůstávají beze změny.
+4. Hotová a odladěná feature větev jde rovnou do finálního pull requestu proti `main`. Draft PR se nezakládá.
+5. Před pushem i před mergem se větev porovná s aktuálním `origin/main`. Když hrozí nebo vznikne konflikt, dostanete ho popsaný v chatu a návrh řešení v kódu. Ruční skládání konfliktu ve webovém rozhraní GitHubu se nepoužívá.
+6. Merge do `main` je až po závěrečné kontrole a vašem schválení.
+7. U změny designu nebo layoutu je u vykresleného náhledu ještě úsporný snímek: výřez změněné části, ne sada velkých celostránkových obrázků.
+8. Rozbité odkazy, validace HTML a výsledek buildu se berou z GitHub Actions a z `npm test`, ne z ručního procházení.
+
+Po významnější fázi se zkontroluje `sitemap.xml`, kanonické URL a dopad na indexaci. Když se mění adresa stránky, navrhne se přesměrování nebo vyžádání nového crawlu v Google Search Console. Registrace `sitemap.xml` po ostrém spuštění zůstává samostatný krok.

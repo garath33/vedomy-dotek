@@ -22,22 +22,30 @@ Ponech stávající stránky. Samostatná `reference.html` patří do navigace. 
 
 ## Tokeny a soubory
 
-- Respektuj `.cursorignore`. Nečti celé repozitář ani git historii.
+- Respektuj `.cursorignore` i `.gitignore`. Nečti celé repozitář ani git historii.
 - Upravuj jen soubory nutné pro úkol a jejich bezprostřední závislosti.
 - Styly patří do `src/styles/main.css` (vlastní CSS, ne Tailwind). Skripty do `src/scripts/main.js`.
 - Nové závislosti nepřidávej, pokud bez nich úkol nejde splnit.
 
 ## Model a subagenti
 
-- Na začátku úkolu posuď, jestli zvolený model sedí. Nemá být slabý na danou práci ani zbytečně silný. Když se fit liší, napiš uživateli své stanovisko dřív, než se do práce pustíš. Když sedí, stačí krátká věta.
+- Na začátku úkolu posuď složitost a jestli zvolený model sedí. Nemá být slabý na danou práci ani zbytečně silný. Drobná úprava stylů, textu nebo changelogu nepatří na nejsilnější model, architektonický zásah nepatří na slabý. Když se fit liší, navrhni nejnižší dostatečně chytrý model dřív, než se do práce pustíš. Když sedí, stačí krátká věta.
 - Drž se modelu, který uživatel vybral. Na jiný model, včetně Sonnetu a dalších Claude modelů, nepřepínej bez jeho výslovného souhlasu.
 - Subagenta nespouštěj na jiném modelu. Když už subagent dává smysl, musí jet na stejném modelu jako hlavní běh. Když to ten typ subagenta neumí, nespouštěj ho a práci udělej sám na zvoleném modelu.
 - Subagenta nespouštěj jen proto, že je k dispozici. Na běžnou úpravu textu, dokumentace a stylů není potřeba.
 
+## Iterace a bezpečný zásah
+
+- Neprováděj plošné změny naráz. Nový optimalizační záměr začíná otázkami na stav webu, architekturu a cíl. Z odpovědí vznikne prioritizovaný plán v `docs/ROADMAP.md`.
+- Jednotlivou fázi nejdřív krátce vysvětli, počkej na schválení a teprve potom ji realizuj.
+- Nezasahuj do funkčních částí, které úkol nevyžaduje.
+
 ## Testy, dokumentace, git
 
-- Testy drž v souladu se změnou. Kontrolu odkazů nespouštěj ručně jako hlavní jistotu; spoléhej na GitHub Actions (Lychee nebo htmlproofer) a existující `npm test`.
+- Testy drž v souladu se změnou. Rozbité odkazy, validaci HTML a výsledek buildu nekontroluj ručně jako hlavní jistotu. Spoléhej na GitHub Actions a existující `npm test`. Lychee nebo htmlproofer patří do pipeline, až bude na řadě.
 - Každou změnu rozsahu zapiš do `docs/ROADMAP.md` a `docs/CHANGELOG.md`. `README.md` nech jako návod ke spuštění a `SDLC_GUIDE.md` jako provozní příručku. Nemaz je a nekopíruj do nich plán práce.
-- Práce jde na feature větev a do PR s náhledem. PR zakládej rovnou jako připravený ke kontrole, ne jako draft, aby uživatel nemusel na GitHubu přepínat stav na Ready for review. Před pushem i před mergem do `main` ověř konflikty proti aktuálnímu `origin/main` a vyřeš je. Před mergem je potřeba závěrečná kontrola a schválení uživatele.
+- Práce jde na feature větev. Pull request otevírej rovnou finální, připravený ke schválení a mergi do `main`. Draft PR nezakládej.
+- Před pushem i před mergem do `main` ověř konflikty proti aktuálnímu `origin/main`. Když hrozí nebo vzniknou, popiš je v chatu a vyřeš je v kódu. Uživatele neposílej řešit konflikt ve webovém rozhraní GitHubu. Před mergem je potřeba závěrečná kontrola a schválení uživatele.
 - Než požádáš o schválení změn na webu, dej uživateli odkaz, na kterém prohlížeč tu verzi vykreslí. Není to ostrý web `https://garath33.github.io/vedomy-dotek/` a není to odkaz na jsDelivr ani na raw GitHub: ty vrací `text/plain` a návštěvník vidí zdrojový kód. Náhled je sestavený web po `npm run build` (složka `dist/`, fotky už v `images/`) nasazený tak, aby adresa vracela `text/html`. Když takový odkaz nejde dát, napiš to a o schválení nežádej.
-- Po ostrém spuštění připomeň registraci `sitemap.xml` v Google Search Console.
+- Když se mění design nebo layout, přidej k náhledu úsporný snímek: výřez změněné části nebo jeden komprimovaný obrázek.
+- Po významnější fázi zkontroluj `sitemap.xml`, platnost kanonických URL a dopad na indexaci. Navrhni redirecty nebo vyžádání nového crawlu v Google Search Console. Po ostrém spuštění připomeň registraci `sitemap.xml`.
