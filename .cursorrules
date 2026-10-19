@@ -1,29 +1,35 @@
-# .cursorrules - Pravidla pro Cursor AI
+# .cursorrules — Terapie vědomého dotyku
 
-## 1. Princip minimalizace kontextu a tokenů
+Statický web Martina Šimůnka (Vite, čisté HTML/CSS/JS). Běží na GitHub Pages.
 
-- Vždy respektuj pravidla z .cursorignore. Nečti ani neindexuj vynechané složky a soubory.
+## Zadání, které se nemění bez výslovného souhlasu
 
-- Nečti ani neupravuj soubory, které nejsou explicitně potřeba pro aktuální úkol.
+- Název praxe zůstává **Terapie vědomého dotyku**. Terapeutická masáž je metoda, ne nový název webu.
+- Metoda v textech: prvky muzikoterapie pro hluboké uvolnění, vedený rozhovor a bodyterapeutické techniky pro práci s tělem a emocemi v něm uloženými.
+- Jediný jazyk je čeština. Vícejazyčnost nepřidávej. Kdyby později přibyla, strukturu vyvíjej a testuj na češtině, překlady drž v JSON a mutace kontroluj hromadně až před vydáním.
+- Rezervace je telefonická. Formulář na kontaktu je jen alternativa a po odeslání doručí e-mail na `cesta-zmeny@email.cz`. Samotné `mailto:` nestačí, GitHub Pages e-mail neodešle. Použij formulářovou službu, jejíž adresu dodá uživatel. Nikde nepřidávej kalendář, výběr termínu ani rezervační widget.
+- Nabídka má dva formáty ve studiu: ochutnávka 800 Kč / 60 min a terapie 1 600 Kč / 120 min. Příplatek +500 Kč ani masáž u klienta nevracej. Fotky v `public/images/` neměň, dokud uživatel nedodá nové.
+- Cílová skupina: lidé, kteří se už trochu znají a chtějí nový vhled skrze tělo — změnu, uvolnění, nebo rovnováhu.
 
-- Pokud upravuješ konkrétní komponentu nebo stránku (např. `index.html` nebo `styles.css`), pracuj pouze s tímto souborem a jeho bezprostředními závislostmi.
+## Rozsah stránek
 
-- Nikdy nenačítaj do kontextu celou historii gitu ani velké binární soubory.
+Ponech stávající stránky. Samostatná `reference.html` patří do navigace. Doplň `ochrana-osobnich-udaju.html` (odkaz v patičce) a `404.html` (stránka pro neexistující adresu, není v menu).
 
-- Při vícejazyčných webech vyvíjej a testuj strukturu výhradně na originálním jazyku. Překlady odděluj do lokalizačních souborů (JSON) a mutace ověřuj až hromadně před finálním vydáním.
+## SEO a analytika
 
-- Kontrolu nefunkčních odkazů (broken links / 404) přenechej automatickému CI/CD pipeline (GitHub Actions - např. Lychee nebo htmlproofer).
+- Sémantické HTML5, unikátní title a meta description na každé stránce, kanonické URL, `sitemap.xml` a `robots.txt`. Open Graph a favicon vytvoř v rámci webu, uživatel nemá podklady.
+- Analytika je Umami (návštěvy, zdroje, počty). Skript vkládej až s reálnou adresou instance a website ID. Nepřidávej Google Analytics ani jiné měření. Do Umami neposílej jména, telefon ani text z formuláře.
 
-- Před mergem do `main` vždy připrav PR, odkaž na preview prostředí, proveď závěrečnou kontrolu celé finální verze a vyžádej si schválení uživatele. Kde je to možné, přilož vizuální screenshoty.
+## Tokeny a soubory
 
-## 2. Architektura a kódové standardy
+- Respektuj `.cursorignore`. Nečti celé repozitář ani git historii.
+- Upravuj jen soubory nutné pro úkol a jejich bezprostřední závislosti.
+- Styly patří do `src/styles/main.css` (vlastní CSS, ne Tailwind). Skripty do `src/scripts/main.js`.
+- Nové závislosti nepřidávej, pokud bez nich úkol nejde splnit.
 
-- Piš čistý, srozumitelný a modulární kód.
+## Testy, dokumentace, git
 
-- Pro stylování preferuj Tailwind CSS (nebo čisté CSS proměnné podle typu projektu).
-
-- Dbej na sémantický HTML5 kód (`<header>`, `<main>`, `<section>`, `<article>`, `<footer>`).
-
-## 3. Dokumentace
-
-- Každá nová feature musí být zaznamenána v `docs/ROADMAP.md` a `docs/CHANGELOG.md`.
+- Testy drž v souladu se změnou. Kontrolu odkazů nespouštěj ručně jako hlavní jistotu; spoléhej na GitHub Actions (Lychee nebo htmlproofer) a existující `npm test`.
+- Každou změnu rozsahu zapiš do `docs/ROADMAP.md` a `docs/CHANGELOG.md`. `README.md` nech jako návod ke spuštění a `SDLC_GUIDE.md` jako provozní příručku. Nemaz je a nekopíruj do nich plán práce.
+- Práce jde na feature větev a do PR s náhledem. Před mergem do `main` je potřeba závěrečná kontrola a schválení uživatele.
+- Po ostrém spuštění připomeň registraci `sitemap.xml` v Google Search Console.
