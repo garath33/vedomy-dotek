@@ -1,13 +1,10 @@
 node_modules/
-
 .next/
-
 dist/
-
 build/
-
+test-results/
+playwright-report/
+public/images/
 package-lock.json
-
 *.log
-
 .git/

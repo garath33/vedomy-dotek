@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-### Added
+### Changed
 
-- `.cursorignore` v kořeni projektu. Vynechává `node_modules/`, `.next/`, `dist/`, `build/`, `package-lock.json`, `*.log` a `.git/`, aby se zbytečně neindexovaly velké a generované soubory.
-- `.cursorrules` v kořeni projektu. Drží minimální kontext, čistý modulární kód a povinný zápis nových funkcí do `docs/ROADMAP.md` a `docs/CHANGELOG.md`.
+- `.cursorrules` popisují tento web: název Terapie vědomého dotyku, terapeutická masáž jako metoda, jen čeština, telefon jako hlavní rezervace, formulář jako alternativa, bez kalendáře, Umami až s reálným ID, styly ve stávajícím CSS.
+- `.cursorignore` navíc vynechává výsledky testů, report Playwrightu a `public/images/`.
+- `docs/ROADMAP.md` drží schválený rozsah a pořadí dalších úprav.
