@@ -79,6 +79,50 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     expect(linked).toBe(true);
   });
 
+  test('Úvodní hero ukazuje výřez sezení přes původní rozložení', async ({ page }) => {
+    await page.goto('/');
+
+    const img = page.locator('.hero-visual img');
+    await expect(img).toBeVisible();
+    await expect(img).toHaveAttribute('src', './images/hero-sezeni.jpg');
+    await expect(img).toHaveAttribute('alt', /hlavou na ručníku/);
+
+    const placed = await page.evaluate(() => {
+      const photo = document.querySelector('.hero-visual img').getBoundingClientRect();
+      const heading = document.querySelector('.hero h1').getBoundingClientRect();
+      const hero = document.querySelector('.hero').getBoundingClientRect();
+      const covers = photo.width >= hero.width - 2 && photo.height >= hero.height - 2;
+      const textOverPhoto = heading.left >= photo.left - 1
+        && heading.top >= photo.top - 1
+        && heading.right <= photo.right + 2
+        && heading.bottom <= photo.bottom + 2;
+      return { covers, textOverPhoto };
+    });
+
+    expect(placed.covers).toBe(true);
+    expect(placed.textOverPhoto).toBe(true);
+  });
+
+  test('Úvod v průběhu sezení ukazuje záběr doteku v rozumné velikosti', async ({ page }) => {
+    await page.goto('/');
+
+    const photos = page.locator('#jak-probiha .session-photos img');
+    await expect(photos).toHaveCount(2);
+
+    const hands = photos.first();
+    await expect(hands).toBeVisible();
+    await expect(hands).toHaveAttribute('src', './images/dotek-rukou.jpg');
+    await expect(hands).toHaveAttribute('alt', /dlaně/);
+
+    const box = await hands.boundingBox();
+    expect(box.width).toBeGreaterThan(200);
+    expect(box.width).toBeLessThanOrEqual(320);
+
+    const candle = photos.nth(1);
+    await expect(candle).toBeVisible();
+    await expect(candle).toHaveAttribute('src', './images/svicka-levandule.jpg');
+  });
+
   test('Slideshow referencí funguje a reaguje na přepínání', async ({ page }) => {
     await page.goto('/');
 
