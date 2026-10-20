@@ -44,7 +44,7 @@ requiredFiles.forEach(file => {
       console.error(`❌ V souboru ${file} chybí viewport tag`);
       errors++;
     }
-    if (!html.includes('rel="canonical" href="https://garath33.github.io/vedomy-dotek/')) {
+    if (!html.includes('rel="canonical" href="https://terapiedoteku.cz/')) {
       console.error(`❌ V souboru ${file} chybí kanonická adresa`);
       errors++;
     }
@@ -52,7 +52,7 @@ requiredFiles.forEach(file => {
       console.error(`❌ V souboru ${file} chybí favicon`);
       errors++;
     }
-    if (!html.includes('property="og:image" content="https://garath33.github.io/vedomy-dotek/images/')) {
+    if (!html.includes('property="og:image" content="https://terapiedoteku.cz/images/')) {
       console.error(`❌ V souboru ${file} chybí absolutní og:image`);
       errors++;
     }
@@ -220,7 +220,7 @@ if (!notFoundHtml.includes('name="robots" content="noindex"')) {
 
 const sitemap = fs.readFileSync(path.join(distDir, 'sitemap.xml'), 'utf8');
 const robots = fs.readFileSync(path.join(distDir, 'robots.txt'), 'utf8');
-if (!sitemap.includes('https://garath33.github.io/vedomy-dotek/ochrana-osobnich-udaju.html')) {
+if (!sitemap.includes('https://terapiedoteku.cz/ochrana-osobnich-udaju.html')) {
   console.error('❌ V sitemap.xml chybí ochrana osobních údajů');
   errors++;
 }
@@ -228,7 +228,7 @@ if (sitemap.includes('404.html')) {
   console.error('❌ sitemap.xml nesmí obsahovat 404.html');
   errors++;
 }
-if (!robots.includes('Sitemap: https://garath33.github.io/vedomy-dotek/sitemap.xml')) {
+if (!robots.includes('Sitemap: https://terapiedoteku.cz/sitemap.xml')) {
   console.error('❌ V robots.txt chybí odkaz na sitemap');
   errors++;
 }

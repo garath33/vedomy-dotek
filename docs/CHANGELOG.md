@@ -4,6 +4,7 @@
 
 ### Added
 
+- Soubor `docs/dns/terapiedoteku.cz.zone` pro import do DNS u Hukotu. Apex `terapiedoteku.cz` míří na GitHub Pages, `www` na `garath33.github.io`. Pošta, nameservery a CAA pro Let's Encrypt zůstávají.
 - Na úvodní stránce je u výkladu terapie medailonek Martina Šimůnka s popiskem, kdo masáž provádí, a odkazem na stránku O Martinovi.
 - Pull request se zakládá rovnou jako připravený ke kontrole. Draft se nenechává.
 - Tři návrhy vzhledu na všech stránkách: Lehátko v klidu, Světlý dech a Večerní klid. Přepínač je dole na stránce, volba zůstane v prohlížeči a jde sdílet přes `?vzhled=klid`, `?vzhled=svetlo` nebo `?vzhled=soumrak`.
@@ -25,6 +26,7 @@
 
 ### Changed
 
+- Kanonické URL, Open Graph, `sitemap.xml` a `robots.txt` používají `https://terapiedoteku.cz/`.
 - Na stránce O Martinovi už není tučně „IT a státní správy“. U psychoterapeutického výcviku je, že je Martin před jeho koncem.
 - Úvodní text na mobilu a tabletu začíná výš a je rozložený po výšce hero, aby horní část fotky nezůstávala prázdná. Stín je silnější u textu a dolů pouští lehátko. Na široké obrazovce je stejný text opticky ve středu výšky.
 - Popisek u oleje na úvodu zní: Na masáži na vás čekají čisté ručníky, prostěradlo a přírodní olej.
