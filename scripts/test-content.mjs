@@ -147,7 +147,21 @@ referenceNames.forEach(name => {
 
 // 6. Kontrola podstránky storno-podminky.html a úprav ceníku / FAQ
 const stornoHtml = fs.readFileSync(path.join(distDir, 'storno-podminky.html'), 'utf8');
-const stornoDetails = ['48 hodin', '50 %', '100 %', 'Slevu 30 %', '30 minut péče navíc'];
+const stornoDetails = [
+  '48 hodin',
+  '50 %',
+  '100 %',
+  'Slevu 30 %',
+  '30 minut péče navíc',
+  'Nejsem plátce DPH',
+  'Cena je konečná',
+  'Smlouva vzniká',
+  'náhlé nemoci',
+  'léčivých zvuků',
+  'České obchodní inspekce',
+  '§ 1830a',
+  'terapiedoteku.cz/storno-podminky.html'
+];
 stornoDetails.forEach(detail => {
   if (!stornoHtml.includes(detail)) {
     console.error(`❌ V storno-podminky.html chybí klíčový údaj: "${detail}"`);
@@ -167,6 +181,14 @@ if ((cenikHtml.match(/na místě/g) || []).length !== 1) {
 }
 if (!cenikHtml.includes('storno-podminky.html')) {
   console.error('❌ V cenik.html chybí odkaz na storno-podminky.html.');
+  errors++;
+}
+if (!cenikHtml.includes('Nejsem plátce DPH') || !cenikHtml.includes('Smlouva vzniká až potvrzením konkrétního termínu')) {
+  console.error('❌ V cenik.html chybí údaj o DPH nebo o vzniku smlouvy.');
+  errors++;
+}
+if (cenikHtml.includes('nejpozději 24 hodin')) {
+  console.error('❌ V cenik.html zůstala stará lhůta 24 hodin jako jediné pravidlo storna.');
   errors++;
 }
 if (!indexHtml.includes('dopřejeme tělu čas v naprostém klidu na lůžku')) {

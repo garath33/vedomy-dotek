@@ -26,6 +26,7 @@
 
 ### Changed
 
+- Stránka podmínek uvádí konečné ceny, neplátcovství DPH, platbu ve studiu a vznik smlouvy až potvrzením termínu. Storno zůstává zdarma nad 48 hodin, 50 % mezi 24 a 48 hodinami a 100 % pod 24 hodin, s výjimkou náhlé nemoci. Doplněna je reklamace, Česká obchodní inspekce a věta, že tlačítko pro odstoupení na webu není, protože se tu smlouva neuzavírá. Léčivé zvuky a úleva od bolesti zůstávají, s vymezením, že sezení není zdravotní péče. Tlačítka znějí „Poptat“ a formulář zůstává nezávaznou poptávkou.
 - Kanonické URL, Open Graph, `sitemap.xml` a `robots.txt` používají `https://terapiedoteku.cz/`.
 - Na stránce O Martinovi už není tučně „IT a státní správy“. U psychoterapeutického výcviku je, že je Martin před jeho koncem.
 - Úvodní text na mobilu a tabletu začíná výš a je rozložený po výšce hero, aby horní část fotky nezůstávala prázdná. Stín je silnější u textu a dolů pouští lehátko. Na široké obrazovce je stejný text opticky ve středu výšky.
