@@ -79,7 +79,7 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     expect(linked).toBe(true);
   });
 
-  test('Úvodní hero ukazuje záběr sezení vedle nadpisu', async ({ page }) => {
+  test('Úvodní hero ukazuje výřez sezení přes původní rozložení', async ({ page }) => {
     await page.goto('/');
 
     const img = page.locator('.hero-visual img');
@@ -90,21 +90,17 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     const placed = await page.evaluate(() => {
       const photo = document.querySelector('.hero-visual img').getBoundingClientRect();
       const heading = document.querySelector('.hero h1').getBoundingClientRect();
-      return {
-        beside: photo.left >= heading.right - 8,
-        above: photo.bottom <= heading.top + 8,
-        width: photo.width,
-      };
+      const hero = document.querySelector('.hero').getBoundingClientRect();
+      const covers = photo.width >= hero.width - 2 && photo.height >= hero.height - 2;
+      const textOverPhoto = heading.left >= photo.left - 1
+        && heading.top >= photo.top - 1
+        && heading.right <= photo.right + 2
+        && heading.bottom <= photo.bottom + 2;
+      return { covers, textOverPhoto };
     });
 
-    const viewport = page.viewportSize();
-    if (viewport.width > 960) {
-      expect(placed.beside).toBe(true);
-      expect(placed.width).toBeGreaterThan(280);
-      expect(placed.width).toBeLessThanOrEqual(700);
-    } else {
-      expect(placed.above).toBe(true);
-    }
+    expect(placed.covers).toBe(true);
+    expect(placed.textOverPhoto).toBe(true);
   });
 
   test('Úvod v průběhu sezení ukazuje záběr doteku v rozumné velikosti', async ({ page }) => {

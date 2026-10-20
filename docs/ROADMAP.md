@@ -37,14 +37,14 @@
 - Na stránce O Martinovi je „IT a státní správy“ ve stejné síle písma jako okolní věta. Psychoterapeutický výcvik je popsaný jako stav před koncem.
 - Úvodní hero má text výš a rozložený do plochy, ne sražený u spodního okraje fotky.
 - Nové fotky dlaní a svíčky jsou na úvodu u průběhu sezení, ve sloupci do 300 px. Na celou šířku hero se nehodí: zdroj má 505 px na šířku a je na výšku.
-- Úvodní hero nese dodaný záběr sezení v pravém sloupci do 680 px. Zdroj má 688 px na šířku, spodní černý pruh na webu není.
+- Úvodní hero nese výřez dodaného záběru sezení. Rozložení a stín textu zůstávají. Spodní černý pruh na snímku není.
 - Úvodní stránka ukazuje u výkladu terapie medailonek Martina Šimůnka, aby bylo hned jasné, kdo masáž provádí.
 - Popisek u oleje na úvodu zní: Na masáži na vás čekají čisté ručníky, prostěradlo a přírodní olej.
 - Nabídka na úvodu a v ceníku klidovou integraci na lůžku neuvádí. V průběhu sezení na úvodu zůstává jen čas na doznění.
 - Pull request je rovnou připravený ke kontrole. Uživatel na GitHubu nepřepíná draft na Ready for review.
 - Zvolený vzhled je Večerní klid. Přepínač a další dva návrhy jsou pryč. Portrét na stránce O Martinovi se neměnil.
 - Kalimba a olej jsou na úvodu i jako menší záběry vedle textu.
-- Dodaná fotka lehátka je na kontaktu. Úvodní hero používá záběr sezení.
+- Dodaná fotka lehátka je na kontaktu. Úvodní hero používá výřez záběru sezení ve stejném rozložení.
 - Náhled před schválením je vykreslená stránka sestaveného webu. jsDelivr se nepoužívá, protože ukazuje zdrojový kód. Ostrý web se k tomu nepoužívá.
 - Volba modelu zůstává na uživateli. Agent ji posoudí a bez souhlasu ji nemění, ani u subagenta.
 - Reference mluví jen o vědomém dotyku. Koučink a osobní rozvoj v ohlasech nejsou. Popisek referujícího je pod jménem. Kontakt má nadpis Kontakt a objednání a ceník neopakuje „na místě“.
