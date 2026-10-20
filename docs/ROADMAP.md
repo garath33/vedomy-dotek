@@ -8,7 +8,7 @@
 - Cílová skupina: lidé, kteří se už trochu znají a chtějí nový vhled skrze tělo.
 - Nové stránky: ochrana osobních údajů (patička) a 404. Reference už existují a patří do menu.
 - Měření: Umami, až bude adresa instance a website ID.
-- SEO: veřejná adresa je `https://garath33.github.io/vedomy-dotek/`. `sitemap.xml`, `robots.txt`, kanonické URL, Open Graph a favicon jsou součást fáze 1. Podklady od uživatele nejsou.
+- SEO: veřejná adresa je `https://terapiedoteku.cz/`. `sitemap.xml`, `robots.txt`, kanonické URL, Open Graph a favicon jsou součást fáze 1. Podklady od uživatele nejsou.
 - Umami se nevkládá, dokud není adresa instance a website ID.
 - Rychlost webu a úpravy fotek v této fázi nejsou. Fonty se hostují na webu, aby prohlížeč neposílal adresu návštěvníka na Google.
 - Bezpečnostní hlavičky GitHub Pages nastavit neumí. Meta značku Content-Security-Policy teď nedáváme, protože by musela povolit vložené styly a FormSubmit.
@@ -25,12 +25,13 @@
 
 ## Další práce
 
-1. Po nasazení na `main` provést registraci `sitemap.xml` v Google Search Console. Po dalších významných fázích zkontrolovat kanonické URL a navrhnout redirect nebo nový crawl.
+1. Až DNS `terapiedoteku.cz` ukazuje na GitHub Pages a v repozitáři je vlastní doména, v Google Search Console přidat vlastnost `https://terapiedoteku.cz/` a zaregistrovat `sitemap.xml`. Starou vlastnost `https://garath33.github.io/vedomy-dotek/` nechat, dokud Google nepřevezme kanonické URL na doméně. Po dalších významných fázích zkontrolovat kanonické URL a navrhnout nový crawl.
 2. Umami doplnit až s reálnou adresou instance a website ID. Do měření nepatří jméno, telefon ani text z formuláře.
 3. Lychee v GitHub Actions, až bude na řadě samostatná úprava pipeline.
 
 ## Hotovo
 
+- Doména `terapiedoteku.cz` má připravený import zóny v `docs/dns/terapiedoteku.cz.zone`. Apex míří na IP GitHub Pages, `www` na `garath33.github.io`, pošta zůstává u Hukotu. Kanonické URL, Open Graph, sitemap a robots používají `https://terapiedoteku.cz/`.
 - Na stránce O Martinovi je „IT a státní správy“ ve stejné síle písma jako okolní věta. Psychoterapeutický výcvik je popsaný jako stav před koncem.
 - Úvodní hero má text výš a rozložený do plochy, ne sražený u spodního okraje fotky.
 - Úvodní stránka ukazuje u výkladu terapie medailonek Martina Šimůnka, aby bylo hned jasné, kdo masáž provádí.

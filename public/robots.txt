@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://garath33.github.io/vedomy-dotek/sitemap.xml
+Sitemap: https://terapiedoteku.cz/sitemap.xml

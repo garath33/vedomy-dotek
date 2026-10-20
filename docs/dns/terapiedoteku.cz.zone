@@ -1,0 +1,41 @@
+$ORIGIN terapiedoteku.cz.
+$TTL 86400
+@ 3600  IN SOA   (
+                 ns1.hukot.cz.   ; MNAME
+                 hukot.hukot.cz. ; RNAME
+                 1792485091      ; SERIAL
+                 28800           ; REFRESH
+                 7200            ; RETRY
+                 604800          ; EXPIRE
+                 1000            ; MINIMUM
+                 )
+
+; NS RECORDS - nameservery Hukotu, nemenit
+  86400 IN NS    ns1.hukot.cz.
+  86400 IN NS    ns2.securitynet.cz.
+  86400 IN NS    ns3.hukot.cz.
+
+; A RECORDS - apex na GitHub Pages
+@ 3600  IN A     185.199.108.153
+@ 3600  IN A     185.199.109.153
+@ 3600  IN A     185.199.110.153
+@ 3600  IN A     185.199.111.153
+
+; AAAA RECORDS - apex na GitHub Pages
+@ 3600  IN AAAA  2606:50c0:8000::153
+@ 3600  IN AAAA  2606:50c0:8001::153
+@ 3600  IN AAAA  2606:50c0:8002::153
+@ 3600  IN AAAA  2606:50c0:8003::153
+
+; CNAME - jen www. Zadne wildcard *. GitHub pred nim varuje.
+www 3600 IN CNAME garath33.github.io.
+
+; MX RECORDS - posta zustava u Hukotu
+@ 86400 IN MX    10 mail.hukot.net.
+@ 86400 IN MX    100 mx2.securitynet.cz.
+
+; TXT RECORDS - bez mechanismu a, webove IP uz nejsou servery Hukotu
+@ 86400 IN TXT   "v=spf1 mx include:spf.hukot.net ~all"
+
+; CAA RECORDS - certifikat GitHub Pages vydava Let's Encrypt
+@ 86400 IN CAA   0 issue "letsencrypt.org"

@@ -47,7 +47,7 @@ Pro bezpečné provádění změn (nové texty, fotky, úpravy cen) doporučujem
 
 ### Náhled před schválením
 - Než se změna sloučí, má být k dispozici odkaz na náhled **právě toho commitu**, ne na ostrý web.
-- Ostrý web je `https://garath33.github.io/vedomy-dotek/`. Větev `staging` se nasazuje na stejné GitHub Pages, proto to není oddělený náhled.
+- Ostrý web je `https://terapiedoteku.cz/`. Než se doména přepne, stránky ještě běží na `https://garath33.github.io/vedomy-dotek/`. Větev `staging` se nasazuje na stejné GitHub Pages, proto to není oddělený náhled.
 - Náhled musí prohlížeč vykreslit jako stránku. Odkaz na jsDelivr (`cdn.jsdelivr.net/gh/.../index.html`) ani na raw GitHub se neposílá: oba vrací `Content-Type: text/plain` a místo webu je vidět zdrojový kód.
 - Ke schválení se dává adresa sestaveného webu po `npm run build`. Ve složce `dist/` už jsou fotky v `images/` a styly sestavené. Adresa musí vracet `text/html`.
 - U konkrétní úpravy přidej i dotčené stránky, například `reference.html`, `cenik.html` nebo `kontakt.html`.
@@ -93,14 +93,14 @@ Pokud nastane situace, kdy potřebujete **nasadit úpravy ihned na produkci (`ma
 
 ---
 
-## 5. Budoucí napojení vlastní domény
+## 5. Vlastní doména terapiedoteku.cz
 
-Až budete chtít web převést z `github.io` na vlastní doménu (např. `www.vedomydotek.cz`):
-1. V **Settings** &rarr; **Pages** &rarr; **Custom domain** zadáte název vaší domény.
-2. U vašeho registrátora domény (např. Wedos, Forpsi, Active24) nastavíte DNS záznamy:
-   - buď CNAME pro subdoménu (např. `www` mířící na `<vase-jmeno>.github.io`),
-   - nebo A záznamy pro GitHub IP adresy (`185.199.108.153`, atd.).
-3. Zaškrtnete **Enforce HTTPS** na GitHubu pro bezplatný SSL certifikát Let's Encrypt.
+Web se má otevírat na `https://terapiedoteku.cz/`. DNS je u Hukotu, soubor k importu je `docs/dns/terapiedoteku.cz.zone`.
+
+1. V repozitáři **Settings** → **Pages** → **Custom domain** zadejte `terapiedoteku.cz` a uložte. Tohle je potřeba dřív než import DNS.
+2. V administraci Hukotu u zóny `terapiedoteku.cz` použijte **Importovat zónu** a nahrajte `docs/dns/terapiedoteku.cz.zone`. Tlačítko **Přepsat data ze šablony pro cluster** nepoužívejte, vrátilo by adresy hostingu Hukotu.
+3. Až záznamy ukážou IP GitHub Pages, v Pages zaškrtněte **Enforce HTTPS**.
+4. V Google Search Console přidejte `https://terapiedoteku.cz/` a odešlete `https://terapiedoteku.cz/sitemap.xml`.
 
 ---
 
