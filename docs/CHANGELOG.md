@@ -28,6 +28,7 @@
 
 ### Changed
 
+- Na úvodu u průběhu sezení je vlevo svíčka s levandulí a vpravo dlaně při práci se zády. Na stránce O Martinovi je text příběhu vlevo a portrét vpravo.
 - Podmínky, ochrana údajů, ceník a kontakt jsou kratší. Z podmínek je pryč vzor potvrzovací zprávy. Zůstávají ceny, vznik smlouvy potvrzením termínu, storno, reklamace a vymezení, že sezení není zdravotní péče.
 - Stránka podmínek uvádí konečné ceny, neplátcovství DPH, platbu ve studiu a vznik smlouvy až potvrzením termínu. Storno zůstává zdarma nad 48 hodin, 50 % mezi 24 a 48 hodinami a 100 % pod 24 hodin, s výjimkou náhlé nemoci. Doplněna je reklamace, Česká obchodní inspekce a věta, že tlačítko pro odstoupení na webu není, protože se tu smlouva neuzavírá. Léčivé zvuky a úleva od bolesti zůstávají, s vymezením, že sezení není zdravotní péče. Tlačítka znějí „Poptat“ a formulář zůstává nezávaznou poptávkou.
 - Kanonické URL, Open Graph, `sitemap.xml` a `robots.txt` používají `https://terapiedoteku.cz/`.

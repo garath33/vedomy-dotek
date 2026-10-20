@@ -590,7 +590,7 @@ img {
   box-shadow: var(--shadow-md);
 }
 
-.session-photo:last-child img {
+.session-photo--svicka img {
   object-position: center 68%;
 }
 
@@ -1027,7 +1027,7 @@ img {
 /* O Martinovi Grid */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
+  grid-template-columns: 1.35fr 1fr;
   gap: 3.5rem;
   align-items: center;
 }
