@@ -29,7 +29,7 @@ Web je rozdělen do čistých, srozumitelných sekcí:
 3. **Ceník a formáty sezení (`cenik.html`)**:
    - **Ochutnávka vědomého dotyku**: 800 Kč / 60 min
    - **Terapie vědomého dotyku**: 1 600 Kč / 120 min (hloubková péče se šamanským bubnem)
-   - Platební a storno podmínky (zrušení do 24 h)
+   - Platební a storno podmínky (neplátce DPH, konečná cena, platba ve studiu, zrušení zdarma více než 48 hodin předem, smlouva až potvrzením termínu)
 
 4. **Časté dotazy (`faq.html`)**:
    - Interaktivní akordeon s odpověďmi na přípravu, kontraindikace, otázku usnutí při masáži a přístup k tlaku
