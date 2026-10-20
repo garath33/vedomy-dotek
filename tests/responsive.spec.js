@@ -109,7 +109,11 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     const photos = page.locator('#jak-probiha .session-photos img');
     await expect(photos).toHaveCount(2);
 
-    const hands = photos.first();
+    const candle = photos.first();
+    await expect(candle).toBeVisible();
+    await expect(candle).toHaveAttribute('src', './images/svicka-levandule.jpg');
+
+    const hands = photos.nth(1);
     await expect(hands).toBeVisible();
     await expect(hands).toHaveAttribute('src', './images/dotek-rukou.jpg');
     await expect(hands).toHaveAttribute('alt', /dlaně/);
@@ -118,9 +122,32 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     expect(box.width).toBeGreaterThan(200);
     expect(box.width).toBeLessThanOrEqual(320);
 
-    const candle = photos.nth(1);
-    await expect(candle).toBeVisible();
-    await expect(candle).toHaveAttribute('src', './images/svicka-levandule.jpg');
+    const order = await page.evaluate(() => {
+      const figures = [...document.querySelectorAll('#jak-probiha .session-photo img')];
+      const [left, right] = figures.map((img) => img.getBoundingClientRect());
+      const sideBySide = left.right <= right.left + 8;
+      const stacked = left.bottom <= right.top + 8;
+      return sideBySide || stacked;
+    });
+    expect(order).toBe(true);
+  });
+
+  test('Na stránce O Martinovi je text vlevo a fotka vpravo', async ({ page }) => {
+    await page.goto('/o-martinovi.html');
+
+    const story = page.locator('.about-grid h2');
+    const photo = page.locator('.about-photo');
+    await expect(story).toBeVisible();
+    await expect(photo).toBeVisible();
+
+    const placed = await page.evaluate(() => {
+      const heading = document.querySelector('.about-grid h2').getBoundingClientRect();
+      const portrait = document.querySelector('.about-photo').getBoundingClientRect();
+      const sideBySide = heading.right <= portrait.left + 8;
+      const stacked = heading.bottom <= portrait.top + 8;
+      return sideBySide || stacked;
+    });
+    expect(placed).toBe(true);
   });
 
   test('Slideshow referencí funguje a reaguje na přepínání', async ({ page }) => {
