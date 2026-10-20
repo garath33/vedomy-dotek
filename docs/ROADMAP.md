@@ -36,6 +36,7 @@
 - Doména `terapiedoteku.cz` má připravený import zóny v `docs/dns/terapiedoteku.cz.zone`. Apex míří na IP GitHub Pages, `www` na `garath33.github.io`, pošta zůstává u Hukotu. Kanonické URL, Open Graph, sitemap a robots používají `https://terapiedoteku.cz/`.
 - Na stránce O Martinovi je „IT a státní správy“ ve stejné síle písma jako okolní věta. Psychoterapeutický výcvik je popsaný jako stav před koncem.
 - Úvodní hero má text výš a rozložený do plochy, ne sražený u spodního okraje fotky.
+- Nové fotky dlaní a svíčky jsou na úvodu u průběhu sezení, ve sloupci do 300 px. Na celou šířku hero se nehodí: zdroj má 505 px na šířku a je na výšku.
 - Úvodní stránka ukazuje u výkladu terapie medailonek Martina Šimůnka, aby bylo hned jasné, kdo masáž provádí.
 - Popisek u oleje na úvodu zní: Na masáži na vás čekají čisté ručníky, prostěradlo a přírodní olej.
 - Nabídka na úvodu a v ceníku klidovou integraci na lůžku neuvádí. V průběhu sezení na úvodu zůstává jen čas na doznění.

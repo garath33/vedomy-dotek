@@ -4,6 +4,7 @@
 
 ### Added
 
+- Na úvodu u průběhu sezení jsou dvě nové fotky: dlaně při práci se zády a svíčka s levandulí. Zůstávají ve sloupci do 300 px, protože zdroj má jen 505 px na šířku. Hero a stávající záběry se nemění.
 - Soubor `docs/dns/terapiedoteku.cz.zone` pro import do DNS u Hukotu. Apex `terapiedoteku.cz` míří na GitHub Pages, `www` na `garath33.github.io`. Pošta, nameservery a CAA pro Let's Encrypt zůstávají.
 - Na úvodní stránce je u výkladu terapie medailonek Martina Šimůnka s popiskem, kdo masáž provádí, a odkazem na stránku O Martinovi.
 - Pull request se zakládá rovnou jako připravený ke kontrole. Draft se nenechává.

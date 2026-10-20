@@ -78,7 +78,9 @@ const expectedTexts = [
   'Lucie',
   'Hanka',
   'Kdo masáž provádí',
-  'images/martin-medailonek.png'
+  'images/martin-medailonek.png',
+  'images/dotek-rukou.jpg',
+  'Vědomý dotek při práci se zády.'
 ];
 
 expectedTexts.forEach(text => {

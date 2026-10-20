@@ -79,6 +79,26 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     expect(linked).toBe(true);
   });
 
+  test('Úvod v průběhu sezení ukazuje záběr doteku v rozumné velikosti', async ({ page }) => {
+    await page.goto('/');
+
+    const photos = page.locator('#jak-probiha .session-photos img');
+    await expect(photos).toHaveCount(2);
+
+    const hands = photos.first();
+    await expect(hands).toBeVisible();
+    await expect(hands).toHaveAttribute('src', './images/dotek-rukou.jpg');
+    await expect(hands).toHaveAttribute('alt', /dlaně/);
+
+    const box = await hands.boundingBox();
+    expect(box.width).toBeGreaterThan(200);
+    expect(box.width).toBeLessThanOrEqual(320);
+
+    const candle = photos.nth(1);
+    await expect(candle).toBeVisible();
+    await expect(candle).toHaveAttribute('src', './images/svicka-levandule.jpg');
+  });
+
   test('Slideshow referencí funguje a reaguje na přepínání', async ({ page }) => {
     await page.goto('/');
 

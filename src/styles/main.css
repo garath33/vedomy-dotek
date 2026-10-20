@@ -564,6 +564,40 @@ img {
   color: var(--color-primary);
 }
 
+/* Portréty u průběhu sezení. Zdroj má 505 px na šířku, proto zůstávají ve sloupci do 300 px. */
+.session-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
+  justify-content: center;
+  gap: 1.25rem 1.5rem;
+  margin-top: 2.75rem;
+}
+
+.session-photo {
+  margin: 0;
+}
+
+.session-photo img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center 42%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.session-photo:last-child img {
+  object-position: center 68%;
+}
+
+.session-photo figcaption {
+  margin-top: 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--color-muted);
+  text-align: center;
+}
+
 /* Úvod terapie a kdo ji vede */
 .therapy-intro {
   display: grid;
