@@ -85,7 +85,7 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     const img = page.locator('.hero-visual img');
     await expect(img).toBeVisible();
     await expect(img).toHaveAttribute('src', './images/hero-sezeni.jpg');
-    await expect(img).toHaveAttribute('alt', /dlaně na záda/);
+    await expect(img).toHaveAttribute('alt', /hlavou na ručníku/);
 
     const placed = await page.evaluate(() => {
       const photo = document.querySelector('.hero-visual img').getBoundingClientRect();
