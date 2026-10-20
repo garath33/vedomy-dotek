@@ -1,4 +1,6 @@
+import { execFileSync } from 'child_process';
 import fs from 'fs';
+import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -113,6 +115,19 @@ if (!kontaktHtml.includes('<h1>Kontakt a objednání</h1>')) {
 }
 if (kontaktHtml.includes('Kontakt a rezervace')) {
   console.error('❌ V kontakt.html zůstal nadpis Kontakt a rezervace.');
+  errors++;
+}
+
+requiredFiles.forEach(file => {
+  if (file === '404.html') return;
+  const html = fs.readFileSync(path.join(distDir, file), 'utf8');
+  if (html.includes('noindex')) {
+    console.error(`❌ Ostrý soubor ${file} obsahuje noindex. Ten patří jen na náhled.`);
+    errors++;
+  }
+});
+if (!fs.existsSync(path.join(distDir, 'sitemap.xml'))) {
+  console.error('❌ V ostrém dist/ chybí sitemap.xml.');
   errors++;
 }
 
@@ -286,6 +301,33 @@ cssFiles.forEach(file => {
     }
   });
 });
+
+const previewDir = fs.mkdtempSync(path.join(os.tmpdir(), 'nahled-'));
+fs.cpSync(distDir, previewDir, { recursive: true });
+execFileSync(process.execPath, [path.join(__dirname, 'prepare-preview.mjs'), previewDir], { stdio: 'inherit' });
+const previewIndex = fs.readFileSync(path.join(previewDir, 'index.html'), 'utf8');
+if (!previewIndex.includes('<meta name="robots" content="noindex, nofollow">')) {
+  console.error('❌ Náhledový index.html nemá noindex.');
+  errors++;
+}
+if (!previewIndex.includes('rel="canonical" href="https://terapiedoteku.cz/')) {
+  console.error('❌ Náhled přišel o kanonickou adresu ostrého webu.');
+  errors++;
+}
+if (fs.existsSync(path.join(previewDir, 'sitemap.xml'))) {
+  console.error('❌ Náhled nesmí publikovat sitemap.xml.');
+  errors++;
+}
+const previewRobots = fs.readFileSync(path.join(previewDir, 'robots.txt'), 'utf8');
+if (!previewRobots.includes('Disallow: /')) {
+  console.error('❌ Náhledový robots.txt nezakazuje indexaci.');
+  errors++;
+}
+if (fs.readFileSync(path.join(distDir, 'index.html'), 'utf8').includes('noindex')) {
+  console.error('❌ Příprava náhledu změnila ostrý index.html.');
+  errors++;
+}
+fs.rmSync(previewDir, { recursive: true, force: true });
 
 if (errors > 0) {
   console.error(`\n❌ Testy obsahu selhaly (${errors} chyb)!`);

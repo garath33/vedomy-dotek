@@ -59,13 +59,48 @@ jobs:
       - name: Automatizované testy responzivity (Desktop, Mobil, Tablet)
         run: npm run test:e2e
 
+      - name: Uložit sestavený web pro náhled
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-dist
+          path: dist
+          retention-days: 1
+
   # ========================================================
-  # FÁZE 2: NASAZENÍ (DEPLOY NA GITHUB PAGES)
+  # FÁZE 2: NÁHLED (JEN PULL REQUEST, JINÝ REPOZITÁŘ PAGES)
+  # ========================================================
+  preview:
+    name: Náhled na GitHub Pages
+    needs: test
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kódu
+        uses: actions/checkout@v4
+
+      - name: Stáhnout sestavený web
+        uses: actions/download-artifact@v4
+        with:
+          name: preview-dist
+          path: dist
+
+      - name: Označit náhled jako neindexovatelný
+        run: node scripts/prepare-preview.mjs dist
+
+      - name: Zveřejnit náhled
+        env:
+          PREVIEW_TOKEN: ${{ secrets.PREVIEW_PAGES_TOKEN }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: sh scripts/publish-preview.sh
+
+  # ========================================================
+  # FÁZE 3: NASAZENÍ OSTRÉHO WEBU (JEN MAIN)
   # ========================================================
   deploy:
     name: Nasazení na GitHub Pages
     needs: test
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -99,7 +134,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
   # ========================================================
-  # FÁZE 3: ZPĚTNÁ SYNCHRONIZACE PRODUKCE DO STAGINGU
+  # FÁZE 4: ZPĚTNÁ SYNCHRONIZACE PRODUKCE DO STAGINGU
   # ========================================================
   sync-back-to-staging:
     name: Sync produkce do stagingu (pokud byl push přímo do main)

@@ -30,27 +30,30 @@ Aby GitHub věděl, že k nasazení používá naši automatizovanou pipeline:
 
 ---
 
-## 3. Staging vs. Produkce (Jak funguje synchronizace a Preview)
+## 3. Náhled a ostrý web
 
-Pro bezpečné provádění změn (nové texty, fotky, úpravy cen) doporučujeme dodržovat tento tok:
+Jeden repozitář GitHub Pages má jen jeden web. Ostrý web a náhled jsou proto dva repozitáře.
 
-### Větev `staging` (Přípravné prostředí)
-- Na této větvi testujete nové úpravy.
-- Každý `git push` do větve `staging` automaticky spustí testy a vygeneruje náhled.
-- Pokud chcete oddělené staging URL, můžete v GitHub repozitáři využít např. GitHub Environments (nebo jednoduchou větev `gh-pages-staging`).
+### Ostrý web
+- Adresa je `https://terapiedoteku.cz/`. `https://garath33.github.io/vedomy-dotek/` na ni přesměrovává.
+- Publikuje se jen při pushi do `main`, po zelených testech.
+- Schválení změny je sloučení pull requestu do `main`.
 
-### Větev `main` (Produkce)
-- `main` představuje ostrý produkční stav, který vidí návštěvníci.
-- Změny do `main` se přenášejí pomocí **Pull Requestu** ze `staging` &rarr; `main`.
-- Pull Request se zakládá rovnou jako připravený ke kontrole. Draft se nenechává, aby nebylo potřeba na GitHubu ručně přepínat stav na Ready for review.
-- Pull Request automaticky provede testy (Broken links + Content check). Pokud testy selžou, nepustí vás k mergi.
+### Náhled
+- Adresa je `https://garath33.github.io/vedomy-dotek-preview/`.
+- Pull request po zelených testech vezme už sestavenou složku `dist/`, doplní `noindex`, smaže `sitemap.xml` a na náhled dá `robots.txt` se zákazem procházení. Kanonická adresa zůstává `https://terapiedoteku.cz/`, aby se náhled nezařadil jako druhý web.
+- Soubory se odešlou do repozitáře `garath33/vedomy-dotek-preview`, složka `site/`. Tamní Actions je teprve vystaví na GitHub Pages.
+- Prohlížeč musí dostat `text/html`. jsDelivr ani raw GitHub se neposílají.
+- U konkrétní úpravy se k adrese přidá i stránka, například `o-martinovi.html`.
+- Větev `staging` je dál jen kopie `main`. Na Pages se z ní nenasazuje.
 
-### Náhled před schválením
-- Než se změna sloučí, má být k dispozici odkaz na náhled **právě toho commitu**, ne na ostrý web.
-- Ostrý web je `https://terapiedoteku.cz/`. Než se doména přepne, stránky ještě běží na `https://garath33.github.io/vedomy-dotek/`. Větev `staging` se nasazuje na stejné GitHub Pages, proto to není oddělený náhled.
-- Náhled musí prohlížeč vykreslit jako stránku. Odkaz na jsDelivr (`cdn.jsdelivr.net/gh/.../index.html`) ani na raw GitHub se neposílá: oba vrací `Content-Type: text/plain` a místo webu je vidět zdrojový kód.
-- Ke schválení se dává adresa sestaveného webu po `npm run build`. Ve složce `dist/` už jsou fotky v `images/` a styly sestavené. Adresa musí vracet `text/html`.
-- U konkrétní úpravy přidej i dotčené stránky, například `reference.html`, `cenik.html` nebo `kontakt.html`.
+### Jednorázové propojení náhledu
+V repozitáři `vedomy-dotek` je potřeba secret `PREVIEW_PAGES_TOKEN`. Bez něj job „Náhled na GitHub Pages“ skončí chybou a náhled se neaktualizuje.
+
+1. V GitHubu otevřete **Settings → Developer settings → Fine-grained tokens** a vytvořte token.
+2. Přístup dejte jen k repozitáři `garath33/vedomy-dotek-preview`. Oprávnění **Contents: Read and write**.
+3. V repozitáři `vedomy-dotek` otevřete **Settings → Secrets and variables → Actions** a přidejte secret `PREVIEW_PAGES_TOKEN`.
+4. V repozitáři `vedomy-dotek-preview` při prvním běhu Actions potvrďte nasazení, pokud si ho GitHub vyžádá. Workflow do toho repozitáře zkopíruje první úspěšný náhled, ručně se tam nic nenahrává.
 
 ### Model a souhlas s jiným modelem
 - Agent si na začátku úkolu řekne, jestli zvolený model na tu práci sedí. Slabý model na těžký úkol i silný model na drobnost (styly, texty, changelog) má pojmenovat a navrhnout nejnižší model, který stačí.

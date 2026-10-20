@@ -16,7 +16,7 @@
 - Formulář doručí zprávu na `cesta-zmeny@email.cz` přes FormSubmit. Kalendář na webu nebude.
 - Dokumentace: `README.md` je návod ke spuštění, `SDLC_GUIDE.md` je provozní příručka, `docs/ROADMAP.md` je plán a `docs/CHANGELOG.md` je historie změn. Všechny čtyři zůstávají.
 - Hosting: GitHub Pages. Odkazy hlídá CI (Lychee nebo htmlproofer).
-- Před schválením změny dostane uživatel odkaz, na kterém prohlížeč vidí sestavený web. jsDelivr ani raw GitHub to nejsou: vracejí zdrojový kód.
+- Před schválením změny dostane uživatel odkaz na náhled `https://garath33.github.io/vedomy-dotek-preview/`. Ostrý web `https://terapiedoteku.cz/` se mění až sloučením do `main`. jsDelivr ani raw GitHub se neposílají: vracejí zdrojový kód.
 - Agent posoudí, jestli zvolený model na úkol sedí, a zůstane na něm. Když je zbytečně silný nebo slabý, navrhne nejnižší dostatečný model ještě před prací. Jiný model nebo subagent na jiném modelu jen s výslovným souhlasem.
 - Nový optimalizační záměr začíná otázkami na stav, architekturu a cíl. Plán je prioritizovaný v tomto souboru. Fáze jde do kódu až po schválení záměru. Funkční části mimo úkol se nemění.
 - Pull request je rovnou finální, bez draftu. Konflikt s `main` se popíše v chatu a vyřeší v kódu.
@@ -25,12 +25,14 @@
 
 ## Další práce
 
-1. Až DNS `terapiedoteku.cz` ukazuje na GitHub Pages a v repozitáři je vlastní doména, v Google Search Console přidat vlastnost `https://terapiedoteku.cz/` a zaregistrovat `sitemap.xml`. Starou vlastnost `https://garath33.github.io/vedomy-dotek/` nechat, dokud Google nepřevezme kanonické URL na doméně. Po dalších významných fázích zkontrolovat kanonické URL a navrhnout nový crawl.
-2. Umami doplnit až s reálnou adresou instance a website ID. Do měření nepatří jméno, telefon ani text z formuláře.
-3. Lychee v GitHub Actions, až bude na řadě samostatná úprava pipeline.
+1. Do repozitáře `vedomy-dotek` uložit secret `PREVIEW_PAGES_TOKEN` s právem zápisu jen do `garath33/vedomy-dotek-preview`. Bez něj pull request náhled nepublikuje. Postup je v `SDLC_GUIDE.md`.
+2. Až DNS `terapiedoteku.cz` ukazuje na GitHub Pages a v repozitáři je vlastní doména, v Google Search Console přidat vlastnost `https://terapiedoteku.cz/` a zaregistrovat `sitemap.xml`. Starou vlastnost `https://garath33.github.io/vedomy-dotek/` nechat, dokud Google nepřevezme kanonické URL na doméně. Po dalších významných fázích zkontrolovat kanonické URL a navrhnout nový crawl.
+3. Umami doplnit až s reálnou adresou instance a website ID. Do měření nepatří jméno, telefon ani text z formuláře.
+4. Lychee v GitHub Actions, až bude na řadě samostatná úprava pipeline.
 
 ## Hotovo
 
+- Náhled před sloučením jde na `https://garath33.github.io/vedomy-dotek-preview/`. Ostrý web publikuje jen `main`. Náhled má `noindex`, nemá sitemap a `robots.txt` zakazuje procházení. Kanonická adresa dál ukazuje na `https://terapiedoteku.cz/`.
 - Na úvodu jsou u průběhu sezení prohozené záběry: vlevo svíčka, vpravo dlaně. Na stránce O Martinovi je text příběhu vlevo a portrét vpravo.
 - Texty podmínek a ochrany údajů jsou zkrácené. Vzor zprávy pro potvrzení termínu na webu není. Pravidla ceny, storna, reklamace a vzniku smlouvy zůstávají.
 - Podmínky služby uvádějí konečné ceny, neplátcovství DPH a platbu ve studiu. Předmět podnikání z rejstříku na webu není. Smlouva vzniká až potvrzením termínu. Storno je zdarma nad 48 hodin, 50 % mezi 24 a 48 hodinami a 100 % pod 24 hodin, při náhlé nemoci bez poplatku. Reklamace a Česká obchodní inspekce jsou na stejné stránce. Tlačítko „Odstoupit od smlouvy“ se doplní až ve chvíli, kdy by formulář začal smlouvu uzavírat a právo odstoupit by u ní bylo. Léčivé zvuky a popis úlevy od bolesti zůstávají, sezení je vymezené jako terapeutická masáž, ne jako zdravotní péče.
