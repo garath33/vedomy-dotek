@@ -159,9 +159,12 @@ const stornoDetails = [
   'náhlé nemoci',
   'léčivých zvuků',
   'České obchodní inspekce',
-  '§ 1830a',
-  'terapiedoteku.cz/storno-podminky.html'
+  'tlačítko pro odstoupení od smlouvy tu proto není'
 ];
+if (stornoHtml.includes('Při domluvě používám tuto zprávu') || stornoHtml.includes('Potvrzuji termín [')) {
+  console.error('❌ V storno-podminky.html zůstala šablona potvrzovací zprávy.');
+  errors++;
+}
 stornoDetails.forEach(detail => {
   if (!stornoHtml.includes(detail)) {
     console.error(`❌ V storno-podminky.html chybí klíčový údaj: "${detail}"`);

@@ -31,6 +31,7 @@
 
 ## Hotovo
 
+- Texty podmínek a ochrany údajů jsou zkrácené. Vzor zprávy pro potvrzení termínu na webu není. Pravidla ceny, storna, reklamace a vzniku smlouvy zůstávají.
 - Podmínky služby uvádějí konečné ceny, neplátcovství DPH a platbu ve studiu. Předmět podnikání z rejstříku na webu není. Smlouva vzniká až potvrzením termínu. Storno je zdarma nad 48 hodin, 50 % mezi 24 a 48 hodinami a 100 % pod 24 hodin, při náhlé nemoci bez poplatku. Reklamace a Česká obchodní inspekce jsou na stejné stránce. Tlačítko „Odstoupit od smlouvy“ se doplní až ve chvíli, kdy by formulář začal smlouvu uzavírat a právo odstoupit by u ní bylo. Léčivé zvuky a popis úlevy od bolesti zůstávají, sezení je vymezené jako terapeutická masáž, ne jako zdravotní péče.
 - Doména `terapiedoteku.cz` má připravený import zóny v `docs/dns/terapiedoteku.cz.zone`. Apex míří na IP GitHub Pages, `www` na `garath33.github.io`, pošta zůstává u Hukotu. Kanonické URL, Open Graph, sitemap a robots používají `https://terapiedoteku.cz/`.
 - Na stránce O Martinovi je „IT a státní správy“ ve stejné síle písma jako okolní věta. Psychoterapeutický výcvik je popsaný jako stav před koncem.
