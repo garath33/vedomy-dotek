@@ -315,7 +315,7 @@ img {
 /* Hero — Večerní klid: fotka v pozadí, text ve stínu vlevo */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  grid-template-columns: minmax(360px, 1fr) minmax(300px, 680px);
   align-items: stretch;
   min-height: min(78vh, 760px);
   background: #f4ece4;
@@ -341,6 +341,10 @@ img {
   object-position: 34% 46%;
 }
 
+.hero-visual img.photo-sezeni {
+  object-position: center top;
+}
+
 .hero-veil {
   display: none;
 }
@@ -350,8 +354,8 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4.2rem 3.2rem 4.2rem 0;
-  max-width: 640px;
+  padding: 3.4rem clamp(1.5rem, 4vw, 3.6rem);
+  max-width: 680px;
   margin-left: auto;
 }
 
@@ -1359,59 +1363,15 @@ img {
   color: var(--color-muted);
 }
 
-/* Večerní klid: fotka v pozadí, text ve stínu vlevo, opticky ve středu výšky */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  position: relative;
-  min-height: min(88vh, 820px);
-  background: #24312d;
-}
-
+/* Hero úvodu: portrét sezení v pravém sloupci, text na pískovém podkladu */
 .hero-visual {
-  position: absolute;
-  inset: 0;
-  order: 0;
+  position: relative;
+  inset: auto;
+  order: 2;
 }
 
 .hero-veil {
-  display: block;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(24, 34, 31, 0.78) 0%, rgba(24, 34, 31, 0.42) 48%, rgba(24, 34, 31, 0.12) 100%);
-}
-
-.hero-panel {
-  position: relative;
-  z-index: 1;
-  order: 0;
-  margin: 0;
-  max-width: 640px;
-  padding: 3.2rem 8vw;
-  background: transparent;
-}
-
-.hero .badge-tag {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.28);
-  color: #f4efe8;
-}
-
-.hero h1,
-.hero-subtitle {
-  color: #f7f3ee;
-}
-
-.hero .btn-quiet {
-  color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.65);
-}
-
-.hero .btn-quiet:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff !important;
-  border-color: #ffffff;
+  display: none;
 }
 
 .page-header {
@@ -1456,31 +1416,25 @@ img {
 /* Respozivita */
 @media (max-width: 960px) {
   .hero {
+    grid-template-columns: 1fr;
     align-items: stretch;
-    min-height: min(76vh, 680px);
+    min-height: 0;
   }
 
-  /* Stín je silnější nahoře, kde leží text, a dolů pouští záběr lehátka. */
-  .hero-veil {
-    background: linear-gradient(
-      180deg,
-      rgba(24, 34, 31, 0.84) 0%,
-      rgba(24, 34, 31, 0.72) 42%,
-      rgba(24, 34, 31, 0.5) 74%,
-      rgba(24, 34, 31, 0.28) 100%
-    );
+  .hero-visual {
+    order: 1;
+    min-height: 0;
+    height: min(52vh, 460px);
   }
 
   .hero-panel {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: clamp(1.35rem, 4.6vh, 2.4rem);
+    order: 2;
     align-self: stretch;
-    min-height: min(76vh, 680px);
+    min-height: 0;
     max-width: none;
-    padding: 1.6rem 1.35rem 1.7rem;
+    margin-left: 0;
+    padding: 1.7rem 1.35rem 2.1rem;
+    gap: 1.15rem;
   }
 
   .hero .badge-tag,
@@ -1491,7 +1445,7 @@ img {
   }
 
   .hero h1 {
-    font-size: clamp(2.5rem, 9vw, 3.35rem);
+    font-size: clamp(2.35rem, 9vw, 3.15rem);
     line-height: 1.12;
   }
 

@@ -4,14 +4,15 @@
 
 ### Added
 
-- Na úvodu u průběhu sezení jsou dvě nové fotky: dlaně při práci se zády a svíčka s levandulí. Zůstávají ve sloupci do 300 px, protože zdroj má jen 505 px na šířku. Hero a stávající záběry se nemění.
+- Na úvodu u průběhu sezení jsou dvě nové fotky: dlaně při práci se zády a svíčka s levandulí. Zůstávají ve sloupci do 300 px, protože zdroj má jen 505 px na šířku.
+- Úvodní hero používá dodaný záběr sezení. Fotka má 688 px na šířku, proto stojí v pravém sloupci do 680 px a text je vedle ní. Spodní černý pruh je oříznutý. Kontakt dál ukazuje lehátko.
 - Soubor `docs/dns/terapiedoteku.cz.zone` pro import do DNS u Hukotu. Apex `terapiedoteku.cz` míří na GitHub Pages, `www` na `garath33.github.io`. Pošta, nameservery a CAA pro Let's Encrypt zůstávají.
 - Na úvodní stránce je u výkladu terapie medailonek Martina Šimůnka s popiskem, kdo masáž provádí, a odkazem na stránku O Martinovi.
 - Pull request se zakládá rovnou jako připravený ke kontrole. Draft se nenechává.
 - Tři návrhy vzhledu na všech stránkách: Lehátko v klidu, Světlý dech a Večerní klid. Přepínač je dole na stránce, volba zůstane v prohlížeči a jde sdílet přes `?vzhled=klid`, `?vzhled=svetlo` nebo `?vzhled=soumrak`.
 - Nové atmosférické fotky lehátka, ručníků, dlaní, kalimby a tichého místa k zastavení. Pozadí je rozostřené, místnost nejde poznat. Stávající portrét Martina zůstává.
 - Na úvodu jsou kalimba a olej také jako menší záběry u textu o léčivých zvucích a přípravě sezení.
-- Úvod a kontakt používají dodanou fotku lehátka v měkkém denním světle.
+- Kontakt používá dodanou fotku lehátka v měkkém denním světle.
 - Kanonické URL a absolutní Open Graph adresa `https://garath33.github.io/vedomy-dotek/` na všech stránkách.
 - `sitemap.xml`, `robots.txt` a favicon s písmenem V.
 - Stránka `ochrana-osobnich-udaju.html` s odkazem v patičce a u souhlasu ve formuláři. Popisuje údaje z formuláře a doručení přes FormSubmit na `cesta-zmeny@email.cz`.

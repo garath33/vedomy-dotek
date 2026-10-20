@@ -79,6 +79,34 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     expect(linked).toBe(true);
   });
 
+  test('Úvodní hero ukazuje záběr sezení vedle nadpisu', async ({ page }) => {
+    await page.goto('/');
+
+    const img = page.locator('.hero-visual img');
+    await expect(img).toBeVisible();
+    await expect(img).toHaveAttribute('src', './images/hero-sezeni.jpg');
+    await expect(img).toHaveAttribute('alt', /dlaně na záda/);
+
+    const placed = await page.evaluate(() => {
+      const photo = document.querySelector('.hero-visual img').getBoundingClientRect();
+      const heading = document.querySelector('.hero h1').getBoundingClientRect();
+      return {
+        beside: photo.left >= heading.right - 8,
+        above: photo.bottom <= heading.top + 8,
+        width: photo.width,
+      };
+    });
+
+    const viewport = page.viewportSize();
+    if (viewport.width > 960) {
+      expect(placed.beside).toBe(true);
+      expect(placed.width).toBeGreaterThan(280);
+      expect(placed.width).toBeLessThanOrEqual(700);
+    } else {
+      expect(placed.above).toBe(true);
+    }
+  });
+
   test('Úvod v průběhu sezení ukazuje záběr doteku v rozumné velikosti', async ({ page }) => {
     await page.goto('/');
 

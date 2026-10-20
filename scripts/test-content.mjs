@@ -80,6 +80,7 @@ const expectedTexts = [
   'Kdo masáž provádí',
   'images/martin-medailonek.png',
   'images/dotek-rukou.jpg',
+  'images/hero-sezeni.jpg',
   'Vědomý dotek při práci se zády.'
 ];
 
