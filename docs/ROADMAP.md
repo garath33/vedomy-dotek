@@ -31,6 +31,7 @@
 
 ## Hotovo
 
+- U ohlasů Anny, Jany, Lucie a Hanky není štítek „Vědomý dotek“. Platí to na stránce referencí i v úvodním přehledu. V citaci Lucie zůstává její vlastní pojmenování služby.
 - Od šířky 961 px ukazuje úvodní hero celý záběr sezení ve výšce hero, zarovnaný doprava, s pozvolným přechodem do tmavého pozadí vlevo. Na mobilu a tabletu zůstává výřez přes celou plochu.
 - Texty používají „dotek“, „doteku“ a „dotekem“, včetně nadpisů, ceníku, štítků a citace, která službu jmenuje.
 - Na úvodu jsou u průběhu sezení prohozené záběry: vlevo svíčka, vpravo dlaně. Na stránce O Martinovi je text příběhu vlevo a portrét vpravo.
