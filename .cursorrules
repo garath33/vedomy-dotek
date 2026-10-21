@@ -1,10 +1,10 @@
-# .cursorrules — Terapie vědomého dotyku
+# .cursorrules — Terapie vědomého doteku
 
 Statický web Martina Šimůnka (Vite, čisté HTML/CSS/JS). Běží na GitHub Pages.
 
 ## Zadání, které se nemění bez výslovného souhlasu
 
-- Název praxe zůstává **Terapie vědomého dotyku**. Terapeutická masáž je metoda, ne nový název webu.
+- Název praxe zůstává **Terapie vědomého doteku**. Terapeutická masáž je metoda, ne nový název webu. V textech je „dotek“, 2. pád „doteku“ a 7. pád „dotekem“.
 - Metoda v textech: prvky muzikoterapie pro hluboké uvolnění, vedený rozhovor a bodyterapeutické techniky pro práci s tělem a emocemi v něm uloženými.
 - Jediný jazyk je čeština. Vícejazyčnost nepřidávej. Kdyby později přibyla, strukturu vyvíjej a testuj na češtině, překlady drž v JSON a mutace kontroluj hromadně až před vydáním.
 - Rezervace je telefonická. Formulář na kontaktu je jen alternativa a odesílá se přes FormSubmit na `cesta-zmeny@email.cz` (`https://formsubmit.co/cesta-zmeny@email.cz`). Nevracej `mailto:` jako způsob odeslání. Nikde nepřidávej kalendář, výběr termínu ani rezervační widget.

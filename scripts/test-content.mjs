@@ -66,11 +66,11 @@ requiredFiles.forEach(file => {
 // 2. Kontrola specifického obsahu
 const indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
 const expectedTexts = [
-  'Terapie vědomého dotyku',
+  'Terapie vědomého doteku',
   'Když analytická mysl nestačí a odpovědi hledáme v těle.',
   'šamanský buben, Koshi, kalimba',
   'Hlava zná příběh, ale tělo drží emoci',
-  'Ochutnávka vědomého dotyku',
+  'Ochutnávka vědomého doteku',
   '1 600 Kč',
   '800 Kč',
   'Anna',

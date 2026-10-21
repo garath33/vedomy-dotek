@@ -20,7 +20,7 @@
 - Fonty Playfair Display, Plus Jakarta Sans a Montserrat jsou uložené ve webu (latin a latin-ext, licence SIL OFL).
 - Před schválením změn se posílá odkaz na vykreslený sestavený web, ne na ostrý web a ne na jsDelivr. jsDelivr vrací zdrojový kód. Postup je v `SDLC_GUIDE.md` a v `.cursorrules`.
 - Agent má posoudit vhodnost zvoleného modelu a nepřeptávat se na jiný, včetně Sonnetu, bez výslovného souhlasu. Subagent zůstává na stejném modelu, jinak se nespouští.
-- `.cursorrules` popisují tento web: název Terapie vědomého dotyku, terapeutická masáž jako metoda, jen čeština, telefon jako hlavní rezervace, formulář jako alternativa, bez kalendáře, Umami až s reálným ID, styly ve stávajícím CSS.
+- `.cursorrules` popisují tento web: název Terapie vědomého doteku, terapeutická masáž jako metoda, jen čeština, telefon jako hlavní rezervace, formulář jako alternativa, bez kalendáře, Umami až s reálným ID, styly ve stávajícím CSS.
 - `.cursorignore` navíc vynechává výsledky testů, report Playwrightu a `public/images/`.
 - `docs/ROADMAP.md` drží schválený rozsah a pořadí dalších úprav.
 - Do `.cursorrules`, `SDLC_GUIDE.md` a `docs/ROADMAP.md` přibyl zbytek master promptu, který tam chyběl: práce po schválených iteracích, nejnižší dostatečný model bez přepnutí bez souhlasu, respekt k `.gitignore`, finální pull request bez draftu, konflikty popsané v chatu a vyřešené v kódu, úsporný vizuální náhled u změny layoutu a kontrola sitemap, kanonických URL a indexace po významnější fázi.
@@ -28,6 +28,8 @@
 
 ### Changed
 
+- Od šířky 961 px je úvodní fotka sezení celá, ve výšce hero a vpravo. Levý okraj přechází do tmavého pozadí. Na mobilu a tabletu zůstává výřez přes celou plochu, protože zdroj má 688×462 px a přes celou šířku desktopu se rozmazával.
+- Pravopis služby je sjednocený na „dotek“ (2. pád „doteku“, 7. pád „dotekem“) v nadpisech, ceníku, štítcích, citaci i v názvu Terapie vědomého doteku.
 - Na úvodu u průběhu sezení je vlevo svíčka s levandulí a vpravo dlaně při práci se zády. Na stránce O Martinovi je text příběhu vlevo a portrét vpravo.
 - Podmínky, ochrana údajů, ceník a kontakt jsou kratší. Z podmínek je pryč vzor potvrzovací zprávy. Zůstávají ceny, vznik smlouvy potvrzením termínu, storno, reklamace a vymezení, že sezení není zdravotní péče.
 - Stránka podmínek uvádí konečné ceny, neplátcovství DPH, platbu ve studiu a vznik smlouvy až potvrzením termínu. Storno zůstává zdarma nad 48 hodin, 50 % mezi 24 a 48 hodinami a 100 % pod 24 hodin, s výjimkou náhlé nemoci. Doplněna je reklamace, Česká obchodní inspekce a věta, že tlačítko pro odstoupení na webu není, protože se tu smlouva neuzavírá. Léčivé zvuky a úleva od bolesti zůstávají, s vymezením, že sezení není zdravotní péče. Tlačítka znějí „Poptat“ a formulář zůstává nezávaznou poptávkou.

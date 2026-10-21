@@ -1,4 +1,4 @@
-# Terapie vědomého dotyku - Martin Šimůnek
+# Terapie vědomého doteku - Martin Šimůnek
 
 Samostatný statický web pro terapeutickou práci s tělem, masáže a vědomý dotek (Praha 5 – Zličín).
 
@@ -27,8 +27,8 @@ Web je rozdělen do čistých, srozumitelných sekcí:
      - Koučink a kariérní poradenství
 
 3. **Ceník a formáty sezení (`cenik.html`)**:
-   - **Ochutnávka vědomého dotyku**: 800 Kč / 60 min
-   - **Terapie vědomého dotyku**: 1 600 Kč / 120 min (hloubková péče se šamanským bubnem)
+   - **Ochutnávka vědomého doteku**: 800 Kč / 60 min
+   - **Terapie vědomého doteku**: 1 600 Kč / 120 min (hloubková péče se šamanským bubnem)
    - Platební a storno podmínky (neplátce DPH, konečná cena, platba ve studiu, zrušení zdarma více než 48 hodin předem, smlouva až potvrzením termínu)
 
 4. **Časté dotazy (`faq.html`)**:

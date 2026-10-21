@@ -1,4 +1,4 @@
-// Interaktivní logika webu Terapie vědomého dotyku
+// Interaktivní logika webu Terapie vědomého doteku
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Mobilní menu toggle
