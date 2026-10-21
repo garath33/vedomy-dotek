@@ -174,6 +174,8 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     const slideshow = page.locator('.slideshow-wrapper');
     await expect(slideshow).toBeVisible();
 
+    await expect(slideshow.locator('.reference-tag')).toHaveCount(0);
+
     const activeSlide = slideshow.locator('.slide-item.active');
     await expect(activeSlide).toBeVisible();
     const firstAuthor = await activeSlide.locator('.slide-author-name').innerText();
@@ -245,6 +247,7 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     await expect(cards.filter({ hasText: 'Koučink' })).toHaveCount(0);
     await expect(cards.filter({ hasText: 'Osobní rozvoj' })).toHaveCount(0);
     await expect(page.locator('.filter-tabs')).toHaveCount(0);
+    await expect(page.locator('.reference-tag')).toHaveCount(0);
 
     const jana = page.locator('.reference-card').filter({ hasText: 'Jana' });
     const name = jana.locator('.reference-author-name');

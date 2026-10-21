@@ -28,6 +28,7 @@
 
 ### Changed
 
+- U jednotlivých ohlasů na stránce referencí i v úvodním přehledu už není štítek „Vědomý dotek“. Citace, ve kterých klientka službu sama pojmenuje, zůstává.
 - Od šířky 961 px je úvodní fotka sezení celá, ve výšce hero a vpravo. Levý okraj přechází do tmavého pozadí. Na mobilu a tabletu zůstává výřez přes celou plochu, protože zdroj má 688×462 px a přes celou šířku desktopu se rozmazával.
 - Pravopis služby je sjednocený na „dotek“ (2. pád „doteku“, 7. pád „dotekem“) v nadpisech, ceníku, štítcích, citaci i v názvu Terapie vědomého doteku.
 - Na úvodu u průběhu sezení je vlevo svíčka s levandulí a vpravo dlaně při práci se zády. Na stránce O Martinovi je text příběhu vlevo a portrét vpravo.
