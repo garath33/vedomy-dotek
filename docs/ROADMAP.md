@@ -2,7 +2,7 @@
 
 ## Schválené zadání
 
-- Web zůstává **Terapie vědomého dotyku**. Terapeutická masáž je metoda: prvky muzikoterapie, vedený rozhovor a bodyterapeutické techniky.
+- Web zůstává **Terapie vědomého doteku**. Terapeutická masáž je metoda: prvky muzikoterapie, vedený rozhovor a bodyterapeutické techniky. V textech je „dotek“, 2. pád „doteku“ a 7. pád „dotekem“.
 - Čeština je jediný jazyk.
 - Termín se domlouvá telefonicky. Formulář na kontaktu zůstává jako alternativa. Kalendář na webu nebude.
 - Cílová skupina: lidé, kteří se už trochu znají a chtějí nový vhled skrze tělo.
@@ -31,6 +31,8 @@
 
 ## Hotovo
 
+- Od šířky 961 px ukazuje úvodní hero celý záběr sezení ve výšce hero, zarovnaný doprava, s pozvolným přechodem do tmavého pozadí vlevo. Na mobilu a tabletu zůstává výřez přes celou plochu.
+- Texty používají „dotek“, „doteku“ a „dotekem“, včetně nadpisů, ceníku, štítků a citace, která službu jmenuje.
 - Na úvodu jsou u průběhu sezení prohozené záběry: vlevo svíčka, vpravo dlaně. Na stránce O Martinovi je text příběhu vlevo a portrét vpravo.
 - Texty podmínek a ochrany údajů jsou zkrácené. Vzor zprávy pro potvrzení termínu na webu není. Pravidla ceny, storna, reklamace a vzniku smlouvy zůstávají.
 - Podmínky služby uvádějí konečné ceny, neplátcovství DPH a platbu ve studiu. Předmět podnikání z rejstříku na webu není. Smlouva vzniká až potvrzením termínu. Storno je zdarma nad 48 hodin, 50 % mezi 24 a 48 hodinami a 100 % pod 24 hodin, při náhlé nemoci bez poplatku. Reklamace a Česká obchodní inspekce jsou na stejné stránce. Tlačítko „Odstoupit od smlouvy“ se doplní až ve chvíli, kdy by formulář začal smlouvu uzavírat a právo odstoupit by u ní bylo. Léčivé zvuky a popis úlevy od bolesti zůstávají, sezení je vymezené jako terapeutická masáž, ne jako zdravotní péče.
@@ -48,8 +50,8 @@
 - Dodaná fotka lehátka je na kontaktu. Úvodní hero používá výřez záběru sezení ve stejném rozložení.
 - Náhled před schválením je vykreslená stránka sestaveného webu. jsDelivr se nepoužívá, protože ukazuje zdrojový kód. Ostrý web se k tomu nepoužívá.
 - Volba modelu zůstává na uživateli. Agent ji posoudí a bez souhlasu ji nemění, ani u subagenta.
-- Reference mluví jen o vědomém dotyku. Koučink a osobní rozvoj v ohlasech nejsou. Popisek referujícího je pod jménem. Kontakt má nadpis Kontakt a objednání a ceník neopakuje „na místě“.
+- Reference mluví jen o vědomém doteku. Koučink a osobní rozvoj v ohlasech nejsou. Popisek referujícího je pod jménem. Kontakt má nadpis Kontakt a objednání a ceník neopakuje „na místě“.
 - `.cursorrules` a `.cursorignore` drží schválené zadání a rozsah souborů, které se nemají načítat.
-- Úvodní text popisuje terapeutickou masáž jako metodu Terapie vědomého dotyku.
+- Úvodní text popisuje terapeutickou masáž jako metodu Terapie vědomého doteku.
 - Kontaktní formulář odesílá poptávku přes FormSubmit na `cesta-zmeny@email.cz`.
 - Fáze 1: kanonické URL a absolutní Open Graph, `sitemap.xml`, `robots.txt`, favicon, ochrana osobních údajů v patičce, stránka 404 mimo menu a mimo sitemap, lokální fonty.

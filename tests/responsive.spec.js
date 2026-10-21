@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const PAGES = [
-  { path: '/', title: 'Terapie vědomého dotyku' },
+  { path: '/', title: 'Terapie vědomého doteku' },
   { path: '/o-martinovi.html', title: 'O Martinovi' },
   { path: '/reference.html', title: 'Reference' },
   { path: '/cenik.html', title: 'Ceník' },
@@ -79,7 +79,7 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     expect(linked).toBe(true);
   });
 
-  test('Úvodní hero ukazuje výřez sezení přes původní rozložení', async ({ page }) => {
+  test('Úvodní hero na šířce od 961 px ukáže celý záběr vpravo a na užší obrazovce výřez', async ({ page }) => {
     await page.goto('/');
 
     const img = page.locator('.hero-visual img');
@@ -87,20 +87,38 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     await expect(img).toHaveAttribute('src', './images/hero-sezeni.jpg');
     await expect(img).toHaveAttribute('alt', /hlavou na ručníku/);
 
+    const viewport = page.viewportSize();
+    const wide = viewport && viewport.width >= 961;
+
     const placed = await page.evaluate(() => {
       const photo = document.querySelector('.hero-visual img').getBoundingClientRect();
       const heading = document.querySelector('.hero h1').getBoundingClientRect();
       const hero = document.querySelector('.hero').getBoundingClientRect();
-      const covers = photo.width >= hero.width - 2 && photo.height >= hero.height - 2;
-      const textOverPhoto = heading.left >= photo.left - 1
-        && heading.top >= photo.top - 1
-        && heading.right <= photo.right + 2
-        && heading.bottom <= photo.bottom + 2;
-      return { covers, textOverPhoto };
+      return {
+        covers: photo.width >= hero.width - 2 && photo.height >= hero.height - 2,
+        textOverHero: heading.left >= hero.left - 1
+          && heading.top >= hero.top - 1
+          && heading.right <= hero.right + 2
+          && heading.bottom <= hero.bottom + 2,
+        fullHeight: Math.abs(photo.height - hero.height) <= 2,
+        alignedRight: Math.abs(photo.right - hero.right) <= 2,
+        leavesDarkOnLeft: photo.left > hero.left + 40,
+        inside: photo.left >= hero.left - 1 && photo.right <= hero.right + 2 && photo.bottom <= hero.bottom + 2,
+        ratio: photo.width / photo.height,
+      };
     });
 
-    expect(placed.covers).toBe(true);
-    expect(placed.textOverPhoto).toBe(true);
+    expect(placed.textOverHero).toBe(true);
+    if (wide) {
+      expect(placed.fullHeight).toBe(true);
+      expect(placed.alignedRight).toBe(true);
+      expect(placed.leavesDarkOnLeft).toBe(true);
+      expect(placed.inside).toBe(true);
+      expect(placed.ratio).toBeGreaterThan(1.45);
+      expect(placed.ratio).toBeLessThan(1.53);
+    } else {
+      expect(placed.covers).toBe(true);
+    }
   });
 
   test('Úvod v průběhu sezení ukazuje záběr doteku v rozumné velikosti', async ({ page }) => {
@@ -219,7 +237,7 @@ test.describe('Interaktivní prvky a použitelnost na mobilu i desktopu', () => 
     await expect(page.locator('#form-intro')).toBeHidden();
   });
 
-  test('Reference ukazují jen ohlasy vědomého dotyku a jméno s popiskem jdou pod sebou', async ({ page }) => {
+  test('Reference ukazují jen ohlasy vědomého doteku a jméno s popiskem jdou pod sebou', async ({ page }) => {
     await page.goto('/reference.html');
 
     const cards = page.locator('.reference-card');

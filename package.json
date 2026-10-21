@@ -2,7 +2,7 @@
   "name": "terapie-vedomeho-dotyku",
   "version": "1.0.0",
   "private": true,
-  "description": "Statický web pro Terapii vědomého dotyku - Martin Šimůnek",
+  "description": "Statický web pro Terapii vědomého doteku - Martin Šimůnek",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

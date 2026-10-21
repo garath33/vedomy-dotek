@@ -1,6 +1,6 @@
 # Průvodce SDLC, GitHub Pages a Staging prostředím
 
-Tento dokument slouží jako detailní manuál pro správu webu **Terapie vědomého dotyku** podle profesionálních standardů vývoje software (SDLC).
+Tento dokument slouží jako detailní manuál pro správu webu **Terapie vědomého doteku** podle profesionálních standardů vývoje software (SDLC).
 
 ---
 
